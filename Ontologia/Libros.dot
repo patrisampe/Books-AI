@@ -1,0 +1,6 @@
+digraph Libros {
+	node [label="\N"];
+	graph [bb="0,0,176,140"];
+	Lector [label="{Lector|{sexo|Symbol|{Femenino|Masculino}}|{ocupacion|String}|{estudios|String}|{edad|Integer}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="88,70", rects="-0.5,116,176.5,139 -0.5,70,42.5,116 42.5,70,102.5,116 102.5,93,176.5,116 102.5,70,176.5,93 -0.5,47,100.5,70 100.5,47,176.5,70 -0.5\
+,24,94.5,47 94.5,24,176.5,47 -0.5,1,82.5,24 82.5,1,176.5,24", width="2.4514", height="1.9306"];
+}

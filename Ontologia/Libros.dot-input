@@ -1,0 +1,4 @@
+digraph "Libros" {
+
+"Lector" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Lector|{sexo|Symbol|{Femenino|Masculino}}|{ocupacion|String}|{estudios|String}|{edad|Integer}}"]
+}
