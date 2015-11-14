@@ -1,6 +1,12 @@
+usage() {
+    echo "CrearClp.sh [destino]"
+}
+
 CLP=Libros.clp
-rm $CLP 
-touch $CLP
+if [ $# -eq 1 ]; then
+    CLP=$1
+fi
+echo /dev/null > $CLP
 for name in $(cat FitxersEnOrdre.txt); do
     for fit in $(ls $name); do
         echo "Añadiendo $fit a $CLP ..."
