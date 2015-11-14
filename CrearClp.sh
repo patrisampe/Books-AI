@@ -6,7 +6,7 @@ CLP=Libros.clp
 if [ $# -eq 1 ]; then
     CLP=$1
 fi
-echo /dev/null > $CLP
+cat /dev/null > $CLP
 for name in $(cat FitxersEnOrdre.txt); do
     for fit in $(ls $name); do
         echo "Añadiendo $fit a $CLP ..."
