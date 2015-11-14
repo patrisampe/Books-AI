@@ -1,4 +1,4 @@
-; Sat Nov 14 11:51:52 CET 2015
+; Sat Nov 14 23:05:00 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -73,6 +73,10 @@
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
 		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot anoDeNacimiento
+		(type INTEGER)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot editorial
 		(type STRING)
@@ -281,10 +285,8 @@
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot edad
-;+		(comment "Edad del lector")
+	(single-slot anoDeNacimiento
 		(type INTEGER)
-		(range 0 %3FVARIABLE)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot nacionalidad

@@ -1,21 +1,24 @@
-; Sat Nov 14 11:51:52 CET 2015
+; Sat Nov 14 23:05:00 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
 ([Libros_Class0] of  Autor
 
-	(edad 52)
+	(anoDeNacimiento 1963)
 	(nacionalidad "Reino Unido")
 	(nombre "E. L. James")
 	(nPremios 5))
 
 ([Libros_Class1] of  Autor
 
-	(edad 41)
+	(anoDeNacimiento 1973)
 	(nacionalidad "Estados Unidos")
 	(nombre "Stephenie Meyer")
 	(nPremios 3))
+
+([Libros_Class10003] of  Habitos
+)
 
 ([Libros_Class10006] of  Fantasia
 
@@ -108,7 +111,8 @@
 	(estudios "Magisterio")
 	(Identificador 1)
 	(ocupacion "Estudiante")
-	(sexo Masculino))
+	(sexo Masculino)
+	(suele [Libros_Class10003]))
 
 ([Libros_Class3] of  Libro
 

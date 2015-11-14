@@ -1,4 +1,4 @@
-; Sat Nov 14 11:44:05 CET 2015
+; Sat Nov 14 23:04:50 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,17 +20,17 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Libros_ProjectKB_Class10175]
-		[Libros_ProjectKB_Class10176]
-		[Libros_ProjectKB_Class10177]
-		[Libros_ProjectKB_Class10178]
-		[Libros_ProjectKB_Class10179]
-		[Libros_ProjectKB_Class10180]
-		[Libros_ProjectKB_Class10181]
-		[Libros_ProjectKB_Class10182]
-		[Libros_ProjectKB_Class10183]
-		[Libros_ProjectKB_Class10184]
-		[Libros_ProjectKB_Class10185]))
+		[Libros_ProjectKB_Class62]
+		[Libros_ProjectKB_Class63]
+		[Libros_ProjectKB_Class64]
+		[Libros_ProjectKB_Class65]
+		[Libros_ProjectKB_Class66]
+		[Libros_ProjectKB_Class67]
+		[Libros_ProjectKB_Class68]
+		[Libros_ProjectKB_Class69]
+		[Libros_ProjectKB_Class70]
+		[Libros_ProjectKB_Class71]
+		[Libros_ProjectKB_Class72]))
 
 ([CLSES_TAB] of  Widget
 
@@ -82,9 +82,9 @@
 ([KB_142843_Class1] of  Map
 
 	(entries
-		[Libros_ProjectKB_Class10186]
-		[Libros_ProjectKB_Class10187]
-		[Libros_ProjectKB_Class10188]))
+		[Libros_ProjectKB_Class73]
+		[Libros_ProjectKB_Class74]
+		[Libros_ProjectKB_Class75]))
 
 ([KB_142843_Class10] of  Property_List
 )
@@ -511,7 +511,7 @@
 	(name "classes_file_name")
 	(string_value "Libros.pont"))
 
-([KB_453552_Class3] of  Map
+([KB_485638_Class3] of  Map
 )
 
 ([LAYOUT_PROPERTIES] of  Property_List
@@ -519,121 +519,80 @@
 	(name "layout properties")
 	(properties [VERTICAL_STRETCHER]))
 
-([Libros_ProjectKB_Class10043] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "pertenece")
-	(property_list [Libros_ProjectKB_Class10044])
-	(widget_class_name "edu.stanford.smi.protege.widget.InstanceFieldWidget")
-	(width 200)
-	(x 200)
-	(y 120))
-
-([Libros_ProjectKB_Class10044] of  Property_List
-
-	(properties
-		[Libros_ProjectKB_Class10045]
-		[Libros_ProjectKB_Class10046]))
-
-([Libros_ProjectKB_Class10045] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-View References to Value"))
-
-([Libros_ProjectKB_Class10046] of  Boolean
-
-	(boolean_value FALSE)
-	(name "ButtonDisplayed-Delete Instance"))
-
 ([Libros_ProjectKB_Class101] of  String
 
 	(name "SearchTab_Query"))
 
-([Libros_ProjectKB_Class10162] of  Widget
-
-	(height 60)
-	(is_hidden FALSE)
-	(name "Identificador")
-	(property_list [Libros_ProjectKB_Class10163])
-	(widget_class_name "edu.stanford.smi.protege.widget.TextFieldWidget")
-	(width 200)
-	(x 0)
-	(y 300))
-
-([Libros_ProjectKB_Class10163] of  Property_List
-)
-
-([Libros_ProjectKB_Class10175] of  String
+([Libros_ProjectKB_Class62] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([Libros_ProjectKB_Class10176] of  String
+([Libros_ProjectKB_Class63] of  String
 
 	(name "Erotico")
 	(string_value "nombreTema"))
 
-([Libros_ProjectKB_Class10177] of  String
+([Libros_ProjectKB_Class64] of  String
 
 	(name "Amor")
 	(string_value "nombreTema"))
 
-([Libros_ProjectKB_Class10178] of  String
+([Libros_ProjectKB_Class65] of  String
 
 	(name "Genero")
 	(string_value "nombreGenero"))
 
-([Libros_ProjectKB_Class10179] of  String
+([Libros_ProjectKB_Class66] of  String
 
 	(name "Autor")
 	(string_value "nombre"))
 
-([Libros_ProjectKB_Class10180] of  String
+([Libros_ProjectKB_Class67] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([Libros_ProjectKB_Class10181] of  String
+([Libros_ProjectKB_Class68] of  String
 
 	(name "Tema")
 	(string_value "nombreTema"))
 
-([Libros_ProjectKB_Class10182] of  String
+([Libros_ProjectKB_Class69] of  String
 
 	(name "Lector")
 	(string_value "{Lector}Identificador"))
 
-([Libros_ProjectKB_Class10183] of  String
+([Libros_ProjectKB_Class70] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([Libros_ProjectKB_Class10184] of  String
+([Libros_ProjectKB_Class71] of  String
 
 	(name "Libro")
 	(string_value "titulo"))
 
-([Libros_ProjectKB_Class10185] of  String
+([Libros_ProjectKB_Class72] of  String
 
 	(name "Habitos")
 	(string_value "{F%3A}frecuenciaAnual{+H%3A}horaDelDia{+L%3A}lugarDeLectura"))
 
-([Libros_ProjectKB_Class10186] of  Map_Entry
+([Libros_ProjectKB_Class73] of  Map_Entry
 
 	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([Libros_ProjectKB_Class10187] of  Map_Entry
+([Libros_ProjectKB_Class74] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([Libros_ProjectKB_Class10188] of  Map_Entry
+([Libros_ProjectKB_Class75] of  Map_Entry
 
 	(key "change_tracking_active")
 	(key_class "java.lang.String")
@@ -718,9 +677,9 @@
 
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
+		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[STANDARD_CLASS_FORM_WIDGET]
 		[STANDARD_SLOT_FORM_WIDGET]
-		[INSTANCE_ANNOTATION_FORM_WIDGET]
 		[PAL_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
