@@ -14,7 +14,7 @@ echo ";; * Patricia Sampedro          ;;" >> $CLP
 echo ";; * Yoel Cabo                  ;;" >> $CLP
 echo ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;" >> $CLP
 echo "" >> $CLP
-for name in $(cat FitxersEnOrdre.txt); do
+for name in $(cat FitxersEnOrdre.txt | grep -v "#"); do
     for fit in $(ls $name); do
         echo "Añadiendo $fit a $CLP ..."
 	echo ";;; $fit BEGIN" >> $CLP
