@@ -1,4 +1,4 @@
-; Sat Nov 14 23:05:00 CET 2015
+; Sat Nov 14 23:14:19 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -22,10 +22,6 @@
 ;+		(allowed-classes Autor)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot FrecuenciaAnual
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot titulo
 		(type STRING)
 ;+		(cardinality 0 1)
@@ -48,7 +44,8 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot frecuenciaAnual
-		(type STRING)
+		(type INTEGER)
+		(range 0 365)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot sexo
@@ -318,7 +315,8 @@
 	(is-a USER)
 	(role concrete)
 	(single-slot frecuenciaAnual
-		(type STRING)
+		(type INTEGER)
+		(range 0 365)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot lugarDeLectura

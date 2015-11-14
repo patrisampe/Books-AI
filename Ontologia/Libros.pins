@@ -1,4 +1,4 @@
-; Sat Nov 14 23:05:00 CET 2015
+; Sat Nov 14 23:14:20 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -54,13 +54,11 @@
 
 ([Libros_Class10015] of  Habitos
 
-	(frecuenciaAnual "365")
 	(horaDelDia Manana Noche)
 	(lugarDeLectura Casa))
 
 ([Libros_Class10016] of  Habitos
 
-	(frecuenciaAnual "40")
 	(horaDelDia Manana)
 	(lugarDeLectura TransportePublico))
 
