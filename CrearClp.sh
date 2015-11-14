@@ -1,7 +1,7 @@
 CLP=Libros.clp
 rm $CLP 
 touch $CLP
-for fit in $(cat FitxersEnOrdre.txt); do
+for fit in $(ls $(cat FitxersEnOrdre.txt)); do
     echo ";;; $fit BEGIN" >> $CLP
     echo "" >> $CLP 
     cat $fit >> $CLP 
