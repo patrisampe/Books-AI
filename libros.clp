@@ -4,9 +4,9 @@
 
 (deftemplate Lector
         (slot nombre (type STRING) (default ?DERIVE))
-        (slot edad (type INTEGER) (range 1 120))
-        (slot sexo (type SYMBOL) (allowed-values hombre mujer))
-        (slot estudios (type SYMBOL) (allowed-values No_graduado_escolar CFGS Bachillerato Universidad))
+        (slot edad (type INTEGER) (range 1 120) (default 1))
+        (slot sexo (type SYMBOL) (allowed-values hombre mujer IND) (default IND))
+        (slot estudios (type SYMBOL) (allowed-values No_graduado_escolar CFGS Bachillerato Universidad IND) (default IND))
 )
 
 ; =============================================================================
