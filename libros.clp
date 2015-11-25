@@ -1,3 +1,487 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;          Practica 2 IA       ;;
+;; Por:                         ;;
+;; * Octavi Pascual             ;;
+;; * Patricia Sampedro          ;;
+;; * Yoel Cabo                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; Ontologia/Libros.pins BEGIN
+
+; Sat Nov 14 23:14:20 CET 2015
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+([Libros_Class0] of  Autor
+
+	(anoDeNacimiento 1963)
+	(nacionalidad "Reino Unido")
+	(nombre "E. L. James")
+	(nPremios 5))
+
+([Libros_Class1] of  Autor
+
+	(anoDeNacimiento 1973)
+	(nacionalidad "Estados Unidos")
+	(nombre "Stephenie Meyer")
+	(nPremios 3))
+
+([Libros_Class10003] of  Habitos
+)
+
+([Libros_Class10006] of  Fantasia
+
+	(nombreGenero "Fantasia"))
+
+([Libros_Class10007] of  Historica
+
+	(nombreGenero "Historica"))
+
+([Libros_Class10008] of  Narrativa
+
+	(nombreGenero "Narrativa"))
+
+([Libros_Class10009] of  Oeste
+
+	(nombreGenero "Oeste"))
+
+([Libros_Class10010] of  Policiaca
+
+	(nombreGenero "Policiaca"))
+
+([Libros_Class10011] of  Romantica
+
+	(nombreGenero "Romatica"))
+
+([Libros_Class10012] of  Terror
+
+	(nombreGenero "Terror"))
+
+([Libros_Class10013] of  Viajes
+
+	(nombreGenero "Viajes"))
+
+([Libros_Class10015] of  Habitos
+
+	(horaDelDia Manana Noche)
+	(lugarDeLectura Casa))
+
+([Libros_Class10016] of  Habitos
+
+	(horaDelDia Manana)
+	(lugarDeLectura TransportePublico))
+
+([Libros_Class10017] of  Amor
+
+	(nombreTema "Amor"))
+
+([Libros_Class10018] of  Deber
+
+	(nombreTema "Deber"))
+
+([Libros_Class10019] of  Erotico
+
+	(nombreTema "Erotico"))
+
+([Libros_Class10020] of  Honor
+
+	(nombreTema "Honor"))
+
+([Libros_Class10021] of  IgualdadGenero
+
+	(nombreTema "IgualdadGenero"))
+
+([Libros_Class10022] of  Justicia
+
+	(nombreTema "Justicia"))
+
+([Libros_Class10023] of  Muerte
+
+	(nombreTema "Muerte"))
+
+([Libros_Class10024] of  Soledad
+
+	(nombreTema "Soledad"))
+
+([Libros_Class10028] of  PreferenciasAutor
+)
+
+([Libros_Class10029] of  PreferenciasGenero
+)
+
+([Libros_Class10030] of  PreferenciasTema
+)
+
+([Libros_Class2] of  Lector
+
+	(edad 21)
+	(estudios "Magisterio")
+	(Identificador 1)
+	(ocupacion "Estudiante")
+	(sexo Masculino)
+	(suele [Libros_Class10003]))
+
+([Libros_Class3] of  Libro
+
+	(dificultad Baja)
+	(editorial "Alfaguara")
+	(escritoPor [Libros_Class1])
+	(paginas 765)
+	(pertenece [Libros_Class10011])
+	(premios FALSE)
+	(titulo "Crepusculo")
+	(trata
+		[Libros_Class10017]
+		[Libros_Class10019]))
+
+([Libros_Class4] of  Aventuras
+
+	(nombreGenero "Aventuras"))
+
+([Libros_Class5] of  Ciencia-ficcion
+
+	(nombreGenero "Ciencia-ficcion"))
+
+;;; Ontologia/Libros.pins END
+
+
+;;; Ontologia/Libros.pont BEGIN
+
+; Sat Nov 14 23:14:19 CET 2015
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot nPremios
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot edad
+;+		(comment "Edad del lector")
+		(type INTEGER)
+		(range 0 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot escritoPor
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombreGenero
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombreTema
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot suele
+		(type INSTANCE)
+;+		(allowed-classes Habitos)
+		(create-accessor read-write))
+	(single-slot dificultad
+		(type SYMBOL)
+		(allowed-values Baja Media Alta)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot frecuenciaAnual
+		(type INTEGER)
+		(range 0 365)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sexo
+		(type SYMBOL)
+		(allowed-values Femenino Masculino)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Identificador
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot premios
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot paginas
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot pertenece
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot anoDeNacimiento
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot editorial
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot estudios
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ocupacion
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot lugarDeLectura
+		(type SYMBOL)
+		(allowed-values Casa TransportePublico Cama)
+		(create-accessor read-write))
+	(multislot tiene
+		(type INSTANCE)
+;+		(allowed-classes Preferencias)
+		(create-accessor read-write))
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot trata
+		(type INSTANCE)
+;+		(allowed-classes Tema)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot horaDelDia
+		(type SYMBOL)
+		(allowed-values Manana Tarde Noche)
+		(create-accessor read-write)))
+
+(defclass Lector
+	(is-a USER)
+	(role concrete)
+	(multislot tiene
+		(type INSTANCE)
+;+		(allowed-classes Preferencias)
+		(create-accessor read-write))
+	(single-slot edad
+;+		(comment "Edad del lector")
+		(type INTEGER)
+		(range 0 %3FVARIABLE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sexo
+		(type SYMBOL)
+		(allowed-values Femenino Masculino)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Identificador
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot estudios
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ocupacion
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot suele
+		(type INSTANCE)
+;+		(allowed-classes Habitos)
+		(create-accessor read-write)))
+
+(defclass Libro
+	(is-a USER)
+	(role concrete)
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot escritoPor
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot pertenece
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot dificultad
+		(type SYMBOL)
+		(allowed-values Baja Media Alta)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot editorial
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot premios
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot paginas
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot trata
+		(type INSTANCE)
+;+		(allowed-classes Tema)
+		(create-accessor read-write)))
+
+(defclass Genero
+	(is-a USER)
+	(role concrete)
+	(single-slot nombreGenero
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Narrativa
+	(is-a Genero)
+	(role concrete))
+
+(defclass Policiaca
+	(is-a Genero)
+	(role concrete))
+
+(defclass Terror
+	(is-a Genero)
+	(role concrete))
+
+(defclass Ciencia-ficcion
+	(is-a Genero)
+	(role concrete))
+
+(defclass Fantasia
+	(is-a Genero)
+	(role concrete))
+
+(defclass Romantica
+	(is-a Genero)
+	(role concrete))
+
+(defclass Historica
+	(is-a Genero)
+	(role concrete))
+
+(defclass Oeste
+	(is-a Genero)
+	(role concrete))
+
+(defclass Aventuras
+	(is-a Genero)
+	(role concrete))
+
+(defclass Viajes
+	(is-a Genero)
+	(role concrete))
+
+(defclass Tema
+	(is-a USER)
+	(role concrete)
+	(single-slot nombreTema
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Amor
+	(is-a Tema)
+	(role concrete))
+
+(defclass Erotico
+	(is-a Tema)
+	(role concrete))
+
+(defclass Muerte
+	(is-a Tema)
+	(role concrete))
+
+(defclass Honor
+	(is-a Tema)
+	(role concrete))
+
+(defclass Deber
+	(is-a Tema)
+	(role concrete))
+
+(defclass Soledad
+	(is-a Tema)
+	(role concrete))
+
+(defclass Justicia
+	(is-a Tema)
+	(role concrete))
+
+(defclass IgualdadGenero
+	(is-a Tema)
+	(role concrete))
+
+(defclass Autor
+	(is-a USER)
+	(role concrete)
+	(single-slot nPremios
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anoDeNacimiento
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Preferencias
+	(is-a USER)
+	(role concrete))
+
+(defclass PreferenciasGenero
+	(is-a Preferencias)
+	(role concrete))
+
+(defclass PreferenciasAutor
+	(is-a Preferencias)
+	(role concrete))
+
+(defclass PreferenciasTema
+	(is-a Preferencias)
+	(role concrete))
+
+(defclass Habitos
+	(is-a USER)
+	(role concrete)
+	(single-slot frecuenciaAnual
+		(type INTEGER)
+		(range 0 365)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot lugarDeLectura
+		(type SYMBOL)
+		(allowed-values Casa TransportePublico Cama)
+		(create-accessor read-write))
+	(multislot horaDelDia
+		(type SYMBOL)
+		(allowed-values Manana Tarde Noche)
+		(create-accessor read-write)))
+;;; Ontologia/Libros.pont END
+
+
+;;; octavipatridivendres.clp BEGIN
+
 ; =============================================================================
 ; TEMPLATES 
 ; =============================================================================
@@ -232,4 +716,8 @@
 
 ; HASTA AQUI HEMOS LLEGADO!:(
 ; Modulo de recopilacion de las prefencias literarias del lector
+
+
+;;; octavipatridivendres.clp END
+
 

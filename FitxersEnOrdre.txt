@@ -1,6 +1,6 @@
 #Fitxers que s'uniran, en ordre. 
 #El fitxer permet comentaris però només si son a principi de línea, per pal del senyor Yoel.
-Ontologia/Libros.pins
-Ontologia/Libros.pont
-
+Ontologia/libros.pins
+Ontologia/libros.pont
+octavipatridivendres.clp
 #ReglasYoel/instancias.clp
