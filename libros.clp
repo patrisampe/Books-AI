@@ -6,149 +6,278 @@
 ;; * Yoel Cabo                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;;; Ontologia/Libros.pins BEGIN
+;;; Ontologia/libros.pins BEGIN
 
-; Sat Nov 14 23:14:20 CET 2015
+; Wed Nov 25 17:58:50 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
-([Libros_Class0] of  Autor
+([libros_Class10] of  Nacionalidad
 
-	(anoDeNacimiento 1963)
-	(nacionalidad "Reino Unido")
-	(nombre "E. L. James")
-	(nPremios 5))
+	(nacionalidad "Italia"))
 
-([Libros_Class1] of  Autor
+([libros_Class11] of  Nacionalidad
 
-	(anoDeNacimiento 1973)
-	(nacionalidad "Estados Unidos")
-	(nombre "Stephenie Meyer")
-	(nPremios 3))
+	(nacionalidad "Liechestein"))
 
-([Libros_Class10003] of  Habitos
-)
+([libros_Class12] of  Nacionalidad
 
-([Libros_Class10006] of  Fantasia
+	(nacionalidad "Japon"))
 
-	(nombreGenero "Fantasia"))
+([libros_Class13] of  Nacionalidad
 
-([Libros_Class10007] of  Historica
+	(nacionalidad "Canada"))
 
-	(nombreGenero "Historica"))
+([libros_Class3] of  Nacionalidad
 
-([Libros_Class10008] of  Narrativa
+	(autores [libros_Class69])
+	(nacionalidad "Espana"))
 
-	(nombreGenero "Narrativa"))
+([libros_Class38] of  Tema
 
-([Libros_Class10009] of  Oeste
-
-	(nombreGenero "Oeste"))
-
-([Libros_Class10010] of  Policiaca
-
-	(nombreGenero "Policiaca"))
-
-([Libros_Class10011] of  Romantica
-
-	(nombreGenero "Romatica"))
-
-([Libros_Class10012] of  Terror
-
-	(nombreGenero "Terror"))
-
-([Libros_Class10013] of  Viajes
-
-	(nombreGenero "Viajes"))
-
-([Libros_Class10015] of  Habitos
-
-	(horaDelDia Manana Noche)
-	(lugarDeLectura Casa))
-
-([Libros_Class10016] of  Habitos
-
-	(horaDelDia Manana)
-	(lugarDeLectura TransportePublico))
-
-([Libros_Class10017] of  Amor
-
+	(librosTema
+		[libros_Class59]
+		[libros_Class63]
+		[libros_Class64])
 	(nombreTema "Amor"))
 
-([Libros_Class10018] of  Deber
+([libros_Class39] of  Tema
 
-	(nombreTema "Deber"))
-
-([Libros_Class10019] of  Erotico
-
+	(librosTema [libros_Class59])
 	(nombreTema "Erotico"))
 
-([Libros_Class10020] of  Honor
+([libros_Class4] of  Nacionalidad
 
+	(nacionalidad "Alemania"))
+
+([libros_Class40] of  Tema
+
+	(librosTema [libros_Class70])
+	(nombreTema "Deber"))
+
+([libros_Class41] of  Tema
+
+	(librosTema [libros_Class67])
 	(nombreTema "Honor"))
 
-([Libros_Class10021] of  IgualdadGenero
+([libros_Class42] of  Tema
 
 	(nombreTema "IgualdadGenero"))
 
-([Libros_Class10022] of  Justicia
+([libros_Class43] of  Tema
 
+	(librosTema
+		[libros_Class67]
+		[libros_Class70])
 	(nombreTema "Justicia"))
 
-([Libros_Class10023] of  Muerte
+([libros_Class44] of  Tema
 
+	(librosTema [libros_Class67])
 	(nombreTema "Muerte"))
 
-([Libros_Class10024] of  Soledad
+([libros_Class45] of  Tema
 
 	(nombreTema "Soledad"))
 
-([Libros_Class10028] of  PreferenciasAutor
-)
-
-([Libros_Class10029] of  PreferenciasGenero
-)
-
-([Libros_Class10030] of  PreferenciasTema
-)
-
-([Libros_Class2] of  Lector
-
-	(edad 21)
-	(estudios "Magisterio")
-	(Identificador 1)
-	(ocupacion "Estudiante")
-	(sexo Masculino)
-	(suele [Libros_Class10003]))
-
-([Libros_Class3] of  Libro
-
-	(dificultad Baja)
-	(editorial "Alfaguara")
-	(escritoPor [Libros_Class1])
-	(paginas 765)
-	(pertenece [Libros_Class10011])
-	(premios FALSE)
-	(titulo "Crepusculo")
-	(trata
-		[Libros_Class10017]
-		[Libros_Class10019]))
-
-([Libros_Class4] of  Aventuras
+([libros_Class46] of  Aventuras
 
 	(nombreGenero "Aventuras"))
 
-([Libros_Class5] of  Ciencia-ficcion
+([libros_Class47] of  Ciencia-ficcion
 
 	(nombreGenero "Ciencia-ficcion"))
 
-;;; Ontologia/Libros.pins END
+([libros_Class48] of  Fantasia
+
+	(librosGenero
+		[libros_Class64]
+		[libros_Class63]
+		[libros_Class67])
+	(nombreGenero "Fantasia"))
+
+([libros_Class49] of  Historica
+
+	(nombreGenero "Historica"))
+
+([libros_Class5] of  Nacionalidad
+
+	(autores
+		[libros_Class61]
+		[libros_Class66])
+	(nacionalidad "EEUU"))
+
+([libros_Class50] of  Narrativa
+
+	(librosGenero [libros_Class70])
+	(nombreGenero "Narrativa"))
+
+([libros_Class51] of  Oeste
+
+	(nombreGenero "Oeste"))
+
+([libros_Class52] of  Policiaca
+
+	(nombreGenero "Policiaca"))
+
+([libros_Class53] of  Romantica
+
+	(librosGenero
+		[libros_Class59]
+		[libros_Class64]
+		[libros_Class63])
+	(nombreGenero "Romantica"))
+
+([libros_Class54] of  Terror
+
+	(nombreGenero "Terror"))
+
+([libros_Class55] of  Viajes
+
+	(nombreGenero "Viajes"))
+
+([libros_Class58] of  Autor
+
+	(anoDeNacimiento 1963)
+	(librosEscritos [libros_Class59])
+	(Nombre "E. L. James")
+	(nPremios 5)
+	(tieneNacionalidad [libros_Class9]))
+
+([libros_Class59] of  Libro
+
+	(anoPublicacion 2011)
+	(dificultad Baja)
+	(escritoPor [libros_Class58])
+	(idioma Ingles)
+	(paginas 514)
+	(pertenece [libros_Class53])
+	(premios FALSE)
+	(titulo "Fifty Shades of Grey")
+	(trataSobre
+		[libros_Class39]
+		[libros_Class38]))
+
+([libros_Class6] of  Nacionalidad
+
+	(nacionalidad "Argentina"))
+
+([libros_Class61] of  Autor
+
+	(anoDeNacimiento 1973)
+	(librosEscritos
+		[libros_Class63]
+		[libros_Class64])
+	(Nombre "Stephenie Meyer")
+	(nPremios 0)
+	(tieneNacionalidad [libros_Class5]))
+
+([libros_Class63] of  Libro
+
+	(anoPublicacion 2005)
+	(dificultad Baja)
+	(escritoPor [libros_Class61])
+	(idioma Castellano)
+	(paginas 498)
+	(pertenece
+		[libros_Class53]
+		[libros_Class48])
+	(titulo "Crepusculo")
+	(trataSobre
+		[libros_Class38]
+		[libros_Class65]))
+
+([libros_Class64] of  Libro
+
+	(anoPublicacion 2006)
+	(dificultad Baja)
+	(escritoPor [libros_Class61])
+	(idioma Castellano)
+	(paginas 576)
+	(pertenece
+		[libros_Class48]
+		[libros_Class53])
+	(titulo "Luna Nueva")
+	(trataSobre
+		[libros_Class38]
+		[libros_Class65]))
+
+([libros_Class65] of  Tema
+
+	(librosTema
+		[libros_Class63]
+		[libros_Class64])
+	(nombreTema "Vampiros"))
+
+([libros_Class66] of  Autor
+
+	(anoDeNacimiento 1948)
+	(librosEscritos [libros_Class67])
+	(Nombre "George R. R. Martin")
+	(nPremios 22)
+	(tieneNacionalidad [libros_Class5]))
+
+([libros_Class67] of  Libro
+
+	(anoPublicacion 2002)
+	(dificultad Baja)
+	(escritoPor [libros_Class66])
+	(idioma Castellano)
+	(paginas 800)
+	(pertenece [libros_Class48])
+	(premios TRUE)
+	(titulo "Juego De Tronos")
+	(trataSobre
+		[libros_Class41]
+		[libros_Class43]
+		[libros_Class44]
+		[libros_Class68]))
+
+([libros_Class68] of  Tema
+
+	(librosTema [libros_Class67])
+	(nombreTema "Guerra"))
+
+([libros_Class69] of  Autor
+
+	(anoDeNacimiento 1547)
+	(librosEscritos [libros_Class70])
+	(Nombre "Miguel de Cervantes")
+	(tieneNacionalidad [libros_Class3]))
+
+([libros_Class7] of  Nacionalidad
+
+	(nacionalidad "Rusia"))
+
+([libros_Class70] of  Libro
+
+	(anoPublicacion 1605)
+	(dificultad Alta)
+	(escritoPor [libros_Class69])
+	(idioma Castellano)
+	(paginas 1250)
+	(pertenece [libros_Class50])
+	(titulo "Don Quijote de la Mancha")
+	(trataSobre
+		[libros_Class40]
+		[libros_Class43]))
+
+([libros_Class8] of  Nacionalidad
+
+	(nacionalidad "Francia"))
+
+([libros_Class9] of  Nacionalidad
+
+	(autores [libros_Class58])
+	(nacionalidad "Reino Unido"))
+
+;;; Ontologia/libros.pins END
 
 
-;;; Ontologia/Libros.pont BEGIN
+;;; Ontologia/libros.pont BEGIN
 
-; Sat Nov 14 23:14:19 CET 2015
+; Wed Nov 25 17:58:50 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -157,26 +286,79 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
-	(single-slot nPremios
+	(single-slot idioma
+		(type SYMBOL)
+		(allowed-values Frances Catalan Castellano Ingles Aleman Italiano)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombreGenero
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot autores
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(inverse-slot tieneNacionalidad)
+		(create-accessor read-write))
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot trataSobre
+		(type INSTANCE)
+;+		(allowed-classes Tema)
+;+		(inverse-slot librosTema)
+		(create-accessor read-write))
+	(single-slot anoDeNacimiento
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot edad
-;+		(comment "Edad del lector")
-		(type INTEGER)
-		(range 0 %3FVARIABLE)
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot librosEscritos
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(inverse-slot escritoPor)
+		(create-accessor read-write))
+	(single-slot premios
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tieneNacionalidad
+		(type INSTANCE)
+;+		(allowed-classes Nacionalidad)
+;+		(cardinality 0 1)
+;+		(inverse-slot autores)
+		(create-accessor read-write))
+	(multislot librosGenero
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(inverse-slot pertenece)
+		(create-accessor read-write))
+	(single-slot anoPublicacion
+		(type INTEGER)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot escritoPor
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
 ;+		(cardinality 1 1)
+;+		(inverse-slot librosEscritos)
 		(create-accessor read-write))
-	(single-slot titulo
-		(type STRING)
+	(single-slot paginas
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot nombreGenero
+	(multislot pertenece
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot librosGenero)
+		(create-accessor read-write))
+	(single-slot nacionalidad
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
@@ -184,157 +366,56 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(multislot suele
+	(single-slot nPremios
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot librosTema
 		(type INSTANCE)
-;+		(allowed-classes Habitos)
+;+		(allowed-classes Libro)
+;+		(inverse-slot trataSobre)
 		(create-accessor read-write))
 	(single-slot dificultad
 		(type SYMBOL)
 		(allowed-values Baja Media Alta)
 ;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot frecuenciaAnual
-		(type INTEGER)
-		(range 0 365)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot sexo
-		(type SYMBOL)
-		(allowed-values Femenino Masculino)
+		(create-accessor read-write)))
+
+(defclass Autor
+	(is-a USER)
+	(role concrete)
+	(single-slot Nombre
+		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot Identificador
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot premios
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot paginas
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot pertenece
+	(single-slot tieneNacionalidad
 		(type INSTANCE)
-;+		(allowed-classes Genero)
-		(cardinality 1 ?VARIABLE)
+;+		(allowed-classes Nacionalidad)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot librosEscritos
+		(type INSTANCE)
+;+		(allowed-classes Libro)
 		(create-accessor read-write))
 	(single-slot anoDeNacimiento
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot editorial
-		(type STRING)
+	(single-slot nPremios
+		(type INTEGER)
 ;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot estudios
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot ocupacion
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot lugarDeLectura
-		(type SYMBOL)
-		(allowed-values Casa TransportePublico Cama)
-		(create-accessor read-write))
-	(multislot tiene
-		(type INSTANCE)
-;+		(allowed-classes Preferencias)
-		(create-accessor read-write))
+		(create-accessor read-write)))
+
+(defclass Nacionalidad
+	(is-a USER)
+	(role concrete)
 	(single-slot nacionalidad
 		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot trata
-		(type INSTANCE)
-;+		(allowed-classes Tema)
-		(create-accessor read-write))
-	(single-slot nombre
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot horaDelDia
-		(type SYMBOL)
-		(allowed-values Manana Tarde Noche)
-		(create-accessor read-write)))
-
-(defclass Lector
-	(is-a USER)
-	(role concrete)
-	(multislot tiene
-		(type INSTANCE)
-;+		(allowed-classes Preferencias)
-		(create-accessor read-write))
-	(single-slot edad
-;+		(comment "Edad del lector")
-		(type INTEGER)
-		(range 0 %3FVARIABLE)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot sexo
-		(type SYMBOL)
-		(allowed-values Femenino Masculino)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot Identificador
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot estudios
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot ocupacion
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot suele
-		(type INSTANCE)
-;+		(allowed-classes Habitos)
-		(create-accessor read-write)))
-
-(defclass Libro
-	(is-a USER)
-	(role concrete)
-	(single-slot titulo
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot escritoPor
+	(multislot autores
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot pertenece
-		(type INSTANCE)
-;+		(allowed-classes Genero)
-		(cardinality 1 ?VARIABLE)
-		(create-accessor read-write))
-	(single-slot dificultad
-		(type SYMBOL)
-		(allowed-values Baja Media Alta)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot editorial
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot premios
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot paginas
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot trata
-		(type INSTANCE)
-;+		(allowed-classes Tema)
 		(create-accessor read-write)))
 
 (defclass Genero
@@ -343,17 +424,13 @@
 	(single-slot nombreGenero
 		(type STRING)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot librosGenero
+		(type INSTANCE)
+;+		(allowed-classes Libro)
 		(create-accessor read-write)))
 
-(defclass Narrativa
-	(is-a Genero)
-	(role concrete))
-
-(defclass Policiaca
-	(is-a Genero)
-	(role concrete))
-
-(defclass Terror
+(defclass Aventuras
 	(is-a Genero)
 	(role concrete))
 
@@ -365,11 +442,11 @@
 	(is-a Genero)
 	(role concrete))
 
-(defclass Romantica
+(defclass Historica
 	(is-a Genero)
 	(role concrete))
 
-(defclass Historica
+(defclass Narrativa
 	(is-a Genero)
 	(role concrete))
 
@@ -377,7 +454,15 @@
 	(is-a Genero)
 	(role concrete))
 
-(defclass Aventuras
+(defclass Policiaca
+	(is-a Genero)
+	(role concrete))
+
+(defclass Romantica
+	(is-a Genero)
+	(role concrete))
+
+(defclass Terror
 	(is-a Genero)
 	(role concrete))
 
@@ -385,99 +470,63 @@
 	(is-a Genero)
 	(role concrete))
 
+(defclass Libro
+	(is-a USER)
+	(role concrete)
+	(single-slot idioma
+		(type SYMBOL)
+		(allowed-values Frances Catalan Castellano Ingles Aleman Italiano)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot paginas
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot trataSobre
+		(type INSTANCE)
+;+		(allowed-classes Tema)
+		(create-accessor read-write))
+	(single-slot premios
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dificultad
+		(type SYMBOL)
+		(allowed-values Baja Media Alta)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot anoPublicacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot pertenece
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot escritoPor
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
 (defclass Tema
 	(is-a USER)
 	(role concrete)
 	(single-slot nombreTema
 		(type STRING)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot librosTema
+		(type INSTANCE)
+;+		(allowed-classes Libro)
 		(create-accessor read-write)))
-
-(defclass Amor
-	(is-a Tema)
-	(role concrete))
-
-(defclass Erotico
-	(is-a Tema)
-	(role concrete))
-
-(defclass Muerte
-	(is-a Tema)
-	(role concrete))
-
-(defclass Honor
-	(is-a Tema)
-	(role concrete))
-
-(defclass Deber
-	(is-a Tema)
-	(role concrete))
-
-(defclass Soledad
-	(is-a Tema)
-	(role concrete))
-
-(defclass Justicia
-	(is-a Tema)
-	(role concrete))
-
-(defclass IgualdadGenero
-	(is-a Tema)
-	(role concrete))
-
-(defclass Autor
-	(is-a USER)
-	(role concrete)
-	(single-slot nPremios
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot anoDeNacimiento
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nombre
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write)))
-
-(defclass Preferencias
-	(is-a USER)
-	(role concrete))
-
-(defclass PreferenciasGenero
-	(is-a Preferencias)
-	(role concrete))
-
-(defclass PreferenciasAutor
-	(is-a Preferencias)
-	(role concrete))
-
-(defclass PreferenciasTema
-	(is-a Preferencias)
-	(role concrete))
-
-(defclass Habitos
-	(is-a USER)
-	(role concrete)
-	(single-slot frecuenciaAnual
-		(type INTEGER)
-		(range 0 365)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot lugarDeLectura
-		(type SYMBOL)
-		(allowed-values Casa TransportePublico Cama)
-		(create-accessor read-write))
-	(multislot horaDelDia
-		(type SYMBOL)
-		(allowed-values Manana Tarde Noche)
-		(create-accessor read-write)))
-;;; Ontologia/Libros.pont END
+;;; Ontologia/libros.pont END
 
 
 ;;; octavipatridivendres.clp BEGIN
