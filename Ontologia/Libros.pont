@@ -1,4 +1,4 @@
-; Sat Nov 14 23:14:19 CET 2015
+; Wed Nov 25 17:58:50 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -7,26 +7,79 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
-	(single-slot nPremios
+	(single-slot idioma
+		(type SYMBOL)
+		(allowed-values Frances Catalan Castellano Ingles Aleman Italiano)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombreGenero
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot autores
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(inverse-slot tieneNacionalidad)
+		(create-accessor read-write))
+	(single-slot Nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot trataSobre
+		(type INSTANCE)
+;+		(allowed-classes Tema)
+;+		(inverse-slot librosTema)
+		(create-accessor read-write))
+	(single-slot anoDeNacimiento
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot edad
-;+		(comment "Edad del lector")
-		(type INTEGER)
-		(range 0 %3FVARIABLE)
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot librosEscritos
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(inverse-slot escritoPor)
+		(create-accessor read-write))
+	(single-slot premios
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tieneNacionalidad
+		(type INSTANCE)
+;+		(allowed-classes Nacionalidad)
+;+		(cardinality 0 1)
+;+		(inverse-slot autores)
+		(create-accessor read-write))
+	(multislot librosGenero
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(inverse-slot pertenece)
+		(create-accessor read-write))
+	(single-slot anoPublicacion
+		(type INTEGER)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot escritoPor
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
 ;+		(cardinality 1 1)
+;+		(inverse-slot librosEscritos)
 		(create-accessor read-write))
-	(single-slot titulo
-		(type STRING)
+	(single-slot paginas
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot nombreGenero
+	(multislot pertenece
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot librosGenero)
+		(create-accessor read-write))
+	(single-slot nacionalidad
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
@@ -34,157 +87,56 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(multislot suele
+	(single-slot nPremios
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot librosTema
 		(type INSTANCE)
-;+		(allowed-classes Habitos)
+;+		(allowed-classes Libro)
+;+		(inverse-slot trataSobre)
 		(create-accessor read-write))
 	(single-slot dificultad
 		(type SYMBOL)
 		(allowed-values Baja Media Alta)
 ;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot frecuenciaAnual
-		(type INTEGER)
-		(range 0 365)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot sexo
-		(type SYMBOL)
-		(allowed-values Femenino Masculino)
+		(create-accessor read-write)))
+
+(defclass Autor
+	(is-a USER)
+	(role concrete)
+	(single-slot Nombre
+		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot Identificador
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot premios
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot paginas
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot pertenece
+	(single-slot tieneNacionalidad
 		(type INSTANCE)
-;+		(allowed-classes Genero)
-		(cardinality 1 ?VARIABLE)
+;+		(allowed-classes Nacionalidad)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot librosEscritos
+		(type INSTANCE)
+;+		(allowed-classes Libro)
 		(create-accessor read-write))
 	(single-slot anoDeNacimiento
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot editorial
-		(type STRING)
+	(single-slot nPremios
+		(type INTEGER)
 ;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot estudios
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot ocupacion
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot lugarDeLectura
-		(type SYMBOL)
-		(allowed-values Casa TransportePublico Cama)
-		(create-accessor read-write))
-	(multislot tiene
-		(type INSTANCE)
-;+		(allowed-classes Preferencias)
-		(create-accessor read-write))
+		(create-accessor read-write)))
+
+(defclass Nacionalidad
+	(is-a USER)
+	(role concrete)
 	(single-slot nacionalidad
 		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot trata
-		(type INSTANCE)
-;+		(allowed-classes Tema)
-		(create-accessor read-write))
-	(single-slot nombre
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot horaDelDia
-		(type SYMBOL)
-		(allowed-values Manana Tarde Noche)
-		(create-accessor read-write)))
-
-(defclass Lector
-	(is-a USER)
-	(role concrete)
-	(multislot tiene
-		(type INSTANCE)
-;+		(allowed-classes Preferencias)
-		(create-accessor read-write))
-	(single-slot edad
-;+		(comment "Edad del lector")
-		(type INTEGER)
-		(range 0 %3FVARIABLE)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot sexo
-		(type SYMBOL)
-		(allowed-values Femenino Masculino)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot Identificador
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot estudios
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot ocupacion
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot suele
-		(type INSTANCE)
-;+		(allowed-classes Habitos)
-		(create-accessor read-write)))
-
-(defclass Libro
-	(is-a USER)
-	(role concrete)
-	(single-slot titulo
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot escritoPor
+	(multislot autores
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(multislot pertenece
-		(type INSTANCE)
-;+		(allowed-classes Genero)
-		(cardinality 1 ?VARIABLE)
-		(create-accessor read-write))
-	(single-slot dificultad
-		(type SYMBOL)
-		(allowed-values Baja Media Alta)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot editorial
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot premios
-		(type SYMBOL)
-		(allowed-values FALSE TRUE)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot paginas
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot trata
-		(type INSTANCE)
-;+		(allowed-classes Tema)
 		(create-accessor read-write)))
 
 (defclass Genero
@@ -193,17 +145,13 @@
 	(single-slot nombreGenero
 		(type STRING)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot librosGenero
+		(type INSTANCE)
+;+		(allowed-classes Libro)
 		(create-accessor read-write)))
 
-(defclass Narrativa
-	(is-a Genero)
-	(role concrete))
-
-(defclass Policiaca
-	(is-a Genero)
-	(role concrete))
-
-(defclass Terror
+(defclass Aventuras
 	(is-a Genero)
 	(role concrete))
 
@@ -215,11 +163,11 @@
 	(is-a Genero)
 	(role concrete))
 
-(defclass Romantica
+(defclass Historica
 	(is-a Genero)
 	(role concrete))
 
-(defclass Historica
+(defclass Narrativa
 	(is-a Genero)
 	(role concrete))
 
@@ -227,7 +175,15 @@
 	(is-a Genero)
 	(role concrete))
 
-(defclass Aventuras
+(defclass Policiaca
+	(is-a Genero)
+	(role concrete))
+
+(defclass Romantica
+	(is-a Genero)
+	(role concrete))
+
+(defclass Terror
 	(is-a Genero)
 	(role concrete))
 
@@ -235,95 +191,59 @@
 	(is-a Genero)
 	(role concrete))
 
+(defclass Libro
+	(is-a USER)
+	(role concrete)
+	(single-slot idioma
+		(type SYMBOL)
+		(allowed-values Frances Catalan Castellano Ingles Aleman Italiano)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot paginas
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot trataSobre
+		(type INSTANCE)
+;+		(allowed-classes Tema)
+		(create-accessor read-write))
+	(single-slot premios
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dificultad
+		(type SYMBOL)
+		(allowed-values Baja Media Alta)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot anoPublicacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot pertenece
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot escritoPor
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
 (defclass Tema
 	(is-a USER)
 	(role concrete)
 	(single-slot nombreTema
 		(type STRING)
 ;+		(cardinality 1 1)
-		(create-accessor read-write)))
-
-(defclass Amor
-	(is-a Tema)
-	(role concrete))
-
-(defclass Erotico
-	(is-a Tema)
-	(role concrete))
-
-(defclass Muerte
-	(is-a Tema)
-	(role concrete))
-
-(defclass Honor
-	(is-a Tema)
-	(role concrete))
-
-(defclass Deber
-	(is-a Tema)
-	(role concrete))
-
-(defclass Soledad
-	(is-a Tema)
-	(role concrete))
-
-(defclass Justicia
-	(is-a Tema)
-	(role concrete))
-
-(defclass IgualdadGenero
-	(is-a Tema)
-	(role concrete))
-
-(defclass Autor
-	(is-a USER)
-	(role concrete)
-	(single-slot nPremios
-		(type INTEGER)
-;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(single-slot anoDeNacimiento
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(single-slot nombre
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write)))
-
-(defclass Preferencias
-	(is-a USER)
-	(role concrete))
-
-(defclass PreferenciasGenero
-	(is-a Preferencias)
-	(role concrete))
-
-(defclass PreferenciasAutor
-	(is-a Preferencias)
-	(role concrete))
-
-(defclass PreferenciasTema
-	(is-a Preferencias)
-	(role concrete))
-
-(defclass Habitos
-	(is-a USER)
-	(role concrete)
-	(single-slot frecuenciaAnual
-		(type INTEGER)
-		(range 0 365)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot lugarDeLectura
-		(type SYMBOL)
-		(allowed-values Casa TransportePublico Cama)
-		(create-accessor read-write))
-	(multislot horaDelDia
-		(type SYMBOL)
-		(allowed-values Manana Tarde Noche)
+	(multislot librosTema
+		(type INSTANCE)
+;+		(allowed-classes Libro)
 		(create-accessor read-write)))

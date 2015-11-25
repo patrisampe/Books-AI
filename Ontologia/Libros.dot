@@ -1,6 +1,121 @@
-digraph Libros {
+digraph libros {
 	node [label="\N"];
-	graph [bb="0,0,176,140"];
-	Lector [label="{Lector|{sexo|Symbol|{Femenino|Masculino}}|{ocupacion|String}|{estudios|String}|{edad|Integer}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="88,70", rects="-0.5,116,176.5,139 -0.5,70,42.5,116 42.5,70,102.5,116 102.5,93,176.5,116 102.5,70,176.5,93 -0.5,47,100.5,70 100.5,47,176.5,70 -0.5\
-,24,94.5,47 94.5,24,176.5,47 -0.5,1,82.5,24 82.5,1,176.5,24", width="2.4514", height="1.9306"];
+	graph [bb="0,0,6819,614"];
+	libros_Class50 [label="{Narrativa|{nombreGenero =|{Narrativa}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="90,58", rects="0,58,180,81 0,35,113,58 113,35,180,58", width="2.5", height="0.65278"];
+	Narrativa [label=Narrativa, shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="145,261", width="0.92361", height="0.5"];
+	libros_Class12 [label="{Japon|{nacionalidad =|{Japon}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2037,261", rects="1963,261,2111,284 1963,238,2061,261 2061,238,2111,261", width="2.0556", height="0.65278"];
+	Nacionalidad [label="{Nacionalidad|{nacionalidad|String}|{autores|Instance*|{Autor}}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="2941,510", rects="2853,521.5,3029,544.5 2853,498.5,2959,521.5 2959,498.5,3029,521.5 2853,475.5,2910,498.5 2910,475.5,2980,498.5 2980,475.5,3029,498.5", width="2.4444", height="0.97222"];
+	libros_Class11 [label="{Liechestein|{nacionalidad =|{Liechestein}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2218,261", rects="2129.5,261,2306.5,284 2129.5,238,2227.5,261 2227.5,238,2306.5,261", width="2.4514", height="0.65278"];
+	libros_Class13 [label="{Canada|{nacionalidad =|{Canada}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2403,261", rects="2324.5,261,2481.5,284 2324.5,238,2422.5,261 2422.5,238,2481.5,261", width="2.1736", height="0.65278"];
+	libros_Class10 [label="{Italia|{nacionalidad =|{Italia}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2570,261", rects="2499.5,261,2640.5,284 2499.5,238,2597.5,261 2597.5,238,2640.5,261", width="1.9514", height="0.65278"];
+	libros_Class59 [label="{Fifty Shades of Grey|{titulo =|{Fifty Shades of Grey}}|{escritoPor =|{E. L. James}}|{dificultad =|{Baja}}|{paginas =|{514}}|{premios\
+ =|{false}}|{...}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="4038,261", rects="3943,318.5,4133,341.5 3943,295.5,3999,318.5 3999,295.5,4133,318.5 3943,272.5,4040,295.5 4040,272.5,4133,295.5 3943,249.5,4057,272.5\
+ 4057,249.5,4133,272.5 3943,226.5,4055,249.5 4055,226.5,4133,249.5 3943,203.5,4054,226.5 4054,203.5,4133,226.5 3943,180.5,4133\
+,203.5", width="2.6389", height="2.25"];
+	Libro [label="{Libro|{titulo|String}|{escritoPor|Instance|{Autor}}|{dificultad|Symbol|{Baja|Media|Alta}}|{paginas|Integer}|{premios|Boolean}|{\
+...}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="4249,510", rects="4156,590.5,4342,613.5 4156,567.5,4246,590.5 4246,567.5,4342,590.5 4156,544.5,4230,567.5 4230,544.5,4293,567.5 4293,544.5,4342,567.5\
+ 4156,475.5,4226,544.5 4226,475.5,4288,544.5 4288,521.5,4342,544.5 4288,498.5,4342,521.5 4288,475.5,4342,498.5 4156,452.5,4251\
+,475.5 4251,452.5,4342,475.5 4156,429.5,4249,452.5 4249,429.5,4342,452.5 4156,406.5,4342,429.5", width="2.5833", height="2.8889"];
+	libros_Class58 [label="{E. L. James|{Nombre =|{E. L. James}}|{anoDeNacimiento =|{1963}}|{tieneNacionalidad =|{Reino Unido}}|{librosEscritos =|{Fifty Shades\
+ of Grey}}|{nPremios =|{5}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="4699,261", rects="4579,307,4819,330 4579,284,4695,307 4695,284,4819,307 4579,261,4741,284 4741,261,4819,284 4579,238,4718,261 4718,238,4819,261 4579\
+,215,4685,238 4685,215,4819,238 4579,192,4728,215 4728,192,4819,215", width="3.3333", height="1.9306"];
+	Autor [label="{Autor|{Nombre|String}|{anoDeNacimiento|Integer}|{tieneNacionalidad|Instance|{Nacionalidad}}|{librosEscritos|Instance*|{Libro}}|\
+{nPremios|Integer}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="4815,510", rects="4681.5,556,4948.5,579 4681.5,533,4820.5,556 4820.5,533,4948.5,556 4681.5,510,4845.5,533 4845.5,510,4948.5,533 4681.5,487,4796.5,\
+510 4796.5,487,4859.5,510 4859.5,487,4948.5,510 4681.5,464,4793.5,487 4793.5,464,4882.5,487 4882.5,464,4948.5,487 4681.5,441,4821.5\
+,464 4821.5,441,4948.5,464", width="3.7014", height="1.9306"];
+	libros_Class55 [label="{Viajes|{nombreGenero =|{Viajes}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="280,58", rects="198.5,58,361.5,81 198.5,35,311.5,58 311.5,35,361.5,58", width="2.2569", height="0.65278"];
+	Viajes [label=Viajes, shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="322,261", width="0.75", height="0.5"];
+	"Ciencia-ficcion" [label="Ciencia-ficcion", shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="575,261", width="1.3958", height="0.5"];
+	Genero [label="{Genero|{nombreGenero|String}|{librosGenero|Instance*|{Libro}}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="951,510", rects="848,521.5,1054,544.5 848,498.5,976,521.5 976,498.5,1054,521.5 848,475.5,937,498.5 937,475.5,1007,498.5 1007,475.5,1054,498.5", width="2.8611", height="0.97222"];
+	Oeste [label=Oeste, shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="759,261", width="0.75", height="0.5"];
+	libros_Class53 [label="{Romantica|{nombreGenero =|{Romantica}}|{librosGenero =|{Fifty Shades of Grey|Luna Nueva|Crepusculo}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="910,58", rects="792.5,92.5,1027.5,115.5 792.5,69.5,927.5,92.5 927.5,69.5,1027.5,92.5 792.5,0.5,893.5,69.5 893.5,46.5,1027.5,69.5 893.5,23.5,1027.5\
+,46.5 893.5,0.5,1027.5,23.5", width="3.2569", height="1.6111"];
+	Romantica [label=Romantica, shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="916,261", width="1.0625", height="0.5"];
+	libros_Class54 [label="{Terror|{nombreGenero =|{Terror}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1129,58", rects="1046,58,1212,81 1046,35,1159,58 1159,35,1212,58", width="2.3056", height="0.65278"];
+	Terror [label=Terror, shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1062,261", width="0.75", height="0.5"];
+	libros_Class51 [label="{Oeste|{nombreGenero =|{Oeste}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="693,58", rects="612,58,774,81 612,35,725,58 725,35,774,58", width="2.25", height="0.65278"];
+	libros_Class52 [label="{Policiaca|{nombreGenero =|{Policiaca}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1320,58", rects="1230,58,1410,81 1230,35,1343,58 1343,35,1410,58", width="2.5", height="0.65278"];
+	Policiaca [label=Policiaca, shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1264,261", width="0.92361", height="0.5"];
+	libros_Class61 [label="{Stephenie Meyer|{Nombre =|{Stephenie Meyer}}|{anoDeNacimiento =|{1973}}|{tieneNacionalidad =|{EEUU}}|{librosEscritos =|{Crepusculo\
+|Luna Nueva}}|{nPremios =|{0}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="4932,261", rects="4837.5,318.5,5026.5,341.5 4837.5,295.5,4913.5,318.5 4913.5,295.5,5026.5,318.5 4837.5,272.5,4973.5,295.5 4973.5,272.5,5026.5,295.5\
+ 4837.5,249.5,4968.5,272.5 4968.5,249.5,5026.5,272.5 4837.5,203.5,4943.5,249.5 4943.5,226.5,5026.5,249.5 4943.5,203.5,5026.5,226.5\
+ 4837.5,180.5,4960.5,203.5 4960.5,180.5,5026.5,203.5", width="2.6181", height="2.25"];
+	Tema [label="{Tema|{nombreTema|String}|{librosTema|Instance*|{Libro}}}", shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="6009,510", rects="5910.5,521.5,6107.5,544.5 5910.5,498.5,6029.5,521.5 6029.5,498.5,6107.5,521.5 5910.5,475.5,5990.5,498.5 5990.5,475.5,6060.5,498.5\
+ 6060.5,475.5,6107.5,498.5", width="2.7292", height="0.97222"];
+	libros_Class63 [label="{Crepusculo|{titulo =|{Crepusculo}}|{escritoPor =|{Stephenie Meyer}}|{dificultad =|{Baja}}|{paginas =|{498}}|{pertenece =|{Romantica\
+|Fantasia}}|{...}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="4249,261", rects="4151,330,4347,353 4151,307,4236,330 4236,307,4347,330 4151,284,4237,307 4237,284,4347,307 4151,261,4268,284 4268,261,4347,284 4151\
+,238,4266,261 4266,238,4347,261 4151,192,4251,238 4251,215,4347,238 4251,192,4347,215 4151,169,4347,192", width="2.7222", height="2.5694"];
+	libros_Class64 [label="{Luna Nueva|{titulo =|{Luna Nueva}}|{escritoPor =|{Stephenie Meyer}}|{dificultad =|{Baja}}|{paginas =|{576}}|{pertenece =|{Fantasia\
+|Romantica}}|{...}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="4463,261", rects="4365,330,4561,353 4365,307,4449,330 4449,307,4561,330 4365,284,4451,307 4451,284,4561,307 4365,261,4482,284 4482,261,4561,284 4365\
+,238,4480,261 4480,238,4561,261 4365,192,4465,238 4465,215,4561,238 4465,192,4561,215 4365,169,4561,192", width="2.7222", height="2.5694"];
+	libros_Class65 [label="{Vampiros|{nombreTema =|{Vampiros}}|{librosTema =|{Crepusculo|Luna Nueva}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="5132,261", rects="5044.5,284,5219.5,307 5044.5,261,5147.5,284 5147.5,261,5219.5,284 5044.5,215,5136.5,261 5136.5,238,5219.5,261 5136.5,215,5219.5,\
+238", width="2.4236", height="1.2917"];
+	libros_Class9 [label="{Reino Unido|{nacionalidad =|{Reino Unido}}|{autores =|{E. L. James}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2752,261", rects="2659,272.5,2845,295.5 2659,249.5,2757,272.5 2757,249.5,2845,272.5 2659,226.5,2745,249.5 2745,226.5,2845,249.5", width="2.5833", height="0.97222"];
+	libros_Class8 [label="{Francia|{nacionalidad =|{Francia}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="2941,261", rects="2863,261,3019,284 2863,238,2961,261 2961,238,3019,261", width="2.1667", height="0.65278"];
+	libros_Class38 [label="{Amor|{nombreTema =|{Amor}}|{librosTema =|{Fifty Shades of Grey|Crepusculo|Luna Nueva}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="5351,261", rects="5238,295.5,5464,318.5 5238,272.5,5378,295.5 5378,272.5,5464,295.5 5238,203.5,5330,272.5 5330,249.5,5464,272.5 5330,226.5,5464,249.5\
+ 5330,203.5,5464,226.5", width="3.1389", height="1.6111"];
+	libros_Class5 [label="{EEUU|{nacionalidad =|{EEUU}}|{autores =|{Stephenie Meyer}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="3127,261", rects="3037.5,272.5,3216.5,295.5 3037.5,249.5,3149.5,272.5 3149.5,249.5,3216.5,272.5 3037.5,226.5,3106.5,249.5 3106.5,226.5,3216.5,249.5", width="2.4792", height="0.97222"];
+	libros_Class4 [label="{Alemania|{nacionalidad =|{Alemania}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="3318,261", rects="3235,261,3401,284 3235,238,3333,261 3333,238,3401,261", width="2.3056", height="0.65278"];
+	libros_Class7 [label="{Rusia|{nacionalidad =|{Rusia}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="3492,261", rects="3419,261,3565,284 3419,238,3517,261 3517,238,3565,261", width="2.0278", height="0.65278"];
+	libros_Class39 [label="{Erotico|{nombreTema =|{Erotico}}|{librosTema =|{Fifty Shades of Grey}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="5595,261", rects="5482,272.5,5708,295.5 5482,249.5,5617,272.5 5617,249.5,5708,272.5 5482,226.5,5574,249.5 5574,226.5,5708,249.5", width="3.1389", height="0.97222"];
+	libros_Class6 [label="{Argentina|{nacionalidad =|{Argentina}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="3667,261", rects="3583,261,3751,284 3583,238,3681,261 3681,238,3751,261", width="2.3333", height="0.65278"];
+	libros_Class3 [label="{Espana|{nacionalidad =|{Espana}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="3847,261", rects="3769.5,261,3924.5,284 3769.5,238,3867.5,261 3867.5,238,3924.5,261", width="2.1458", height="0.65278"];
+	Fantasia [label=Fantasia, shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1434,261", width="0.86111", height="0.5"];
+	Historica [label=Historica, shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1619,261", width="0.92361", height="0.5"];
+	libros_Class43 [label="{Justicia|{nombreTema =|{Justicia}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="5806,261", rects="5726,261,5886,284 5726,238,5829,261 5829,238,5886,261", width="2.2222", height="0.65278"];
+	libros_Class42 [label="{IgualdadGenero|{nombreTema =|{IgualdadGenero}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="6009,261", rects="5904.5,261,6113.5,284 5904.5,238,6007.5,261 6007.5,238,6113.5,261", width="2.8958", height="0.65278"];
+	libros_Class41 [label="{Honor|{nombreTema =|{Honor}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="6210,261", rects="6132,261,6288,284 6132,238,6235,261 6235,238,6288,261", width="2.1667", height="0.65278"];
+	libros_Class40 [label="{Deber|{nombreTema =|{Deber}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="6383,261", rects="6306.5,261,6459.5,284 6306.5,238,6409.5,261 6409.5,238,6459.5,261", width="2.1181", height="0.65278"];
+	libros_Class47 [label="{Ciencia-ficcion|{nombreGenero =|{Ciencia-ficcion}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="487,58", rects="380,58,594,81 380,35,493,58 493,35,594,58", width="2.9722", height="0.65278"];
+	libros_Class46 [label="{Aventuras|{nombreGenero =|{Aventuras}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1921,58", rects="1828,58,2014,81 1828,35,1941,58 1941,35,2014,58", width="2.5833", height="0.65278"];
+	Aventuras [label=Aventuras, shape=box, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="1908,261", width="1.0069", height="0.5"];
+	libros_Class45 [label="{Soledad|{nombreTema =|{Soledad}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="6560,261", rects="6477.5,261,6642.5,284 6477.5,238,6580.5,261 6580.5,238,6642.5,261", width="2.2847", height="0.65278"];
+	libros_Class44 [label="{Muerte|{nombreTema =|{Muerte}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="6740,261", rects="6660.5,261,6819.5,284 6660.5,238,6763.5,261 6763.5,238,6819.5,261", width="2.2014", height="0.65278"];
+	libros_Class49 [label="{Historica|{nombreGenero =|{Historica}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1720,58", rects="1630,58,1810,81 1630,35,1743,58 1743,35,1810,58", width="2.5", height="0.65278"];
+	libros_Class48 [label="{Fantasia|{nombreGenero =|{Fantasia}}|{librosGenero =|{Luna Nueva|Crepusculo}}}", shape=record, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="1520,58", rects="1428,81,1612,104 1428,58,1545,81 1545,58,1612,81 1428,12,1529,58 1529,35,1612,58 1529,12,1612,35", width="2.5556", height="1.2917"];
+	Narrativa -> libros_Class50 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,140.31,242.86 137.61,232.99 126.63,192.88 106.24,118.34 96.077,81.209", lp="120.5,142"];
+	Nacionalidad -> libros_Class12 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,2852.9,499.56 2843,498.43 2653.1,476.67 2243,423.08 2120,354 2090.2,337.25 2065.4,305.82 2050.9,284.4", lp="2203.5,380"];
+	Nacionalidad -> libros_Class11 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,2852.9,501.48 2842.7,500.34 2714.4,485.65 2486.2,447.69 2315,354 2282.8,336.39 2253.4,305.47 2235.6,284.38", lp="2383.5,380"];
+	Nacionalidad -> libros_Class13 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,2852.8,491.92 2842.8,489.65 2747.2,467.61 2600.4,425.12 2490,354 2461,335.31 2434.8,304.94 2419,284.25", lp="2551.5,380"];
+	Nacionalidad -> libros_Class10 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,2859.7,475.43 2850.6,471.3 2790.3,443.77 2711.3,402.82 2650,354 2624.3,333.57 2600.4,304.15 2585.5,284.12", lp="2699.5,380"];
+	Libro -> libros_Class59 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,4161.4,406.4 4154.8,398.77 4138.4,379.55 4121.6,359.89 4106.1,341.69", lp="4149.5,380"];
+	Autor -> libros_Class58 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,4783,440.85 4778.6,431.41 4763.3,399.01 4745.8,361.7 4731.1,330.35", lp="4762.5,380"];
+	Viajes -> libros_Class55 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,318.42,242.86 316.36,232.99 307.98,192.88 292.4,118.34 284.64,81.209", lp="304.5,142"];
+	Genero -> "Ciencia-ficcion" [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,899.9,475.43 891.31,469.79 808.03,415.08 660.51,318.17 600.98,279.07", lp="771,380"];
+	Genero -> Oeste [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,924.91,475.43 918.56,467.27 875.72,412.15 802.2,317.58 772.27,279.07", lp="863,380"];
+	Romantica -> libros_Class53 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,915.49,242.86 915.19,232.77 914.3,202.91 912.84,154.15 911.7,115.87", lp="918.5,142"];
+	Terror -> libros_Class54 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1067.7,242.86 1070.9,233.24 1084.3,193.2 1109.2,118.42 1121.6,81.209", lp="1109.5,142"];
+	Oeste -> libros_Class51 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,753.37,242.86 750.21,233.24 737.07,193.2 712.51,118.42 700.29,81.209", lp="728.5,142"];
+	Policiaca -> libros_Class52 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1268.8,242.86 1271.5,232.99 1282.7,192.88 1303.5,118.34 1313.8,81.209", lp="1304.5,142"];
+	Autor -> libros_Class61 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,4847.3,440.85 4851.6,431.7 4865.2,403.07 4880.6,370.58 4894.2,341.73", lp="4883.5,380"];
+	Genero -> Terror [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,966.09,475.43 970.21,466.25 995.04,410.99 1037.1,317.34 1054.3,279.07", lp="1018,380"];
+	Genero -> Viajes [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,847.68,475.62 838.13,472.44 749.38,442.85 623.11,398.84 515,354 454.66,328.97 386.06,294.87 349.08,276", lp="606,380"];
+	Libro -> libros_Class63 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,4249,406.4 4249,396.01 4249,381.69 4249,367.17 4249,353.25", lp="4254.5,380"];
+	Libro -> libros_Class64 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,4337.9,406.4 4344.7,398.51 4357.8,383.38 4371.2,367.98 4383.9,353.25", lp="4368.5,380"];
+	Tema -> libros_Class65 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,5910.3,506.73 5900.1,506.24 5743.4,498.22 5448.9,467.78 5229,354 5206.7,342.48 5186,324.3 5169.5,307.14", lp="5293.5,380"];
+	Nacionalidad -> libros_Class9 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,2915.3,475.43 2909.2,467.38 2872.2,419.14 2812.1,340.57 2777.9,295.89", lp="2852.5,380"];
+	Nacionalidad -> libros_Class8 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,2941,475.43 2941,465.3 2941,412.26 2941,324.86 2941,284.15", lp="2946.5,380"];
+	Tema -> libros_Class38 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,5910.2,491.67 5900.3,489.69 5788.8,467.16 5612.6,423.83 5473,354 5453.8,344.39 5434.5,331.65 5417.1,318.72", lp="5547.5,380"];
+	Nacionalidad -> libros_Class5 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,2966.3,475.43 2972.3,467.38 3008.7,419.14 3067.8,340.57 3101.5,295.89", lp="3045.5,380"];
+	Nacionalidad -> libros_Class4 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,3015.6,475.44 3024.8,471 3083.4,442.63 3162.1,400.79 3225,354 3253.1,333.12 3281,304.07 3298.8,284.23", lp="3202.5,380"];
+	Nacionalidad -> libros_Class7 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,3029.1,494.15 3039.2,492.1 3138.9,471.53 3294.6,429.77 3410,354 3438.1,335.56 3462.6,305.14 3477.3,284.36", lp="3381.5,380"];
+	Tema -> libros_Class39 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,5938.2,475.36 5929.2,470.92 5869.4,441.38 5786.3,398.13 5717,354 5689,336.19 5659.3,313.84 5636.2,295.62", lp="5777.5,380"];
+	Nacionalidad -> libros_Class6 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,3029,502.34 3039.4,501.27 3169.1,487.56 3401.3,450.61 3574,354 3605.5,336.37 3633.8,305.15 3650.6,284.02", lp="3533.5,380"];
+	Nacionalidad -> libros_Class3 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,3029.1,509.68 3039.4,509.5 3200.1,506.3 3524.4,482.78 3760,354 3790.7,337.24 3816.8,305.81 3832.2,284.4", lp="3726.5,380"];
+	Genero -> Fantasia [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,1042.2,475.37 1051.8,471.61 1124.4,443.12 1223.6,400.88 1306,354 1346,331.26 1388.6,298.74 1413.2,279.08", lp="1278,380"];
+	Genero -> Narrativa [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,847.84,496.33 837.85,494.9 702.43,475.28 470.8,432.91 286,354 240.03,334.37 192.56,299.92 166.11,279.2", lp="381,380"];
+	Genero -> Romantica [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,946.24,475.43 944.8,465.21 936.95,409.83 923.81,317.11 918.42,279.07", lp="942,380"];
+	Genero -> Historica [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,1054.3,487.34 1064.2,485.04 1172.4,459.95 1338.6,415.58 1474,354 1520.1,333.02 1568.9,299.34 1596.5,279.07", lp="1428,380"];
+	Tema -> libros_Class43 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,5981.4,475.43 5975,467.6 5931.6,414.82 5858.2,325.46 5824.2,284.15", lp="5913.5,380"];
+	Tema -> libros_Class42 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,6009,475.43 6009,465.3 6009,412.26 6009,324.86 6009,284.15", lp="6014.5,380"];
+	Tema -> libros_Class41 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,6036.3,475.43 6042.7,467.6 6085.6,414.82 6158.4,325.46 6192,284.15", lp="6121.5,380"];
+	Tema -> libros_Class40 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,6087.1,475.48 6096.4,471.11 6156,443.19 6234.9,401.86 6297,354 6323.8,333.32 6349.7,303.95 6365.9,284", lp="6274.5,380"];
+	"Ciencia-ficcion" -> libros_Class47 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,567.5,242.86 563.4,233.5 545.89,193.52 513.05,118.5 496.72,81.209", lp="531.5,142"];
+	Aventuras -> libros_Class46 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1909.1,242.86 1909.8,232.73 1912.4,192.56 1917.2,118.26 1919.6,81.209", lp="1922.5,142"];
+	Tema -> libros_Class45 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,6107.8,489.48 6117.7,487.2 6214.7,464.37 6358.2,422.19 6468,354 6498.1,335.3 6525.9,304.93 6542.9,284.24", lp="6440.5,380"];
+	Tema -> libros_Class44 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,6107.7,502.29 6117.9,501.28 6251.4,487.81 6480.7,451.35 6651,354 6681.7,336.46 6708.6,305.22 6724.6,284.06", lp="6609.5,380"];
+	Historica -> libros_Class49 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1627.6,242.86 1632.2,233.75 1652.2,193.83 1690.1,118.57 1708.8,81.209", lp="1687.5,142"];
+	Fantasia -> libros_Class48 [dir=back, label=io, color="0.0,1.0,1.0", fontcolor="0.0,1.0,1.0", pos="s,1441.3,242.86 1445.4,233.47 1459.4,200.62 1483.6,144.14 1500.6,104.36", lp="1493.5,142"];
+	Genero -> Policiaca [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,993.54,475.43 1001.7,468.95 1071.3,414.1 1193.1,317.98 1242.4,279.07", lp="1125,380"];
+	Genero -> Aventuras [dir=back, label=isa, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", pos="s,1054.1,491.23 1064.1,489.42 1205.3,463.83 1453.4,414.99 1661,354 1737.4,331.56 1824,297.12 1871.7,277.36", lp="1594,380"];
 }
