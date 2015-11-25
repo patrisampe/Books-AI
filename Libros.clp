@@ -6,10 +6,9 @@
 ;; * Yoel Cabo                  ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;; Ontologia/Libros.pont BEGIN
 
-;;; Ontologia/libros.pont BEGIN
-
-; Wed Nov 25 17:58:50 CET 2015
+; Wed Nov 25 19:20:12 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -18,13 +17,13 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
+	(single-slot nombreGenero
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot idioma
 		(type SYMBOL)
 		(allowed-values Frances Catalan Castellano Ingles Aleman Italiano)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
-	(single-slot nombreGenero
-		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot autores
@@ -90,6 +89,11 @@
 		(cardinality 1 ?VARIABLE)
 ;+		(inverse-slot librosGenero)
 		(create-accessor read-write))
+	(single-slot audiencia
+		(type SYMBOL)
+		(allowed-values Infantil Adolescente Adulto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot nacionalidad
 		(type STRING)
 ;+		(cardinality 1 1)
@@ -102,15 +106,15 @@
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
-	(multislot librosTema
-		(type INSTANCE)
-;+		(allowed-classes Libro)
-;+		(inverse-slot trataSobre)
-		(create-accessor read-write))
 	(single-slot dificultad
 		(type SYMBOL)
 		(allowed-values Baja Media Alta)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot librosTema
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(inverse-slot trataSobre)
 		(create-accessor read-write)))
 
 (defclass Autor
@@ -205,23 +209,28 @@
 (defclass Libro
 	(is-a USER)
 	(role concrete)
+	(single-slot paginas
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot idioma
 		(type SYMBOL)
 		(allowed-values Frances Catalan Castellano Ingles Aleman Italiano)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot paginas
-		(type INTEGER)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
-	(multislot trataSobre
-		(type INSTANCE)
-;+		(allowed-classes Tema)
+	(single-slot audiencia
+		(type SYMBOL)
+		(allowed-values Infantil Adolescente Adulto)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot premios
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
 ;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot trataSobre
+		(type INSTANCE)
+;+		(allowed-classes Tema)
 		(create-accessor read-write))
 	(single-slot dificultad
 		(type SYMBOL)
@@ -232,14 +241,14 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot anoPublicacion
-		(type INTEGER)
-;+		(cardinality 1 1)
-		(create-accessor read-write))
 	(multislot pertenece
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
 		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot anoPublicacion
+		(type INTEGER)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot escritoPor
 		(type INSTANCE)
@@ -258,275 +267,278 @@
 		(type INSTANCE)
 ;+		(allowed-classes Libro)
 		(create-accessor read-write)))
-;;; Ontologia/libros.pont END
+;;; Ontologia/Libros.pont END
 
-;;; Ontologia/libros.pins BEGIN
+(definstances instancies
 
-; Wed Nov 25 17:58:50 CET 2015
+;;; Ontologia/Libros.pins BEGIN
+
+; Wed Nov 25 19:20:12 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 
 ([libros_Class10] of  Nacionalidad
 
-        (nacionalidad "Italia"))
+	(nacionalidad "Italia"))
 
 ([libros_Class11] of  Nacionalidad
 
-        (nacionalidad "Liechestein"))
+	(nacionalidad "Liechestein"))
 
 ([libros_Class12] of  Nacionalidad
 
-        (nacionalidad "Japon"))
+	(nacionalidad "Japon"))
 
 ([libros_Class13] of  Nacionalidad
 
-        (nacionalidad "Canada"))
+	(nacionalidad "Canada"))
 
 ([libros_Class3] of  Nacionalidad
 
-        (autores [libros_Class69])
-        (nacionalidad "Espana"))
+	(autores [libros_Class69])
+	(nacionalidad "Espana"))
 
 ([libros_Class38] of  Tema
 
-        (librosTema
-                [libros_Class59]
-                [libros_Class63]
-                [libros_Class64])
-        (nombreTema "Amor"))
+	(librosTema
+		[libros_Class59]
+		[libros_Class63]
+		[libros_Class64])
+	(nombreTema "Amor"))
 
 ([libros_Class39] of  Tema
 
-        (librosTema [libros_Class59])
-        (nombreTema "Erotico"))
+	(librosTema [libros_Class59])
+	(nombreTema "Erotico"))
 
 ([libros_Class4] of  Nacionalidad
 
-        (nacionalidad "Alemania"))
+	(nacionalidad "Alemania"))
 
 ([libros_Class40] of  Tema
 
-        (librosTema [libros_Class70])
-        (nombreTema "Deber"))
+	(librosTema [libros_Class70])
+	(nombreTema "Deber"))
 
 ([libros_Class41] of  Tema
 
-        (librosTema [libros_Class67])
-        (nombreTema "Honor"))
+	(librosTema [libros_Class67])
+	(nombreTema "Honor"))
 
 ([libros_Class42] of  Tema
 
-        (nombreTema "IgualdadGenero"))
+	(nombreTema "IgualdadGenero"))
 
 ([libros_Class43] of  Tema
 
-        (librosTema
-                [libros_Class67]
-                [libros_Class70])
-        (nombreTema "Justicia"))
+	(librosTema
+		[libros_Class67]
+		[libros_Class70])
+	(nombreTema "Justicia"))
 
 ([libros_Class44] of  Tema
 
-        (librosTema [libros_Class67])
-        (nombreTema "Muerte"))
+	(librosTema [libros_Class67])
+	(nombreTema "Muerte"))
 
 ([libros_Class45] of  Tema
 
-        (nombreTema "Soledad"))
+	(nombreTema "Soledad"))
 
 ([libros_Class46] of  Aventuras
 
-        (nombreGenero "Aventuras"))
+	(nombreGenero "Aventuras"))
 
 ([libros_Class47] of  Ciencia-ficcion
 
-        (nombreGenero "Ciencia-ficcion"))
+	(nombreGenero "Ciencia-ficcion"))
 
 ([libros_Class48] of  Fantasia
 
-        (librosGenero
-                [libros_Class64]
-                [libros_Class63]
-                [libros_Class67])
-        (nombreGenero "Fantasia"))
+	(librosGenero
+		[libros_Class64]
+		[libros_Class63]
+		[libros_Class67])
+	(nombreGenero "Fantasia"))
 
 ([libros_Class49] of  Historica
 
-        (nombreGenero "Historica"))
+	(nombreGenero "Historica"))
 
 ([libros_Class5] of  Nacionalidad
 
-        (autores
-                [libros_Class61]
-                [libros_Class66])
-        (nacionalidad "EEUU"))
+	(autores
+		[libros_Class61]
+		[libros_Class66])
+	(nacionalidad "EEUU"))
 
 ([libros_Class50] of  Narrativa
 
-        (librosGenero [libros_Class70])
-        (nombreGenero "Narrativa"))
+	(librosGenero [libros_Class70])
+	(nombreGenero "Narrativa"))
 
 ([libros_Class51] of  Oeste
 
-        (nombreGenero "Oeste"))
+	(nombreGenero "Oeste"))
 
 ([libros_Class52] of  Policiaca
 
-        (nombreGenero "Policiaca"))
+	(nombreGenero "Policiaca"))
 
 ([libros_Class53] of  Romantica
 
-        (librosGenero
-                [libros_Class59]
-                [libros_Class64]
-                [libros_Class63])
-        (nombreGenero "Romantica"))
+	(librosGenero
+		[libros_Class59]
+		[libros_Class64]
+		[libros_Class63])
+	(nombreGenero "Romantica"))
 
 ([libros_Class54] of  Terror
 
-        (nombreGenero "Terror"))
+	(nombreGenero "Terror"))
 
 ([libros_Class55] of  Viajes
 
-        (nombreGenero "Viajes"))
+	(nombreGenero "Viajes"))
 
 ([libros_Class58] of  Autor
 
-        (anoDeNacimiento 1963)
-        (librosEscritos [libros_Class59])
-        (Nombre "E. L. James")
-        (nPremios 5)
-        (tieneNacionalidad [libros_Class9]))
+	(anoDeNacimiento 1963)
+	(librosEscritos [libros_Class59])
+	(Nombre "E. L. James")
+	(nPremios 5)
+	(tieneNacionalidad [libros_Class9]))
 
 ([libros_Class59] of  Libro
 
-        (anoPublicacion 2011)
-        (dificultad Baja)
-        (escritoPor [libros_Class58])
-        (idioma Ingles)
-        (paginas 514)
-        (pertenece [libros_Class53])
-        (premios FALSE)
-        (titulo "Fifty Shades of Grey")
-        (trataSobre
-                [libros_Class39]
-                [libros_Class38]))
+	(anoPublicacion 2011)
+	(dificultad Baja)
+	(escritoPor [libros_Class58])
+	(idioma Ingles)
+	(paginas 514)
+	(pertenece [libros_Class53])
+	(premios FALSE)
+	(titulo "Fifty Shades of Grey")
+	(trataSobre
+		[libros_Class39]
+		[libros_Class38]))
 
 ([libros_Class6] of  Nacionalidad
 
-        (nacionalidad "Argentina"))
+	(nacionalidad "Argentina"))
 
 ([libros_Class61] of  Autor
 
-        (anoDeNacimiento 1973)
-        (librosEscritos
-                [libros_Class63]
-                [libros_Class64])
-        (Nombre "Stephenie Meyer")
-        (nPremios 0)
-        (tieneNacionalidad [libros_Class5]))
+	(anoDeNacimiento 1973)
+	(librosEscritos
+		[libros_Class63]
+		[libros_Class64])
+	(Nombre "Stephenie Meyer")
+	(nPremios 0)
+	(tieneNacionalidad [libros_Class5]))
 
 ([libros_Class63] of  Libro
 
-        (anoPublicacion 2005)
-        (dificultad Baja)
-        (escritoPor [libros_Class61])
-        (idioma Castellano)
-        (paginas 498)
-        (pertenece
-                [libros_Class53]
-                [libros_Class48])
-        (titulo "Crepusculo")
-        (trataSobre
-                [libros_Class38]
-                [libros_Class65]))
+	(anoPublicacion 2005)
+	(dificultad Baja)
+	(escritoPor [libros_Class61])
+	(idioma Castellano)
+	(paginas 498)
+	(pertenece
+		[libros_Class53]
+		[libros_Class48])
+	(titulo "Crepusculo")
+	(trataSobre
+		[libros_Class38]
+		[libros_Class65]))
 
 ([libros_Class64] of  Libro
 
-        (anoPublicacion 2006)
-        (dificultad Baja)
-        (escritoPor [libros_Class61])
-        (idioma Castellano)
-        (paginas 576)
-        (pertenece
-                [libros_Class48]
-                [libros_Class53])
-        (titulo "Luna Nueva")
-        (trataSobre
-                [libros_Class38]
-                [libros_Class65]))
+	(anoPublicacion 2006)
+	(dificultad Baja)
+	(escritoPor [libros_Class61])
+	(idioma Castellano)
+	(paginas 576)
+	(pertenece
+		[libros_Class48]
+		[libros_Class53])
+	(titulo "Luna Nueva")
+	(trataSobre
+		[libros_Class38]
+		[libros_Class65]))
 
 ([libros_Class65] of  Tema
 
-        (librosTema
-                [libros_Class63]
-                [libros_Class64])
-        (nombreTema "Vampiros"))
+	(librosTema
+		[libros_Class63]
+		[libros_Class64])
+	(nombreTema "Vampiros"))
 
 ([libros_Class66] of  Autor
 
-        (anoDeNacimiento 1948)
-        (librosEscritos [libros_Class67])
-        (Nombre "George R. R. Martin")
-        (nPremios 22)
-        (tieneNacionalidad [libros_Class5]))
+	(anoDeNacimiento 1948)
+	(librosEscritos [libros_Class67])
+	(Nombre "George R. R. Martin")
+	(nPremios 22)
+	(tieneNacionalidad [libros_Class5]))
 
 ([libros_Class67] of  Libro
 
-        (anoPublicacion 2002)
-        (dificultad Baja)
-        (escritoPor [libros_Class66])
-        (idioma Castellano)
-        (paginas 800)
-        (pertenece [libros_Class48])
-        (premios TRUE)
-        (titulo "Juego De Tronos")
-        (trataSobre
-                [libros_Class41]
-                [libros_Class43]
-                [libros_Class44]
-                [libros_Class68]))
+	(anoPublicacion 2002)
+	(dificultad Baja)
+	(escritoPor [libros_Class66])
+	(idioma Castellano)
+	(paginas 800)
+	(pertenece [libros_Class48])
+	(premios TRUE)
+	(titulo "Juego De Tronos")
+	(trataSobre
+		[libros_Class41]
+		[libros_Class43]
+		[libros_Class44]
+		[libros_Class68]))
 
 ([libros_Class68] of  Tema
 
-        (librosTema [libros_Class67])
-        (nombreTema "Guerra"))
+	(librosTema [libros_Class67])
+	(nombreTema "Guerra"))
 
 ([libros_Class69] of  Autor
 
-        (anoDeNacimiento 1547)
-        (librosEscritos [libros_Class70])
-        (Nombre "Miguel de Cervantes")
-        (tieneNacionalidad [libros_Class3]))
+	(anoDeNacimiento 1547)
+	(librosEscritos [libros_Class70])
+	(Nombre "Miguel de Cervantes")
+	(tieneNacionalidad [libros_Class3]))
 
 ([libros_Class7] of  Nacionalidad
 
-        (nacionalidad "Rusia"))
+	(nacionalidad "Rusia"))
 
 ([libros_Class70] of  Libro
 
-        (anoPublicacion 1605)
-        (dificultad Alta)
-        (escritoPor [libros_Class69])
-        (idioma Castellano)
-        (paginas 1250)
-        (pertenece [libros_Class50])
-        (titulo "Don Quijote de la Mancha")
-        (trataSobre
-                [libros_Class40]
-                [libros_Class43]))
+	(anoPublicacion 1605)
+	(dificultad Alta)
+	(escritoPor [libros_Class69])
+	(idioma Castellano)
+	(paginas 1250)
+	(pertenece [libros_Class50])
+	(titulo "Don Quijote de la Mancha")
+	(trataSobre
+		[libros_Class40]
+		[libros_Class43]))
 
 ([libros_Class8] of  Nacionalidad
 
-        (nacionalidad "Francia"))
+	(nacionalidad "Francia"))
 
 ([libros_Class9] of  Nacionalidad
 
-        (autores [libros_Class58])
-        (nacionalidad "Reino Unido"))
+	(autores [libros_Class58])
+	(nacionalidad "Reino Unido"))
+)
 
-;;; Ontologia/libros.pins END
+;;; Ontologia/Libros.pins END
 
 
 ;;; octavipatridivendres.clp BEGIN
