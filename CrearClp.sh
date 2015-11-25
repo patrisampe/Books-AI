@@ -19,7 +19,13 @@ for name in $(cat FitxersEnOrdre.txt | grep -v "#"); do
         echo "Añadiendo $fit a $CLP ..."
 	echo ";;; $fit BEGIN" >> $CLP
 	echo "" >> $CLP 
-	cat $fit >> $CLP 
+        if [ "$(echo $fit | grep pins)" != "" ]; then
+            echo "(definstances instancies " >> $CLP
+	    sed -e  "s/^/    /g" $fit >> $CLP 
+            echo ")" >> $CLP
+        else 
+	    cat $fit >> $CLP
+        fi
 	echo "" >> $CLP
 	echo ";;; $fit END" >> $CLP
 	echo "" >> $CLP
