@@ -605,7 +605,13 @@
         )
         ?respuesta
 )
-
+ 
+(deffunction pregunta-lista (?pregunta $?valores_posibles) 
+        (format t "%s" ?pregunta)  
+        (bind ?resposta (readline))  
+        (bind ?res (str-explode ?resposta))   
+        ?res
+)
 ; =============================================================================
 ; MAIN
 ; =============================================================================
@@ -714,10 +720,6 @@
                 "¿En que lugar acostumbra a leer?
                 cama(1) transporte publico(2) casa(3) biblioteca(4)"))
         (switch ?lugar
-                ;(case 1 then (assert (Habitos (lugar casa))))
-                ;(case 2 then (assert (Habitos (lugar transporte_publico))))
-                ;(case 3 then (assert (Habitos(lugar cama))))
-                ;(case 4 then (assert (Habitos (lugar biblioteca))))
                 (case 1 then (bind ?lugar cama))
                 (case 2 then (bind ?lugar transporte_publico))
                 (case 3 then (bind ?lugar casa))
@@ -787,7 +789,31 @@
 ; HASTA AQUI HEMOS LLEGADO!:(
 ; Modulo de recopilacion de las prefencias literarias del lector
 
+(defmodule preferencias-literarias
+        (import MAIN ?ALL)
+        (export ?ALL)
+)
 
-;;; octavipatridivendres.clp END
+(defrule establecer-generos-preferidos
+        (nuevo-lector)
+        =>
+        (bind ?generos-preferidos (pregunta-lista 
+                "Esbribe los numeros de sus generos preferidos
+                Separarelos por espacios:"))
+        ?pref <- (Preferencias-literarias)
+        (progn$ (?it ?generos-preferidos)
+                (switch ?it
+                        (case 1 then (assert(Programacion)))
+                        (case 2 then (assert(IngenieriaSoftware)))
+                        (case 3 then (assert(BasesDatos)))
+                        (case 4 then (assert(Redes)))
+                        (case 5 then (assert(ArquitecturaComputadores)))
+                        (case 6 then (assert(Matematicas)))
+                        (case 7 then (assert(Fisica))) 
+                )
+        )
+
+)
+
 
 
