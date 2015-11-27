@@ -4,14 +4,17 @@ Ontologia/Libros.pont
 Ontologia/Libros.pins
 
 #Deftemplates
-Deftemplates/deftemplates1.clp
-#Deftemplates/yoel.clp
-#Deftemplates/patri.clp
-#Deftemplates/octavi.clp
+#Posem * ja que no ens importa l'ordre
+Deftemplates/*
+
+#Funcions
+#Posem * ja que no ens importa l'ordre
+Funcions/*
+
 
 #Moduls
+Moduls/main.clp
 Moduls/datos-lector.clp
 Moduls/habitos-lector.clp
 Moduls/Octavi/preferencias-literarias.clp
 
-#ReglasYoel/instancias.clp
