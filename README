@@ -1,2 +1,3 @@
-1. Escriure les rutes dels fixers a afegir a FitxersEnOrdre.txt
+1. Escriure les rutes dels fixers a afegir a FitxersEnOrdre.txt, accepta comentaris i *
+    - També es poden afegir exclusions al Exclusiones.txt
 2. Executar el script CrearClp(.sh a linux, .ps1 a windows) 

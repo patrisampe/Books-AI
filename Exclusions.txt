@@ -1,0 +1,3 @@
+#Exclusions: Fitxers que no volem que apareguin (per la rao que sigui).
+
+
