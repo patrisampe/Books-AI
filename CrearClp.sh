@@ -14,8 +14,14 @@ echo ";; * Patricia Sampedro          ;;" >> $CLP
 echo ";; * Yoel Cabo                  ;;" >> $CLP
 echo ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;" >> $CLP
 echo "" >> $CLP
-for name in $(cat FitxersEnOrdre.txt | grep -v "#"); do
+
+FITXERS=$(cat FitxersEnOrdre.txt | grep -v "#")
+EXCLUSIONS=$(cat Exclusions.txt | grep -v "#")
+for name in $FITXERS; do
     for fit in $(ls $name); do
+        if [ "$(echo $EXCLUSIONS | grep $fit)" != "" ]; then
+            continue
+        fi
         echo "Añadiendo $fit a $CLP ..."
 	echo ";;; $fit BEGIN" >> $CLP
 	echo "" >> $CLP 
