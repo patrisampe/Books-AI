@@ -3,9 +3,12 @@ usage() {
 }
 
 CLP=Libros.clp
+
 if [ $# -eq 1 ]; then
     CLP=$1
 fi
+
+cp $CLP "$CLP .save"
 echo ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;" > $CLP
 echo ";;          Practica 2 IA       ;;" >> $CLP
 echo ";; Por:                         ;;" >> $CLP
