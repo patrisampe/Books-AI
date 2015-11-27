@@ -16,7 +16,7 @@
         (slot tiempo (type INTEGER) (range 0 1440) (default 0))
 )
 
-(deftemplate Preferencias-literarias
+(deftemplate Preferencias
         (multislot autores-preferidos (type INSTANCE) (allowed-classes Autor))
         (multislot autores-deseados (type INSTANCE) (allowed-classes Autor))
         (multislot generos-preferidos (type INSTANCE) (allowed-classes Genero))

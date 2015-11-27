@@ -7,6 +7,9 @@ Ontologia/Libros.pins
 #Posem * ja que no ens importa l'ordre
 Deftemplates/*
 
+#Deffacts
+Deffacts/lector-juan.clp
+
 #Funcions
 #Posem * ja que no ens importa l'ordre
 Funcions/*

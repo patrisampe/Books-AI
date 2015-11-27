@@ -1,3 +1,4 @@
+
 ; Modulo de recopilacion de los habitos del lector
 (defmodule habitos-lector
         (import MAIN ?ALL)
@@ -6,7 +7,7 @@
 )
 
 (defrule establecer-lugar
-        (nuevo-lector)
+        (not (Habitos))
         =>
         (bind ?lugar (pregunta-general 
                 "¿En que lugar acostumbra a leer?
@@ -79,5 +80,5 @@
         (printout t " momento: " ?momento crlf)
         (printout t " tiempo: " ?tiempo crlf)
         (retract ?flow)
-        ;(focus preferencias-literarias)
+        (focus preferencias-literarias)
 )

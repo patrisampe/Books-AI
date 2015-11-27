@@ -9,7 +9,7 @@
 )
 
 (defrule establecer-nombre "Establece el nombre de usuario, es la primera pregunta"
-        (nuevo-lector)
+        (not (Lector))
         =>
         (bind ?nombre (pregunta-general "¿Como se llama?"))
         (assert (Lector (nombre ?nombre)))
