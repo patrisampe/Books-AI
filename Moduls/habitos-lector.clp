@@ -1,4 +1,3 @@
-
 ; Modulo de recopilacion de los habitos del lector
 (defmodule habitos-lector
         (import MAIN ?ALL)
@@ -6,6 +5,7 @@
 )
 
 (defrule establecer-lugar
+        ?habitos <- (Habitos)
         =>
         (bind ?lugar (pregunta-general 
                 "¿En que lugar acostumbra a leer?
@@ -16,7 +16,7 @@
                 (case 3 then (bind ?lugar casa))
                 (case 4 then (bind ?lugar biblioteca))
         )
-        (assert (Habitos (lugar ?lugar)))
+        (modify ?habitos (lugar ?lugar))
         (assert (establecer-frecuencia))
 )
 

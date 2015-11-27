@@ -1,4 +1,4 @@
-; Wed Nov 25 19:52:14 CET 2015
+; Fri Nov 27 19:39:08 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -131,7 +131,7 @@
 
 	(anoDeNacimiento 1963)
 	(librosEscritos [libros_Class59])
-	(Nombre "E. L. James")
+	(nombre "E. L. James")
 	(nPremios 5)
 	(tieneNacionalidad [libros_Class9]))
 
@@ -160,7 +160,7 @@
 	(librosEscritos
 		[libros_Class63]
 		[libros_Class64])
-	(Nombre "Stephenie Meyer")
+	(nombre "Stephenie Meyer")
 	(nPremios 0)
 	(tieneNacionalidad [libros_Class5]))
 
@@ -207,7 +207,7 @@
 
 	(anoDeNacimiento 1948)
 	(librosEscritos [libros_Class67])
-	(Nombre "George R. R. Martin")
+	(nombre "George R. R. Martin")
 	(nPremios 22)
 	(tieneNacionalidad [libros_Class5]))
 
@@ -237,7 +237,7 @@
 
 	(anoDeNacimiento 1547)
 	(librosEscritos [libros_Class70])
-	(Nombre "Miguel de Cervantes")
+	(nombre "Miguel de Cervantes")
 	(tieneNacionalidad [libros_Class3]))
 
 ([libros_Class7] of  Nacionalidad

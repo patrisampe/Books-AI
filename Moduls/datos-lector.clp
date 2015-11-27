@@ -9,9 +9,10 @@
 )
 
 (defrule establecer-nombre "Establece el nombre de usuario, es la primera pregunta"
+        ?lector <- (Lector)
         =>
         (bind ?nombre (pregunta-general "¿Como se llama?"))
-        (assert (Lector (nombre ?nombre)))
+        (modify ?lector (nombre ?nombre))
         (assert (establecer-edad))
 )
 
