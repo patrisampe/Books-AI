@@ -1,4 +1,4 @@
-; Wed Nov 25 19:20:12 CET 2015
+; Wed Nov 25 19:52:14 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -138,6 +138,7 @@
 ([libros_Class59] of  Libro
 
 	(anoPublicacion 2011)
+	(audiencia Adolescente)
 	(dificultad Baja)
 	(escritoPor [libros_Class58])
 	(idioma Ingles)
@@ -166,6 +167,7 @@
 ([libros_Class63] of  Libro
 
 	(anoPublicacion 2005)
+	(audiencia Adolescente)
 	(dificultad Baja)
 	(escritoPor [libros_Class61])
 	(idioma Castellano)
@@ -181,6 +183,7 @@
 ([libros_Class64] of  Libro
 
 	(anoPublicacion 2006)
+	(audiencia Adolescente)
 	(dificultad Baja)
 	(escritoPor [libros_Class61])
 	(idioma Castellano)
@@ -211,6 +214,7 @@
 ([libros_Class67] of  Libro
 
 	(anoPublicacion 2002)
+	(audiencia Adulto)
 	(dificultad Baja)
 	(escritoPor [libros_Class66])
 	(idioma Castellano)
@@ -243,6 +247,7 @@
 ([libros_Class70] of  Libro
 
 	(anoPublicacion 1605)
+	(audiencia Adulto)
 	(dificultad Alta)
 	(escritoPor [libros_Class69])
 	(idioma Castellano)

@@ -1,6 +1,17 @@
-#Fitxers que s'uniran, en ordre. 
+﻿#Fitxers que s'uniran, en ordre. 
 #El fitxer permet comentaris però només si son a principi de línea, per pal del senyor Yoel.
 Ontologia/Libros.pont
 Ontologia/Libros.pins
-octavipatridivendres.clp
+
+#Deftemplates
+Deftemplates/deftemplates1.clp
+#Deftemplates/yoel.clp
+#Deftemplates/patri.clp
+#Deftemplates/octavi.clp
+
+#Moduls
+Moduls/datos-lector.clp
+Moduls/habitos-lector.clp
+Moduls/Octavi/preferencias-literarias.clp
+
 #ReglasYoel/instancias.clp
