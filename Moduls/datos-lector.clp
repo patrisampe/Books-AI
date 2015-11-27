@@ -9,7 +9,6 @@
 )
 
 (defrule establecer-nombre "Establece el nombre de usuario, es la primera pregunta"
-        (not (Lector))
         =>
         (bind ?nombre (pregunta-general "¿Como se llama?"))
         (assert (Lector (nombre ?nombre)))
@@ -66,5 +65,5 @@
         (printout t " sexo: " ?sexo crlf)
         (printout t " estudios: " ?estudios crlf)
         (retract ?flow)
-        (focus habitos-lector)
+        (focus MAIN)
 )

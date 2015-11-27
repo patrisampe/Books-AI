@@ -3,20 +3,14 @@
 (defmodule habitos-lector
         (import MAIN ?ALL)
         (export ?ALL)
-;       (import recopilacion_usuario ?ALL)
 )
 
 (defrule establecer-lugar
-        (not (Habitos))
         =>
         (bind ?lugar (pregunta-general 
                 "¿En que lugar acostumbra a leer?
                 cama(1) transporte publico(2) casa(3) biblioteca(4)"))
         (switch ?lugar
-                ;(case 1 then (assert (Habitos (lugar casa))))
-                ;(case 2 then (assert (Habitos (lugar transporte_publico))))
-                ;(case 3 then (assert (Habitos(lugar cama))))
-                ;(case 4 then (assert (Habitos (lugar biblioteca))))
                 (case 1 then (bind ?lugar cama))
                 (case 2 then (bind ?lugar transporte_publico))
                 (case 3 then (bind ?lugar casa))
@@ -80,5 +74,5 @@
         (printout t " momento: " ?momento crlf)
         (printout t " tiempo: " ?tiempo crlf)
         (retract ?flow)
-        (focus preferencias-literarias)
+        (focus MAIN)
 )
