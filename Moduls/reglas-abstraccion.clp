@@ -1,3 +1,4 @@
+
 ; =============================================================================
 ; MODULO DE REGLAS DE ABSTRACCION
 ; =============================================================================
@@ -78,4 +79,27 @@
     (not (Cultura))
     =>
     (assert (Cultura Medio))
+)
+
+; Tipos de lectura
+(defrule tipoLectura
+    (declare (salience 1))
+    =>
+    (assert (Lectura ligera))
+    (assert (Lectura normal))
+    (assert (Lectura densa))
+)
+
+(defrule tipoLectura1
+    (and (Habitos (lugar casa)) (Habitos (frecuencia cuando_se_puede)))
+    ?densa <- (Lectura densa)
+    =>
+    (retract ?densa)
+)
+
+(defrule tipoLectura2
+    (Habitos (lugar transporte_publico))
+    ?densa <- (Lectura densa)
+    =>
+    (retract ?densa)
 )
