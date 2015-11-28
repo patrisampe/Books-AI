@@ -61,3 +61,34 @@
         )
         (printout t crlf)
 )
+
+(deffunction evalua-multislot (?respuesta ?auxi)
+    (bind ?encontrado FALSE)
+    (loop-for-count (?i 1 (length$ ?respuesta)) do
+        (bind ?aux (nth$ ?i ?respuesta))
+              (if (eq ?auxi ?aux) then
+                (bind ?encontrado TRUE)
+              )
+    )
+    ?encontrado
+)
+
+(deffunction une-multislot (?respuesta ?multislot)
+    (loop-for-count (?i 1 (length$ ?respuesta)) do
+        (bind ?aux (nth$ ?i ?respuesta))
+            (if (not (evalua-multislot ?multislot ?aux)) then
+              (bind ?multislot (insert$ ?multislot 1 ?aux))
+            )
+    )
+    ?multislot
+)
+
+(deffunction elimina-multislot (?respuesta ?multislot)
+    (loop-for-count (?i 1 (length$ ?respuesta)) do
+        (bind ?aux (nth$ ?i ?respuesta))
+            (if (evalua-multislot ?multislot ?aux) then
+              (bind ?multislot (delete$ ?multislot ?i ?i))
+            )
+    )
+    ?multislot
+)

@@ -57,3 +57,15 @@
         (assert (establecer-autores-prohibidos))
         (focus prohibiciones-literarias)
 )
+
+(defrule focus-possibles-lector
+        (Lector)
+        (Habitos)
+        (Preferencias)
+        (Prohibiciones)
+        (not (Possibles))
+        =>
+        (assert (Possibles))
+        (assert (establecer-generos-possibles))
+        (focus possibles-literarias)
+)

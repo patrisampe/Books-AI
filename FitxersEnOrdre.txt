@@ -22,3 +22,4 @@ Moduls/habitos-lector.clp
 Moduls/preferencias-literarias.clp
 Moduls/prohibiciones-literarias.clp
 Moduls/reglas-abstraccion.clp
+Moduls/possibles-literarias.clp

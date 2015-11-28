@@ -35,3 +35,9 @@
         (slot seguir-criticos (type SYMBOL) (allowed-values si no IND) (default IND))
         (slot libro-raro (type SYMBOL) (allowed-values si no IND) (default IND))
 )
+
+(deftemplate Possibles
+        (multislot autores-possibles (type INSTANCE) (allowed-classes Autor))
+        (multislot generos-possibles (type INSTANCE) (allowed-classes Genero))
+        (multislot temas-possibles (type INSTANCE) (allowed-classes Tema))
+)
