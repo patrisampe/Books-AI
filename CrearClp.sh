@@ -8,7 +8,7 @@ if [ $# -eq 1 ]; then
     CLP=$1
 fi
 
-cp $CLP "$CLP .save"
+cp $CLP $CLP.save
 echo ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;" > $CLP
 echo ";;          Practica 2 IA       ;;" >> $CLP
 echo ";; Por:                         ;;" >> $CLP
@@ -33,7 +33,7 @@ for name in $FITXERS; do
 	    sed -e  "s/^/    /g" $fit >> $CLP 
             echo ")" >> $CLP
         else 
-	    cat $fit >> $CLP
+	    sed -e '$a\' $fit >> $CLP
         fi
 	echo "" >> $CLP
 	echo ";;; $fit END" >> $CLP
