@@ -82,3 +82,57 @@
         (retract ?flow)
         (focus MAIN)
 )
+
+(defmodule prohiciones-literarias
+    (import MAIN ?ALL)
+    (export ?ALL)
+)
+
+(defrule establecer-autores-prohibidos "recopilacion de los autores prohibidos del lector"
+    ?prohiciones <- (Prohibiciones) 
+    =>
+    (bind ?vectorAutores (pregunta-instancia "Indica tus autores prohibidos" Autor get-nombre))
+    (bind ?lista (pregunta-lista "Escribe los identificadores separados por espacios: " crlf))
+    (bind ?multislot (rellena-multislot ?lista ?vectorAutores))
+    (modify ?prohiciones (autores-prohibidos ?multislot))
+    ;(assert (pasari-a-otra-cosa))
+    (assert (establecer-generos-prohibidos))
+)
+
+(defrule establecer-generos-prohibidos "recopilacion de los generos prohibidos del lector"
+    ?prohiciones <- (Prohibiciones) 
+    ?flow <- (establecer-generos-prohibidos)
+    =>
+    (bind ?vectorGeneros (pregunta-instancia "Indica tus generos prohibidos" Genero get-nombreGenero))
+    (bind ?lista (pregunta-lista "Escribe los identificadores separados por espacios: " crlf))
+    (bind ?multislot (rellena-multislot ?lista ?vectorGeneros))
+    (modify ?prohiciones (generos-prohibidos ?multislot))
+    (retract ?flow)
+    (assert (establecer-temas-prohibidos))
+)
+
+
+(defrule establecer-temas-prohibidos "recopilacion de los temas preferidos del lector"
+    ?prohiciones <- (Prohibiciones) 
+    ?flow <- (establecer-temas-prohibidos)
+    =>
+    (bind ?vectorTemas (pregunta-instancia "Indica tus temas prohibidos" Tema get-nombreTema))
+    (bind ?lista (pregunta-lista "Escribe los identificadores separados por espacios: " crlf))
+    (bind ?multislot (rellena-multislot ?lista ?vectorTemas))
+    (modify ?prohiciones (temas-prohibidos ?multislot))
+    (retract ?flow)
+    (assert (nuevo-m))
+)
+
+(defrule nuevo-m "Pasa a la recopilacion de prohibidos"
+        ;(Preferencias) 
+        (Prohibiciones (autores-prohibidos ?autores-prohibidos) (generos-prohibidos ?generos-prohibidos) (temas-prohibidos ?temas-prohibidos))
+        ?flow <- (nuevo-m)
+        =>
+        (printout t "Resumen Prohibiciones" crlf)
+        (printout t " autores prohibidos: " ?autores-prohibidos crlf)
+        (printout t " generos prohibidos: " ?generos-prohibidos crlf)
+        (printout t " temas prohibidos: " ?temas-prohibidos crlf)
+        (retract ?flow)
+        (focus MAIN)
+)

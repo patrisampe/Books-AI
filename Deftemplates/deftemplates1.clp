@@ -24,3 +24,14 @@
         (multislot temas-preferidos (type INSTANCE) (allowed-classes Tema))
         (multislot temas-deseados (type INSTANCE) (allowed-classes Tema))
 )
+
+(deftemplate Prohibiciones
+        (multislot autores-prohibidos (type INSTANCE) (allowed-classes Autor))
+        (multislot generos-prohibidos (type INSTANCE) (allowed-classes Genero))
+        (multislot temas-prohibidos (type INSTANCE) (allowed-classes Tema))
+)
+
+(deftemplate PreguntasRaras
+        (slot seguir-criticos (type SYMBOL) (allowed-values si no IND) (default IND))
+        (slot libro-raro (type SYMBOL) (allowed-values si no IND) (default IND))
+)
