@@ -10,9 +10,11 @@
 
 (defrule establecer-nombre "Establece el nombre de usuario, es la primera pregunta"
         ?lector <- (Lector)
+        ?flow <- (establecer-nombre)
         =>
         (bind ?nombre (pregunta-general "¿Como se llama?"))
         (modify ?lector (nombre ?nombre))
+        (retract ?flow)
         (assert (establecer-edad))
 )
 
@@ -53,12 +55,12 @@
                 (case 4 then (modify ?lector (estudios Universidad)))
         )
         (retract ?flow)
-        (assert (pasar-a-habitos-lector))
+        (assert (fin-modulo))
 )       
 
-(defrule pasar-a-habitos-lector "Pasa a la recopilacion de preferencias"
+(defrule fin-modulo "Pasa a la recopilacion de preferencias"
         (Lector (nombre ?nombre) (edad ?edad) (sexo ?sexo) (estudios ?estudios))
-        ?flow <- (pasar-a-habitos-lector)
+        ?flow <- (fin-modulo)
         =>
         (printout t "Resumen Lector" crlf)
         (printout t " nombre: " ?nombre crlf)

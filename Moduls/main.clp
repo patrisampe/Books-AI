@@ -24,6 +24,7 @@
     (not (Lector))
     =>
     (assert (Lector))
+    (assert (establecer-nombre))
     (focus datos-lector)
 )
 
@@ -32,6 +33,7 @@
     (not (Habitos))
     =>
     (assert (Habitos))
+    (assert (establecer-lugar))
     (focus habitos-lector)
 )
 
@@ -40,6 +42,18 @@
     (Habitos)
     (not (Preferencias))
     =>
-    (assert(Preferencias))   
+    (assert(Preferencias))
+    (assert (establecer-autores-preferidos))   
     (focus preferencias-literarias)
+)
+
+(defrule focus-prohibiciones-lector
+        (Lector)
+        (Habitos)
+        (Preferencias)
+        (not (Prohibiciones))
+        =>
+        (assert (Prohibiciones))
+        (assert (establecer-autores-prohibidos))
+        (focus prohibiciones-literarias)
 )

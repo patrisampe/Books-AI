@@ -52,3 +52,12 @@
     )
     ?multislot
 )
+
+(deffunction print-multislot (?mensaje ?multislot ?getter)
+        (format t "%s" ?mensaje)
+        (printout t crlf)
+        (progn$ (?inst ?multislot)
+                (printout t (send ?inst ?getter) crlf)
+        )
+        (printout t crlf)
+)

@@ -6,6 +6,7 @@
 
 (defrule establecer-lugar
         ?habitos <- (Habitos)
+        ?flow <- (establecer-lugar)
         =>
         (bind ?lugar (pregunta-general 
                 "¿En que lugar acostumbra a leer?
@@ -17,6 +18,7 @@
                 (case 4 then (bind ?lugar biblioteca))
         )
         (modify ?habitos (lugar ?lugar))
+        (retract ?flow)
         (assert (establecer-frecuencia))
 )
 
@@ -61,12 +63,12 @@
         (bind ?tiempo (pregunta-numerica "¿Cuantos minutos seguidos lee al dia? " 0 1440))
         (modify ?habitos (tiempo ?tiempo))
         (retract ?flow)
-        (assert (pasar-a-preferencias-literarias))
+        (assert (fin-modulo))
 )
 
-(defrule pasar-a-preferencias-literarias "Pasa a la recopilacion de preferencias-literarias"
+(defrule fin-modulo "Pasa a otro modulo"
         (Habitos (lugar ?lugar) (frecuencia ?frecuencia) (momento ?momento) (tiempo ?tiempo))
-        ?flow <- (pasar-a-preferencias-literarias)
+        ?flow <- (fin-modulo)
         =>
         (printout t "Resumen Habitos" crlf)
         (printout t " lugar: " ?lugar crlf)

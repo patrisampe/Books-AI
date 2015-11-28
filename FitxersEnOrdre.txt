@@ -19,5 +19,6 @@ Funcions/*
 Moduls/main.clp
 Moduls/datos-lector.clp
 Moduls/habitos-lector.clp
-Moduls/Octavi/preferencias-literarias.clp
+Moduls/preferencias-literarias.clp
+Moduls/prohibiciones-literarias.clp
 
