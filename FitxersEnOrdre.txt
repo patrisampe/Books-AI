@@ -21,4 +21,4 @@ Moduls/datos-lector.clp
 Moduls/habitos-lector.clp
 Moduls/preferencias-literarias.clp
 Moduls/prohibiciones-literarias.clp
-
+Moduls/reglas-abstraccion.clp
