@@ -1,0 +1,645 @@
+; Sun Nov 29 14:53:54 CET 2015
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+([Libros_Class0] of  Libro
+
+	(anoPublicacion 2007)
+	(audiencia Adulto)
+	(dificultad Baja)
+	(escritoPor [Libros_Class1])
+	(idioma Ingles)
+	(paginas 722)
+	(pertenece
+		[libros_Class48]
+		[libros_Class46]
+		[Libros_Class14])
+	(premios TRUE)
+	(titulo "The Name of the Wind")
+	(trataSobre
+		[libros_Class38]
+		[libros_Class68]
+		[libros_Class45]))
+
+([Libros_Class1] of  Autor
+
+	(anoDeNacimiento 1973)
+	(librosEscritos
+		[Libros_Class0]
+		[Libros_Class2])
+	(nombre "Patrick Rothfuss")
+	(nPremios 4)
+	(tieneNacionalidad [libros_Class5]))
+
+([libros_Class10] of  Nacionalidad
+
+	(nacionalidad "Italia"))
+
+([libros_Class11] of  Nacionalidad
+
+	(nacionalidad "Liechestein"))
+
+([libros_Class12] of  Nacionalidad
+
+	(nacionalidad "Japon"))
+
+([libros_Class13] of  Nacionalidad
+
+	(nacionalidad "Canada"))
+
+([Libros_Class14] of  Aprendizaje
+
+	(librosGenero
+		[Libros_Class2]
+		[Libros_Class0]
+		[Libros_Class4]
+		[Libros_Class16]
+		[Libros_Class26])
+	(nombreGenero "Aprendizaje"))
+
+([Libros_Class15] of  Filosofica
+
+	(librosGenero
+		[Libros_Class4]
+		[Libros_Class18]
+		[Libros_Class25])
+	(nombreGenero "Filosofica"))
+
+([Libros_Class16] of  Libro
+
+	(anoPublicacion 1554)
+	(audiencia Adulto)
+	(dificultad Media)
+	(escritoPor [Libros_Class17])
+	(idioma Castellano)
+	(paginas 64)
+	(pertenece
+		[libros_Class46]
+		[Libros_Class14])
+	(titulo "Lazarillo de Tormes"))
+
+([Libros_Class17] of  Autor
+
+	(librosEscritos [Libros_Class16])
+	(nombre "Anonimous"))
+
+([Libros_Class18] of  Libro
+
+	(anoPublicacion 1953)
+	(audiencia Adulto)
+	(dificultad Media)
+	(escritoPor [Libros_Class19])
+	(idioma Castellano)
+	(paginas 179)
+	(pertenece
+		[Libros_Class15]
+		[libros_Class47])
+	(titulo "Farenheit 451")
+	(trataSobre
+		[libros_Class43]
+		[libros_Class38]
+		[Libros_Class21]))
+
+([Libros_Class19] of  Autor
+
+	(anoDeNacimiento 1920)
+	(librosEscritos [Libros_Class18])
+	(nombre "Ray Bradbury")
+	(nPremios 26)
+	(tieneNacionalidad [libros_Class5]))
+
+([Libros_Class2] of  Libro
+
+	(anoPublicacion 2011)
+	(audiencia Adulto)
+	(dificultad Baja)
+	(escritoPor [Libros_Class1])
+	(idioma Castellano)
+	(paginas 1180)
+	(pertenece
+		[libros_Class48]
+		[libros_Class46]
+		[Libros_Class14])
+	(titulo "El Temor de un Hombre Sabio")
+	(trataSobre
+		[libros_Class38]
+		[libros_Class41]))
+
+([Libros_Class21] of  Tema
+
+	(librosTema
+		[Libros_Class18]
+		[Libros_Class32])
+	(nombreTema "Felicidad"))
+
+([Libros_Class22] of  Autor
+
+	(anoDeNacimiento 1928)
+	(librosEscritos
+		[Libros_Class24]
+		[Libros_Class25])
+	(nombre "Philip K. Dick")
+	(nPremios 13)
+	(tieneNacionalidad [libros_Class5]))
+
+([Libros_Class24] of  Libro
+
+	(anoPublicacion 1962)
+	(audiencia Adulto)
+	(dificultad Alta)
+	(escritoPor [Libros_Class22])
+	(idioma Castellano)
+	(paginas 262)
+	(pertenece [libros_Class47])
+	(premios TRUE)
+	(titulo "El hombre en el Castillo")
+	(trataSobre
+		[libros_Class68]
+		[libros_Class43]
+		[libros_Class44]))
+
+([Libros_Class25] of  Libro
+
+	(anoPublicacion 1968)
+	(audiencia Adulto)
+	(dificultad Media)
+	(escritoPor [Libros_Class22])
+	(idioma Ingles)
+	(paginas 210)
+	(pertenece
+		[libros_Class47]
+		[Libros_Class15])
+	(titulo "Do Androids Dream of Electric Sheep?")
+	(trataSobre
+		[libros_Class43]
+		[libros_Class40]
+		[libros_Class44]))
+
+([Libros_Class26] of  Libro
+
+	(anoPublicacion 2006)
+	(audiencia Adulto)
+	(dificultad Media)
+	(escritoPor [Libros_Class27])
+	(idioma Castellano)
+	(paginas 672)
+	(pertenece
+		[Libros_Class14]
+		[libros_Class49])
+	(premios TRUE)
+	(titulo "La Catedral del Mar"))
+
+([Libros_Class27] of  Autor
+
+	(anoDeNacimiento 1959)
+	(librosEscritos [Libros_Class26])
+	(nombre "Ildefonso Falcones")
+	(nPremios 6)
+	(tieneNacionalidad [libros_Class3]))
+
+([Libros_Class28] of  Autor
+
+	(anoDeNacimiento 1920)
+	(librosEscritos [Libros_Class29])
+	(nombre "Miguel Delibes")
+	(nPremios 24)
+	(tieneNacionalidad [libros_Class3]))
+
+([Libros_Class29] of  Libro
+
+	(anoPublicacion 1950)
+	(audiencia Adulto)
+	(escritoPor [Libros_Class28])
+	(idioma Castellano)
+	(paginas 272)
+	(pertenece [libros_Class46])
+	(premios TRUE)
+	(titulo "El Camino")
+	(trataSobre
+		[Libros_Class30]
+		[libros_Class44]
+		[Libros_Class31]))
+
+([Libros_Class3] of  Autor
+
+	(anoDeNacimiento 1875)
+	(librosEscritos [Libros_Class4])
+	(nombre "Thomas Mann")
+	(nPremios 21)
+	(tieneNacionalidad [libros_Class4]))
+
+([libros_Class3] of  Nacionalidad
+
+	(autores
+		[libros_Class69]
+		[Libros_Class27]
+		[Libros_Class28])
+	(nacionalidad "Espana"))
+
+([Libros_Class30] of  Tema
+
+	(librosTema
+		[Libros_Class29]
+		[Libros_Class40])
+	(nombreTema "Naturaleza"))
+
+([Libros_Class31] of  Tema
+
+	(librosTema
+		[Libros_Class29]
+		[Libros_Class32])
+	(nombreTema "Amistad"))
+
+([Libros_Class32] of  Libro
+
+	(anoPublicacion 1963)
+	(audiencia Infantil)
+	(dificultad Baja)
+	(escritoPor [Libros_Class33])
+	(idioma Castellano)
+	(paginas 48)
+	(pertenece [libros_Class48])
+	(premios TRUE)
+	(titulo "Donde viven los monstruos")
+	(trataSobre
+		[Libros_Class31]
+		[Libros_Class21]))
+
+([Libros_Class33] of  Autor
+
+	(anoDeNacimiento 1928)
+	(librosEscritos [Libros_Class32])
+	(nombre "Maurice Sendak")
+	(nPremios 15)
+	(tieneNacionalidad [libros_Class5]))
+
+([Libros_Class34] of  Libro
+
+	(anoPublicacion 1943)
+	(audiencia Infantil)
+	(dificultad Baja)
+	(escritoPor [Libros_Class35])
+	(idioma Castellano)
+	(paginas 79)
+	(pertenece [libros_Class48])
+	(premios TRUE)
+	(titulo "El Principito"))
+
+([Libros_Class35] of  Autor
+
+	(anoDeNacimiento 1900)
+	(librosEscritos [Libros_Class34])
+	(nombre "Antoine de Saint-Exupery")
+	(nPremios 15)
+	(tieneNacionalidad [libros_Class8]))
+
+([Libros_Class37] of  Autor
+
+	(anoDeNacimiento 1859)
+	(librosEscritos
+		[Libros_Class39]
+		[Libros_Class40])
+	(nombre "Arthur Conan Doyle")
+	(nPremios 24)
+	(tieneNacionalidad [libros_Class9]))
+
+([libros_Class38] of  Tema
+
+	(librosTema
+		[libros_Class59]
+		[libros_Class63]
+		[libros_Class64]
+		[Libros_Class2]
+		[Libros_Class0]
+		[Libros_Class18])
+	(nombreTema "Amor"))
+
+([Libros_Class39] of  Libro
+
+	(anoPublicacion 1887)
+	(audiencia Adulto)
+	(escritoPor [Libros_Class37])
+	(idioma Castellano)
+	(paginas 168)
+	(pertenece
+		[libros_Class52]
+		[libros_Class46])
+	(premios TRUE)
+	(titulo "Estudio en escarlata"))
+
+([libros_Class39] of  Tema
+
+	(librosTema [libros_Class59])
+	(nombreTema "Erotico"))
+
+([Libros_Class4] of  Libro
+
+	(anoPublicacion 1924)
+	(audiencia Adulto)
+	(dificultad Alta)
+	(escritoPor [Libros_Class3])
+	(idioma Castellano)
+	(paginas 936)
+	(pertenece
+		[Libros_Class14]
+		[Libros_Class15])
+	(titulo "La Montana Magica")
+	(trataSobre [libros_Class44]))
+
+([libros_Class4] of  Nacionalidad
+
+	(autores [Libros_Class3])
+	(nacionalidad "Alemania"))
+
+([libros_Class40] of  Tema
+
+	(librosTema
+		[libros_Class70]
+		[Libros_Class25])
+	(nombreTema "Deber"))
+
+([Libros_Class40] of  Libro
+
+	(anoPublicacion 1912)
+	(audiencia Adulto)
+	(dificultad Media)
+	(escritoPor [Libros_Class37])
+	(idioma Castellano)
+	(paginas 320)
+	(pertenece
+		[libros_Class47]
+		[libros_Class46]
+		[libros_Class54])
+	(titulo "El mundo perdido")
+	(trataSobre
+		[Libros_Class30]
+		[libros_Class44]
+		[libros_Class41]))
+
+([libros_Class41] of  Tema
+
+	(librosTema
+		[libros_Class67]
+		[Libros_Class2]
+		[Libros_Class40])
+	(nombreTema "Honor"))
+
+([libros_Class42] of  Tema
+
+	(nombreTema "IgualdadGenero"))
+
+([libros_Class43] of  Tema
+
+	(librosTema
+		[libros_Class67]
+		[libros_Class70]
+		[Libros_Class18]
+		[Libros_Class24]
+		[Libros_Class25])
+	(nombreTema "Justicia"))
+
+([libros_Class44] of  Tema
+
+	(librosTema
+		[libros_Class67]
+		[Libros_Class4]
+		[Libros_Class24]
+		[Libros_Class25]
+		[Libros_Class29]
+		[Libros_Class40])
+	(nombreTema "Muerte"))
+
+([libros_Class45] of  Tema
+
+	(librosTema [Libros_Class0])
+	(nombreTema "Soledad"))
+
+([libros_Class46] of  Aventuras
+
+	(librosGenero
+		[Libros_Class2]
+		[Libros_Class0]
+		[Libros_Class16]
+		[Libros_Class29]
+		[Libros_Class39]
+		[Libros_Class40])
+	(nombreGenero "Aventuras"))
+
+([libros_Class47] of  Ciencia-ficcion
+
+	(librosGenero
+		[Libros_Class18]
+		[Libros_Class24]
+		[Libros_Class25]
+		[Libros_Class40])
+	(nombreGenero "Ciencia-ficcion"))
+
+([libros_Class48] of  Fantasia
+
+	(librosGenero
+		[libros_Class64]
+		[libros_Class63]
+		[libros_Class67]
+		[Libros_Class2]
+		[Libros_Class0]
+		[Libros_Class32]
+		[Libros_Class34])
+	(nombreGenero "Fantasia"))
+
+([libros_Class49] of  Historica
+
+	(librosGenero [Libros_Class26])
+	(nombreGenero "Historica"))
+
+([Libros_Class5] of  Tema
+
+	(nombreTema "Enfermedad"))
+
+([libros_Class5] of  Nacionalidad
+
+	(autores
+		[libros_Class61]
+		[libros_Class66]
+		[Libros_Class1]
+		[Libros_Class19]
+		[Libros_Class22]
+		[Libros_Class33])
+	(nacionalidad "EEUU"))
+
+([libros_Class50] of  Narrativa
+
+	(librosGenero [libros_Class70])
+	(nombreGenero "Narrativa"))
+
+([libros_Class51] of  Oeste
+
+	(nombreGenero "Oeste"))
+
+([libros_Class52] of  Policiaca
+
+	(librosGenero [Libros_Class39])
+	(nombreGenero "Policiaca"))
+
+([libros_Class53] of  Romantica
+
+	(librosGenero
+		[libros_Class59]
+		[libros_Class64]
+		[libros_Class63])
+	(nombreGenero "Romantica"))
+
+([libros_Class54] of  Terror
+
+	(librosGenero [Libros_Class40])
+	(nombreGenero "Terror"))
+
+([libros_Class55] of  Viajes
+
+	(nombreGenero "Viajes"))
+
+([libros_Class58] of  Autor
+
+	(anoDeNacimiento 1963)
+	(librosEscritos [libros_Class59])
+	(nombre "E. L. James")
+	(nPremios 5)
+	(tieneNacionalidad [libros_Class9]))
+
+([libros_Class59] of  Libro
+
+	(anoPublicacion 2011)
+	(audiencia Adolescente)
+	(dificultad Baja)
+	(escritoPor [libros_Class58])
+	(idioma Ingles)
+	(paginas 514)
+	(pertenece [libros_Class53])
+	(premios FALSE)
+	(titulo "Fifty Shades of Grey")
+	(trataSobre
+		[libros_Class39]
+		[libros_Class38]))
+
+([libros_Class6] of  Nacionalidad
+
+	(nacionalidad "Argentina"))
+
+([libros_Class61] of  Autor
+
+	(anoDeNacimiento 1973)
+	(librosEscritos
+		[libros_Class63]
+		[libros_Class64])
+	(nombre "Stephenie Meyer")
+	(nPremios 0)
+	(tieneNacionalidad [libros_Class5]))
+
+([libros_Class63] of  Libro
+
+	(anoPublicacion 2005)
+	(audiencia Adolescente)
+	(dificultad Baja)
+	(escritoPor [libros_Class61])
+	(idioma Castellano)
+	(paginas 498)
+	(pertenece
+		[libros_Class53]
+		[libros_Class48])
+	(titulo "Crepusculo")
+	(trataSobre
+		[libros_Class38]
+		[libros_Class65]))
+
+([libros_Class64] of  Libro
+
+	(anoPublicacion 2006)
+	(audiencia Adolescente)
+	(dificultad Baja)
+	(escritoPor [libros_Class61])
+	(idioma Castellano)
+	(paginas 576)
+	(pertenece
+		[libros_Class48]
+		[libros_Class53])
+	(titulo "Luna Nueva")
+	(trataSobre
+		[libros_Class38]
+		[libros_Class65]))
+
+([libros_Class65] of  Tema
+
+	(librosTema
+		[libros_Class63]
+		[libros_Class64])
+	(nombreTema "Vampiros"))
+
+([libros_Class66] of  Autor
+
+	(anoDeNacimiento 1948)
+	(librosEscritos [libros_Class67])
+	(nombre "George R. R. Martin")
+	(nPremios 22)
+	(tieneNacionalidad [libros_Class5]))
+
+([libros_Class67] of  Libro
+
+	(anoPublicacion 2002)
+	(audiencia Adulto)
+	(dificultad Baja)
+	(escritoPor [libros_Class66])
+	(idioma Castellano)
+	(paginas 800)
+	(pertenece [libros_Class48])
+	(premios TRUE)
+	(titulo "Juego De Tronos")
+	(trataSobre
+		[libros_Class41]
+		[libros_Class43]
+		[libros_Class44]
+		[libros_Class68]))
+
+([libros_Class68] of  Tema
+
+	(librosTema
+		[libros_Class67]
+		[Libros_Class0]
+		[Libros_Class24])
+	(nombreTema "Guerra"))
+
+([libros_Class69] of  Autor
+
+	(anoDeNacimiento 1547)
+	(librosEscritos [libros_Class70])
+	(nombre "Miguel de Cervantes")
+	(tieneNacionalidad [libros_Class3]))
+
+([libros_Class7] of  Nacionalidad
+
+	(nacionalidad "Rusia"))
+
+([libros_Class70] of  Libro
+
+	(anoPublicacion 1605)
+	(audiencia Adulto)
+	(dificultad Alta)
+	(escritoPor [libros_Class69])
+	(idioma Castellano)
+	(paginas 1250)
+	(pertenece [libros_Class50])
+	(titulo "Don Quijote de la Mancha")
+	(trataSobre
+		[libros_Class40]
+		[libros_Class43]))
+
+([libros_Class8] of  Nacionalidad
+
+	(autores [Libros_Class35])
+	(nacionalidad "Francia"))
+
+([libros_Class9] of  Nacionalidad
+
+	(autores
+		[libros_Class58]
+		[Libros_Class37])
+	(nacionalidad "Reino Unido"))

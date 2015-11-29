@@ -1,14 +1,14 @@
 ﻿#Fitxers que s'uniran, en ordre. 
 #El fitxer permet comentaris però només si son a principi de línea, per pal del senyor Yoel.
-Ontologia/Libros.pont
-Ontologia/Libros.pins
+Ontologia/libros.pont
+Ontologia/libros.pins
 
 #Deftemplates
 #Posem * ja que no ens importa l'ordre
 Deftemplates/*
 
 #Deffacts
-Deffacts/lector-juan.clp
+#Deffacts/lector-juan.clp
 
 #Funcions
 #Posem * ja que no ens importa l'ordre
