@@ -1,4 +1,4 @@
-; Sun Nov 29 14:53:39 CET 2015
+; Sun Nov 29 14:58:04 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,15 +20,15 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[Libros_ProjectKB_Class10158]
-		[Libros_ProjectKB_Class10159]
-		[Libros_ProjectKB_Class10160]
-		[Libros_ProjectKB_Class10161]
-		[Libros_ProjectKB_Class10162]
-		[Libros_ProjectKB_Class10163]
-		[Libros_ProjectKB_Class10164]
-		[Libros_ProjectKB_Class10165]
-		[Libros_ProjectKB_Class10166]))
+		[Libros_ProjectKB_Class10170]
+		[Libros_ProjectKB_Class10171]
+		[Libros_ProjectKB_Class10172]
+		[Libros_ProjectKB_Class10173]
+		[Libros_ProjectKB_Class10174]
+		[Libros_ProjectKB_Class10175]
+		[Libros_ProjectKB_Class10176]
+		[Libros_ProjectKB_Class10177]
+		[Libros_ProjectKB_Class10178]))
 
 ([CLSES_TAB] of  Widget
 
@@ -80,9 +80,9 @@
 ([KB_590938_Class1] of  Map
 
 	(entries
-		[Libros_ProjectKB_Class10167]
-		[Libros_ProjectKB_Class10168]
-		[Libros_ProjectKB_Class10169]))
+		[Libros_ProjectKB_Class10179]
+		[Libros_ProjectKB_Class10180]
+		[Libros_ProjectKB_Class10181]))
 
 ([KB_590938_Class10] of  Property_List
 )
@@ -521,66 +521,66 @@
 
 	(name "SearchTab_Query"))
 
-([Libros_ProjectKB_Class10158] of  String
+([Libros_ProjectKB_Class10170] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([Libros_ProjectKB_Class10159] of  String
+([Libros_ProjectKB_Class10171] of  String
 
 	(name "Aventuras")
 	(string_value "nombreGenero"))
 
-([Libros_ProjectKB_Class10160] of  String
+([Libros_ProjectKB_Class10172] of  String
 
 	(name "Nacionalidad")
 	(string_value "nacionalidad"))
 
-([Libros_ProjectKB_Class10161] of  String
+([Libros_ProjectKB_Class10173] of  String
 
 	(name "Genero")
 	(string_value "nombreGenero"))
 
-([Libros_ProjectKB_Class10162] of  String
+([Libros_ProjectKB_Class10174] of  String
 
 	(name "Autor")
 	(string_value "nombre"))
 
-([Libros_ProjectKB_Class10163] of  String
+([Libros_ProjectKB_Class10175] of  String
 
 	(name "Tema")
 	(string_value "nombreTema"))
 
-([Libros_ProjectKB_Class10164] of  String
+([Libros_ProjectKB_Class10176] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([Libros_ProjectKB_Class10165] of  String
+([Libros_ProjectKB_Class10177] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([Libros_ProjectKB_Class10166] of  String
+([Libros_ProjectKB_Class10178] of  String
 
 	(name "Libro")
 	(string_value "titulo"))
 
-([Libros_ProjectKB_Class10167] of  Map_Entry
+([Libros_ProjectKB_Class10179] of  Map_Entry
 
 	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([Libros_ProjectKB_Class10168] of  Map_Entry
+([Libros_ProjectKB_Class10180] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([Libros_ProjectKB_Class10169] of  Map_Entry
+([Libros_ProjectKB_Class10181] of  Map_Entry
 
 	(key "change_tracking_active")
 	(key_class "java.lang.String")

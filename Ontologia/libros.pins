@@ -1,4 +1,4 @@
-; Sun Nov 29 14:53:54 CET 2015
+; Sun Nov 29 14:58:14 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -423,7 +423,8 @@
 		[Libros_Class16]
 		[Libros_Class29]
 		[Libros_Class39]
-		[Libros_Class40])
+		[Libros_Class40]
+		[libros_Class70])
 	(nombreGenero "Aventuras"))
 
 ([libros_Class47] of  Ciencia-ficcion
@@ -444,7 +445,8 @@
 		[Libros_Class2]
 		[Libros_Class0]
 		[Libros_Class32]
-		[Libros_Class34])
+		[Libros_Class34]
+		[libros_Class70])
 	(nombreGenero "Fantasia"))
 
 ([libros_Class49] of  Historica
@@ -626,7 +628,10 @@
 	(escritoPor [libros_Class69])
 	(idioma Castellano)
 	(paginas 1250)
-	(pertenece [libros_Class50])
+	(pertenece
+		[libros_Class50]
+		[libros_Class46]
+		[libros_Class48])
 	(titulo "Don Quijote de la Mancha")
 	(trataSobre
 		[libros_Class40]
