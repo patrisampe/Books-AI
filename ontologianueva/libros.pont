@@ -1,0 +1,267 @@
+; Mon Nov 30 20:17:03 CET 2015
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot idioma
+		(type SYMBOL)
+		(allowed-values Frances Catalan Castellano Ingles Aleman Italiano)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombreGenero
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot autores
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(inverse-slot tieneNacionalidad)
+		(create-accessor read-write))
+	(multislot trataSobre
+		(type INSTANCE)
+;+		(allowed-classes Tema)
+;+		(inverse-slot librosTema)
+		(create-accessor read-write))
+	(single-slot anoDeNacimiento
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot librosEscritos
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(inverse-slot escritoPor)
+		(create-accessor read-write))
+	(single-slot premios
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tieneNacionalidad
+		(type INSTANCE)
+;+		(allowed-classes Nacionalidad)
+;+		(cardinality 0 1)
+;+		(inverse-slot autores)
+		(create-accessor read-write))
+	(multislot librosGenero
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(inverse-slot pertenece)
+		(create-accessor read-write))
+	(single-slot anoPublicacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot escritoPor
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 1 1)
+;+		(inverse-slot librosEscritos)
+		(create-accessor read-write))
+	(single-slot paginas
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot pertenece
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+;+		(inverse-slot librosGenero)
+		(create-accessor read-write))
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot audiencia
+		(type SYMBOL)
+		(allowed-values Infantil Adolescente Adulto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nombreTema
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot nPremios
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot librosTema
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+;+		(inverse-slot trataSobre)
+		(create-accessor read-write))
+	(single-slot dificultad
+		(type SYMBOL)
+		(allowed-values Baja Media Alta)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Autor
+	(is-a USER)
+	(role concrete)
+	(single-slot tieneNacionalidad
+		(type INSTANCE)
+;+		(allowed-classes Nacionalidad)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot librosEscritos
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+		(create-accessor read-write))
+	(single-slot nombre
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot anoDeNacimiento
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot nPremios
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass Nacionalidad
+	(is-a USER)
+	(role concrete)
+	(single-slot nacionalidad
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot autores
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+		(create-accessor read-write)))
+
+(defclass Genero
+	(is-a USER)
+	(role concrete)
+	(single-slot nombreGenero
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot librosGenero
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+		(create-accessor read-write)))
+
+(defclass Aventuras
+	(is-a Genero)
+	(role concrete))
+
+(defclass Ciencia-ficcion
+	(is-a Genero)
+	(role concrete))
+
+(defclass Fantasia
+	(is-a Genero)
+	(role concrete))
+
+(defclass Historica
+	(is-a Genero)
+	(role concrete))
+
+(defclass Narrativa
+	(is-a Genero)
+	(role concrete))
+
+(defclass Oeste
+	(is-a Genero)
+	(role concrete))
+
+(defclass Policiaca
+	(is-a Genero)
+	(role concrete))
+
+(defclass Romantica
+	(is-a Genero)
+	(role concrete))
+
+(defclass Terror
+	(is-a Genero)
+	(role concrete))
+
+(defclass Viajes
+	(is-a Genero)
+	(role concrete))
+
+(defclass Filosofica
+	(is-a Genero)
+	(role concrete))
+
+(defclass Aprendizaje
+	(is-a Genero)
+	(role concrete))
+
+(defclass Libro
+	(is-a USER)
+	(role concrete)
+	(single-slot paginas
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot idioma
+		(type SYMBOL)
+		(allowed-values Frances Catalan Castellano Ingles Aleman Italiano)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot audiencia
+		(type SYMBOL)
+		(allowed-values Infantil Adolescente Adulto)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot premios
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot trataSobre
+		(type INSTANCE)
+;+		(allowed-classes Tema)
+		(create-accessor read-write))
+	(single-slot dificultad
+		(type SYMBOL)
+		(allowed-values Baja Media Alta)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot titulo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot anoPublicacion
+		(type INTEGER)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot pertenece
+		(type INSTANCE)
+;+		(allowed-classes Genero)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot escritoPor
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Tema
+	(is-a USER)
+	(role concrete)
+	(single-slot nombreTema
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot librosTema
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+		(create-accessor read-write)))

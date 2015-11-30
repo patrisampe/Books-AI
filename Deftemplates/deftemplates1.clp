@@ -41,3 +41,7 @@
         (multislot generos-possibles (type INSTANCE) (allowed-classes Genero))
         (multislot temas-possibles (type INSTANCE) (allowed-classes Tema))
 )
+
+(deftemplate LibrosT
+    (multislot libros-possibles (type INSTANCE) (allowed-classes Libro))
+)

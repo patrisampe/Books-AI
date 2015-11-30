@@ -65,7 +65,22 @@
         (Prohibiciones)
         (not (Possibles))
         =>
+        ;(printout t "Resumen HOOLAAA Possibles" crlf crlf)
         (assert (Possibles))
         (assert (establecer-generos-possibles))
         (focus possibles-literarias)
+)
+
+(defrule focus-possibles-recomendaciones
+        (Lector)
+        (Habitos)
+        (Preferencias)
+        (Prohibiciones)
+        (Possibles)
+        (not (LibrosT))
+        =>
+        ;(printout t "Resumen HOOLAAA Possibles" crlf crlf)
+        (assert (LibrosT))
+        (assert (establecer-libros))
+        (focus possibles-recomendaciones)
 )
