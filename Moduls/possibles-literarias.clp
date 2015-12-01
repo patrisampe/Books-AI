@@ -39,6 +39,7 @@
     (bind ?autores-possibles2 (une-multislot ?autores-preferidos ?autores-possibles))
     (bind ?autores-possibles3 (une-multislot ?autores-deseados ?autores-possibles2))
     (bind ?autores-possibles4 (elimina-multislot ?autores-prohibidos ?autores-possibles3))
+    ;elimina-multislot
     (modify ?possibles (autores-possibles ?autores-possibles4))
     ;(printout t "Resumen possibles" crlf crlf)
     ;(print-multislot "autores possibles:" ?autores-possibles4 get-nombre)
@@ -72,6 +73,7 @@
                 (autores-possibles $?autores-possibles) 
                 (generos-possibles $?generos-possibles) 
                 (temas-possibles $?temas-possibles))
+
         ?flow <- (fin-possibles)
         =>
         (printout t "Resumen Possibles" crlf crlf)

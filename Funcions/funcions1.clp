@@ -45,6 +45,25 @@
     ?vectorInstancias 
 )
 
+
+(deffunction todas-instancia ( ?instancia )
+    ;(format t "%s" ?pregunta)
+    ;(printout t crlf)
+    ;(printout t crlf)
+    (bind $?allInstances (find-all-instances((?inst ?instancia)) TRUE))
+    (bind ?vectorInstancias (create$))
+    (loop-for-count (?i 1 (length$ ?allInstances)) do
+        (bind ?inst (nth$ ?i ?allInstances)) 
+     ;   (printout t (send ?inst ?getter) "(" ?i ")" crlf)
+        (bind ?vectorInstancias (insert$ ?vectorInstancias ?i ?inst))
+    )
+    ;(printout t crlf)
+    ;(printout t crlf)
+    ?vectorInstancias 
+)
+
+
+
 (deffunction rellena-multislot (?lista ?vectorInstancias)
     (bind ?multislot (create$))
     (progn$ (?it ?lista)
@@ -72,11 +91,22 @@
     ?encontrado
 )
 (deffunction evalua-multislot-elimina (?respuesta ?auxi)
+    (bind ?encontrado -1)
+    (loop-for-count (?i 1 (length$ ?respuesta)) do
+        (bind ?aux (nth$ ?i ?respuesta))
+              (if (eq ?auxi ?aux) then
+                (bind ?encontrado ?i)
+              )
+    )
+    ?encontrado
+)
+
+(deffunction evalua-multislot-inserta (?respuesta ?auxi)
     (bind ?encontrado FALSE)
     (loop-for-count (?i 1 (length$ ?respuesta)) do
         (bind ?aux (nth$ ?i ?respuesta))
               (if (eq ?auxi ?aux) then
-                (bind ?multislot (delete$ ?multislot ?i ?i))
+                (bind ?multislot (insert$ ?multislot ?i ?aux))
               )
     )
     ?multislot
@@ -92,16 +122,24 @@
     (loop-for-count (?i 1 (length$ ?respuesta)) do
         (bind ?B (nth$ ?i ?respuesta))
         (bind ?aux (send ?B ?getter))
-           (bind ?multislot (evalua-multislot-elimina ?multislot ?aux))
+            (loop-for-count (?i 1 (length$ ?aux)) do
+                (bind ?auxi (nth$ ?i ?aux))
+                (bind ?e -1)
+                (bind ?j (evalua-multislot-elimina ?multislot ?auxi))
+                (if (not (eq ?j ?e ) ) then
+                    (bind ?multislot (delete$ ?multislot ?j ?j))
+                )
+            )
+
     )
     ?multislot
 )
 
 
 (deffunction une-multislot (?respuesta ?multislot)
-    (loop-for-count (?i 1 (length$ ?multislot)) do
-        (bind ?aux (nth$ ?i ?multislot))
-            (if (not (evalua-multislot ?respuesta ?aux)) then
+    (loop-for-count (?i 1 (length$ ?respuesta)) do
+        (bind ?aux (nth$ ?i ?respuesta))
+            (if (not (evalua-multislot ?multislot ?aux)) then
               (bind ?multislot (insert$ ?multislot 1 ?aux))
             )
     )
@@ -109,12 +147,14 @@
 )
 
 (deffunction elimina-multislot (?respuesta ?multislot)
-    (loop-for-count (?i 1 (length$ ?multislot)) do
-        (bind ?aux (nth$ ?i ?multislot))
-            (if (evalua-multislot ?respuesta ?aux) then
-              (bind ?multislot (delete$ ?multislot ?i ?i))
+    (loop-for-count (?i 1 (length$ ?respuesta)) do
+        (bind ?aux (nth$ ?i ?respuesta))
+            (bind ?e -1)
+            (bind ?j (evalua-multislot-elimina ?multislot ?aux))
+            (if (not (eq ?j ?e ) ) then
+                (bind ?multislot (delete$ ?multislot ?j ?j))
             )
+        
     )
     ?multislot
 )
-
