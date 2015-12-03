@@ -6,9 +6,12 @@
 
 (defrule establecer-autores-prohibidos "recopilacion de los autores prohibidos del lector"
     ?prohiciones <- (Prohibiciones)
+    (Preferencias (autores-deseados $?deseos))
     ?flow <- (establecer-autores-prohibidos) 
     =>
-    (bind ?vectorAutores (pregunta-instancia "Indica tus autores prohibidos" Autor get-nombre))
+    (bind ?vectorAutores 
+        (pregunta-instancia-prohibicion "Indica tus autores prohibidos" Autor get-nombre ?deseos)
+    )
     (bind ?lista (pregunta-lista "Escribe los identificadores separados por espacios: " crlf))
     (bind ?multislot (rellena-multislot ?lista ?vectorAutores))
     (modify ?prohiciones (autores-prohibidos ?multislot))
@@ -17,10 +20,13 @@
 )
 
 (defrule establecer-generos-prohibidos "recopilacion de los generos prohibidos del lector"
-    ?prohiciones <- (Prohibiciones) 
+    ?prohiciones <- (Prohibiciones)
+    (Preferencias (generos-deseados $?deseos)) 
     ?flow <- (establecer-generos-prohibidos)
     =>
-    (bind ?vectorGeneros (pregunta-instancia "Indica tus generos prohibidos" Genero get-nombreGenero))
+    (bind ?vectorGeneros 
+        (pregunta-instancia-prohibicion "Indica tus generos prohibidos" Genero get-nombreGenero ?deseos)
+    )
     (bind ?lista (pregunta-lista "Escribe los identificadores separados por espacios: " crlf))
     (bind ?multislot (rellena-multislot ?lista ?vectorGeneros))
     (modify ?prohiciones (generos-prohibidos ?multislot))
@@ -30,10 +36,13 @@
 
 
 (defrule establecer-temas-prohibidos "recopilacion de los temas preferidos del lector"
-    ?prohiciones <- (Prohibiciones) 
+    ?prohiciones <- (Prohibiciones)
+    (Preferencias (temas-deseados $?deseos)) 
     ?flow <- (establecer-temas-prohibidos)
     =>
-    (bind ?vectorTemas (pregunta-instancia "Indica tus temas prohibidos" Tema get-nombreTema))
+    (bind ?vectorTemas
+        (pregunta-instancia-prohibicion "Indica tus temas prohibidos" Tema get-nombreTema ?deseos)
+    )
     (bind ?lista (pregunta-lista "Escribe los identificadores separados por espacios: " crlf))
     (bind ?multislot (rellena-multislot ?lista ?vectorTemas))
     (modify ?prohiciones (temas-prohibidos ?multislot))

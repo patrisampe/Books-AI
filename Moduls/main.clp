@@ -58,11 +58,22 @@
         (focus prohibiciones-literarias)
 )
 
+(defrule focus-reglas-abstraccion
+        (Lector)
+        (Habitos)
+        (Preferencias)
+        (Prohibiciones)
+        (not (Edad ?))
+        =>
+        (focus reglas-abstraccion)
+)
+
 (defrule focus-possibles-lector
         (Lector)
         (Habitos)
         (Preferencias)
         (Prohibiciones)
+        (Edad ?)
         (not (Possibles))
         =>
         ;(printout t "Resumen HOOLAAA Possibles" crlf crlf)

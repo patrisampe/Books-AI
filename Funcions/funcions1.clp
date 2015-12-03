@@ -45,6 +45,30 @@
     ?vectorInstancias 
 )
 
+(deffunction in-multislot (?x ?vector)
+    (bind ?bool TRUE)
+    (loop-for-count (?i 1 (length$ ?vector)) do
+        (bind ?aux (nth$ ?i ?vector))
+        (if (eq ?x ?aux) then (bind ?bool FALSE))
+    )
+    ?bool
+)
+
+(deffunction pregunta-instancia-prohibicion(?pregunta ?instancia ?getter ?deseos)
+    (format t "%s" ?pregunta)
+    (printout t crlf)
+    (printout t crlf)
+    (bind $?allInstances (find-all-instances((?inst ?instancia)) TRUE))
+    (bind ?vectorInstancias (create$))
+    (loop-for-count (?i 1 (length$ ?allInstances)) do
+        (bind ?inst (nth$ ?i ?allInstances))
+        (if (in-multislot ?inst ?deseos) then (printout t (send ?inst ?getter) "(" ?i ")" crlf))
+        (bind ?vectorInstancias (insert$ ?vectorInstancias ?i ?inst))
+    )
+    (printout t crlf)
+    (printout t crlf)
+    ?vectorInstancias 
+)
 
 (deffunction todas-instancia ( ?instancia )
     ;(format t "%s" ?pregunta)

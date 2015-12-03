@@ -29,7 +29,6 @@
     (Lector (edad ?edad))
     (test (and (>= ?edad 17) (<= ?edad 25)))
     =>
-    (printout t "ENTRO AKI GUAPO" crlf)
     (assert (Edad joven))
 )
 
@@ -76,7 +75,7 @@
 
 (defrule culturaDefecto "Por defecto el nivel de cultura es medio"
     (declare (salience -1))
-    (not (Cultura))
+    (not (Cultura ?))
     =>
     (assert (Cultura Medio))
 )
@@ -102,4 +101,10 @@
     ?densa <- (Lectura densa)
     =>
     (retract ?densa)
+)
+
+(defrule acabar
+    (declare (salience -10))
+    =>
+    (focus MAIN)
 )
