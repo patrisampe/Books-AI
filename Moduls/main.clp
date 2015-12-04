@@ -74,6 +74,8 @@
         (Preferencias)
         (Prohibiciones)
         (Edad ?)
+        (Cultura ?)
+        (Lectura ?)
         (not (Possibles))
         =>
         ;(printout t "Resumen HOOLAAA Possibles" crlf crlf)
