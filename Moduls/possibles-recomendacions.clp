@@ -1,8 +1,4 @@
 
-
-
-
-
 (defmodule possibles-recomendaciones
     (import MAIN ?ALL)
     (export ?ALL)
@@ -39,18 +35,18 @@
     =>
 
     (printout t "HOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAA" crlf crlf)
-    (bind ?libros-possibles (maybe-multislot ?generos-possibles ?libros-possibles get-librosGenero))
+    (bind ?libros-possibles (maybe-multislot-multi ?generos-possibles ?libros-possibles get-pertenece))
     (modify ?libros (libros-possibles  ?libros-possibles))
     (printout t " ponemos solo los libros de generos-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
 
-    (bind ?libros-possibles (maybe-multislot ?autores-possibles ?libros-possibles get-librosEscritos))
+    (bind ?libros-possibles (maybe-multislot-single ?autores-possibles ?libros-possibles get-escritoPor))
     (modify ?libros (libros-possibles  ?libros-possibles))
     (printout t " ponemos solo los libros de autores-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
 
 
-    (bind ?libros-possibles (maybe-multislot ?temas-possibles ?libros-possibles get-librosTema))
+    (bind ?libros-possibles (maybe-multislot-multi ?temas-possibles ?libros-possibles get-trataSobre))
     (modify ?libros (libros-possibles  ?libros-possibles))
     (printout t " ponemos solo los libros de autores-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
@@ -271,16 +267,13 @@
     
 ;(and (Edad joven) (Cultura Alto)) )
 (defrule f "Fin del modulo"
-        (Possibles 
-                (autores-possibles $?autores-possibles) 
-                (generos-possibles $?generos-possibles) 
-                (temas-possibles $?temas-possibles))
+        (LibrosT
+                (libros-possibles $?libros-possibles))
         ?flow <- (f)
         =>
-       ; (printout t "Resumen Possibles" crlf crlf)
-        ;(print-multislot "Autores possibles:" ?autores-possibles get-nombre)
+       (printout t "Resumen recomendaciones" crlf crlf)
+        (print-multislot "Libros possibles:" ?libros-possibles get-titulo)
         ;(print-multislot "Generos possibles:" ?generos-possibles get-nombreGenero)
         ;(print-multislot "Temas possibles:" ?temas-possibles get-nombreTema)
         (retract ?flow)
         (focus MAIN)
-)
