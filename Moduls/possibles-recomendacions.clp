@@ -1,7 +1,4 @@
 
-;;; Moduls/possibles-recomendacions.clp BEGIN
-
-
 (defmodule possibles-recomendaciones
     (import MAIN ?ALL)
     (export ?ALL)
@@ -258,7 +255,7 @@
     (declare (salience 1))
     (LibrosT
                 (libros-possibles $?libros-possibles))
-    (test (> (length$ ?libros-possibles) 3))
+    (test (<= (length$ ?libros-possibles) 3))
     =>
 
     (assert(recomendi))
