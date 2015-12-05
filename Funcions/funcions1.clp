@@ -171,7 +171,7 @@
         (bind ?aux (send ?B ?getter))
                 (bind ?j (evalua-elimina-multislot ?respuesta ?aux))
                 ;(bind ?j -1)
-                (if (eq ?j -1 ) then
+                (if (not(eq ?j -1 ) )then
                     (bind ?multislot (insert$ ?multislot 1 ?B))
                 )
 
@@ -188,7 +188,7 @@
         (bind ?B (nth$ ?i ?multislot-libros))
         (bind ?aux (send ?B ?getter))
                 (bind ?j (evalua-multislot-elimina ?respuesta ?aux))
-                (if (eq ?j -1) then
+                (if (not (eq ?j -1) ) then
                     (bind ?multislot (insert$ ?multislot 1 ?B)))
                 )
 
