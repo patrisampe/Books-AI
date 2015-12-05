@@ -196,6 +196,18 @@
     (bind ?multislot-libros (elimina-multislot ?multislot ?multislot-libros))    
     ?multislot-libros
 )
+(deffunction coger-tres (?multislot-libros)
+    (bind ?multislot (create$))
+    (loop-for-count (?i 1 (length$ ?multislot-libros)) do
+        (bind ?B (nth$ ?i ?multislot-libros))
+                (if (< ?i 4) then
+                    (bind ?multislot (insert$ ?multislot 1 ?B)))
+     )
+
+    
+    ;(bind ?multislot-libros (elimina-multislot ?multislot ?multislot-libros))    
+    ?multislot
+)
 
 
 (deffunction une-multislot (?respuesta ?multislot)

@@ -1,4 +1,7 @@
 
+;;; Moduls/possibles-recomendacions.clp BEGIN
+
+
 (defmodule possibles-recomendaciones
     (import MAIN ?ALL)
     (export ?ALL)
@@ -19,7 +22,6 @@
     ;(printout t "Resumen possibles" crlf crlf)
     ;(print-multislot "Generos possibles:" ?generos-possibles4 get-nombreGenero)
     (retract ?flow)
-    (assert (filtrar))
 )
 
 (defrule filtrar "recopilacion de los LIBROS possibles del lector"
@@ -30,8 +32,9 @@
                 (temas-possibles $?temas-possibles))
     (LibrosT
                 (libros-possibles $?libros-possibles))
+    (and (test (> (length$ ?autores-possibles) 0)) (test (> (length$ ?generos-possibles) 0)) (test (> (length$ ?temas-possibles) 0)))
     ?libros <- (LibrosT)
-    ?flow <- (filtrar) 
+    (not (filtrar))
     =>
 
     (printout t "HOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAA" crlf crlf)
@@ -50,20 +53,7 @@
     (modify ?libros (libros-possibles  ?libros-possibles))
     (printout t " ponemos solo los libros de autores-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
-
-    
-
-
-    ;(bind ?vectorLibros (todas-instancia Libro))
-    ;(assert (LibrosT (libros-possibles ?vectorLibros)))                                     
-    ;(modify ?libros (libros-possibles ?vectorLibros))
-    ;(printout t "HOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAA" crlf crlf)
-    (printout t "Resumen Libros" crlf crlf)
-    ;(print-multislot "Libros possibles:" ?vectorLibros get-titulo)
-    ;(printout t "Resumen possibles" crlf crlf)
-    ;(print-multislot "Generos possibles:" ?generos-possibles4 get-nombreGenero)
-    (retract ?flow)
-    (assert (veinte24))
+    (assert (filtrar))
 )
 
 (defrule veinte24 "recopilacion de los LIBROS possibles del lector"
@@ -72,7 +62,7 @@
                 (libros-possibles $?libros-possibles))
     (or (Cultura Bajo) (Cultura Medio))
     ?libros <- (LibrosT)
-    ?flow <- (veinte24) 
+    (not(veinte24)) 
     =>
 
     
@@ -88,8 +78,8 @@
     )
 
 
-    (retract ?flow)
-    (assert (f))
+   ; (retract ?flow)
+    (assert (veinte24))
 )
 
 
@@ -99,7 +89,7 @@
                 (libros-possibles $?libros-possibles))
     (Cultura Alto)
     ?libros <- (LibrosT)
-    ?flow <- (veinte25) 
+    (not(veinte25)) 
     =>
 
     
@@ -113,8 +103,8 @@
     )
 
 
-    (retract ?flow)
-    (assert (veinte26))
+   ; (retract ?flow)
+    (assert (veinte25))
 )
 
 (defrule veinte26 "recopilacion de los LIBROS possibles del lector"
@@ -123,7 +113,7 @@
                 (libros-possibles $?libros-possibles))
     (not (Lectura ligera))
     ?libros <- (LibrosT)
-    ?flow <- (veinte26) 
+    (not (veinte26) ) 
     =>
 
     
@@ -138,8 +128,8 @@
     )
 
 
-    (retract ?flow)
-    (assert (veinte27))
+   ; (retract ?flow)
+    (assert (veinte26))
 )
 (defrule veinte27 "recopilacion de los LIBROS possibles del lector"
     
@@ -147,7 +137,7 @@
                 (libros-possibles $?libros-possibles))
     (not (Lectura densa))
     ?libros <- (LibrosT)
-    ?flow <- (veinte27) 
+    (not (veinte27) )
     =>
 
     
@@ -163,8 +153,8 @@
     )
 
 
-    (retract ?flow)
-    (assert (veinte28))
+    ;(retract ?flow)
+    (assert (veinte27))
 )
 
 (defrule veinte28 "recopilacion de los LIBROS possibles del lector"
@@ -173,7 +163,7 @@
                 (libros-possibles $?libros-possibles))
     (Edad nino)
     ?libros <- (LibrosT)
-    ?flow <- (veinte28) 
+    (not (veinte28)) 
     =>
 
     
@@ -186,8 +176,8 @@
             )
     )
 
-    (retract ?flow)
-    (assert (veinte29))
+    ;(retract ?flow)
+    (assert (veinte28))
 )
 
 (defrule veinte29 "recopilacion de los LIBROS possibles del lector"
@@ -196,7 +186,7 @@
                 (libros-possibles $?libros-possibles))
     (not (Edad nino))
     ?libros <- (LibrosT)
-    ?flow <- (veinte29) 
+    (not (veinte29)) 
     =>
 
     
@@ -209,8 +199,8 @@
             )
     )
 
-    (retract ?flow)
-    (assert (veinte30))
+    ;(retract ?flow)
+    (assert (veinte29))
 )
 
 
@@ -221,7 +211,7 @@
     (Edad adolescente)
     (Cultura Bajo)
     ?libros <- (LibrosT)
-    ?flow <- (veinte30) 
+    (not(veinte30)) 
     =>
 
     
@@ -234,8 +224,8 @@
             )
     )
 
-    (retract ?flow)
-    (assert (veinte31))
+    ;(retract ?flow)
+    (assert (veinte30))
 )
 
 (defrule veinte31 "recopilacion de los LIBROS possibles del lector"
@@ -247,7 +237,7 @@
     (or (Edad Adulto) (Edad terceraEdad) (and (Edad joven) (Cultura Alto) ) )
     (Cultura Bajo)
     ?libros <- (LibrosT)
-    ?flow <- (veinte31) 
+    (not(veinte31)) 
     =>
 
     
@@ -260,21 +250,37 @@
             )
     )
 
-    (retract ?flow)
-    (assert (f))
+    ;(retract ?flow)
+    (assert (veinte31))
+)
+
+(defrule recomanem "hiii"
+    (declare (salience 1))
+    (LibrosT
+                (libros-possibles $?libros-possibles))
+    (test (> (length$ ?libros-possibles) 3))
+    =>
+
+    (assert(recomendi))
+
 )
 ;(deffunction elimina-multislot (?respuesta ?multislot)
     
 ;(and (Edad joven) (Cultura Alto)) )
 (defrule f "Fin del modulo"
+        (declare (salience 1))
         (LibrosT
                 (libros-possibles $?libros-possibles))
-        ?flow <- (f)
+        (or (veinte31) (recomendi))
         =>
+        (bind ?libros-possibles (coger-tres ?libros-possibles))
        (printout t "Resumen recomendaciones" crlf crlf)
+       ;
         (print-multislot "Libros possibles:" ?libros-possibles get-titulo)
         ;(print-multislot "Generos possibles:" ?generos-possibles get-nombreGenero)
         ;(print-multislot "Temas possibles:" ?temas-possibles get-nombreTema)
-        (retract ?flow)
+        ;(retract ?flow)
         (focus MAIN)
 )
+
+;;; Moduls/possibles-recomendacions.clp END
