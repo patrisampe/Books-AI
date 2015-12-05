@@ -18,6 +18,7 @@
     (print-multislot "Libros possibles:" ?vectorLibros get-titulo)
     ;(printout t "Resumen possibles" crlf crlf)
     ;(print-multislot "Generos possibles:" ?generos-possibles4 get-nombreGenero)
+    (assert (carga))
     (retract ?flow)
 )
 
@@ -62,19 +63,22 @@
     (not(veinte24)) 
     =>
 
-    
-
+    (printout t "veinte24" crlf crlf)
+    (bind ?multislot (create$))
     (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?inst (nth$ ?i ?libros-possibles))
             (bind ?e -1)
             (bind ?j (send ?inst get-paginas))
             (bind ?dif (send ?inst get-dificultad))
-            (if (and (> ?j 800 ) (eq ?dif "Alta")) then
-                (bind ?libros-possibles (delete$ ?libros-possibles ?i ?i))
+            (if (and (> ?j 800 ) (= (str-compare ?dif "Alta") 0)) then
+                (bind ?multislot (insert$ ?multislot 1 ?inst))
             )
     )
 
 
+    (bind ?libros-possibles (elimina-multislot ?multislot ?libros-possibles))  
+       
+    (modify ?libros (libros-possibles ?libros-possibles))
    ; (retract ?flow)
     (assert (veinte24))
 )
@@ -89,16 +93,18 @@
     (not(veinte25)) 
     =>
 
-    
-
+    (printout t "veinte25" crlf crlf)
+    (bind ?multislot (create$))
     (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?inst (nth$ ?i ?libros-possibles))
             (bind ?dif (send ?inst get-dificultad))
-            (if  (eq ?dif "Bajo") then
-                (bind ?libros-possibles (delete$ ?libros-possibles ?i ?i))
+            (if  (= (str-compare ?dif "Baja") 0) then
+                 (bind ?multislot (insert$ ?multislot 1 ?inst))
             )
     )
-
+    (bind ?libros-possibles (elimina-multislot ?multislot ?libros-possibles))  
+       
+    (modify ?libros (libros-possibles ?libros-possibles))
 
    ; (retract ?flow)
     (assert (veinte25))
@@ -113,18 +119,20 @@
     (not (veinte26) ) 
     =>
 
-    
-
+    (printout t "veinte26" crlf crlf)
+    (bind ?multislot (create$))
     (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?inst (nth$ ?i ?libros-possibles))
             (bind ?j (send ?inst get-paginas))
             (bind ?dif (send ?inst get-dificultad))
-            (if (and (< ?j 400 ) (eq ?dif "Baja")) then
-                (bind ?libros-possibles (delete$ ?libros-possibles ?i ?i))
+            (if (and (< ?j 400 ) (= (str-compare ?dif "Baja") 0)) then
+                 (bind ?multislot (insert$ ?multislot 1 ?inst))
             )
     )
 
-
+    (bind ?libros-possibles (elimina-multislot ?multislot ?libros-possibles))  
+       
+    (modify ?libros (libros-possibles ?libros-possibles))
    ; (retract ?flow)
     (assert (veinte26))
 )
@@ -137,18 +145,21 @@
     (not (veinte27) )
     =>
 
-    
-
+    (printout t "veinte27" crlf crlf)
+    (bind ?multislot (create$))
      (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?inst (nth$ ?i ?libros-possibles))
             (bind ?e -1)
             (bind ?j (send ?inst get-paginas))
             (bind ?dif (send ?inst get-dificultad))
-            (if (and (> ?j 800 ) (eq ?dif "Alta")) then
-                (bind ?libros-possibles (delete$ ?libros-possibles ?i ?i))
+            (if (and (> ?j 800 ) (= (str-compare ?dif "Alta") 0) ) then
+                (bind ?multislot (insert$ ?multislot 1 ?inst))   
             )
     )
 
+     (bind ?libros-possibles (elimina-multislot ?multislot ?libros-possibles))  
+       
+    (modify ?libros (libros-possibles ?libros-possibles))
 
     ;(retract ?flow)
     (assert (veinte27))
@@ -163,19 +174,31 @@
     (not (veinte28)) 
     =>
 
-    
+    (printout t "veinte28" crlf crlf)
 
+     (bind ?multislot (create$))
      (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?inst (nth$ ?i ?libros-possibles))
             (bind ?audi (send ?inst get-audiencia))
-            (if (or (eq ?audi "Adolescente") (eq ?audi "Adulto")) then
-                (bind ?libros-possibles (delete$ ?libros-possibles ?i ?i))
+            ;(printout t ?audi crlf crlf)
+            (if (or (= (str-compare ?audi "Adulto") 0) (= (str-compare ?audi "Adolescente") 0)) then
+                ;(printout t "Guai" crlf crlf)
+                (bind ?multislot (insert$ ?multislot 1 ?inst))           
             )
     )
-
+    ;(print-multislot "Libros possibles:" ?multislot get-titulo)
+    (bind ?libros-possibles (elimina-multislot ?multislot ?libros-possibles))  
+       
+    (modify ?libros (libros-possibles ?libros-possibles))
+    ;(print-multislot "Libros possibles:" ?libros-possibles get-titulo)
+     ;(bind ?libros-possibles (elimina-multislot ?multislot ?libros-possibles))   
     ;(retract ?flow)
     (assert (veinte28))
 )
+
+
+
+
 
 (defrule veinte29 "recopilacion de los LIBROS possibles del lector"
     
@@ -186,15 +209,18 @@
     (not (veinte29)) 
     =>
 
-    
-
+    (printout t "veinte29" crlf crlf)
+    (bind ?multislot (create$))
      (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?inst (nth$ ?i ?libros-possibles))
             (bind ?audi (send ?inst get-audiencia))
-            (if (eq ?audi "Infantil") then
-                (bind ?libros-possibles (delete$ ?libros-possibles ?i ?i))
+            (if  (= (str-compare ?audi "Infantil") 0) then
+                 (bind ?multislot (insert$ ?multislot 1 ?inst))  
             )
     )
+     (bind ?libros-possibles (elimina-multislot ?multislot ?libros-possibles))  
+       
+    (modify ?libros (libros-possibles ?libros-possibles))
 
     ;(retract ?flow)
     (assert (veinte29))
@@ -211,16 +237,19 @@
     (not(veinte30)) 
     =>
 
-    
-
+    (printout t "veinte30" crlf crlf)
+    (bind ?multislot (create$))
      (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?inst (nth$ ?i ?libros-possibles))
             (bind ?audi (send ?inst get-audiencia))
-            (if (eq ?audi "Adulto") then
-                (bind ?libros-possibles (delete$ ?libros-possibles ?i ?i))
+            (if (= (str-compare ?audi "Adulto") 0) then
+                (bind ?multislot (insert$ ?multislot 1 ?inst))  
             )
     )
 
+    (bind ?libros-possibles (elimina-multislot ?multislot ?libros-possibles))  
+       
+    (modify ?libros (libros-possibles ?libros-possibles))
     ;(retract ?flow)
     (assert (veinte30))
 )
@@ -237,17 +266,20 @@
     (not(veinte31)) 
     =>
 
-    
-
+    (printout t "veinte31" crlf crlf)
+    (bind ?multislot (create$))
      (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?inst (nth$ ?i ?libros-possibles))
             (bind ?audi (send ?inst get-audiencia))
-            (if (eq ?audi "Adolescente") then
-                (bind ?libros-possibles (delete$ ?libros-possibles ?i ?i))
+            (if (= (str-compare ?audi "Adolescente") 0) then
+                (bind ?multislot (insert$ ?multislot 1 ?inst)) 
             )
     )
 
     ;(retract ?flow)
+    (bind ?libros-possibles (elimina-multislot ?multislot ?libros-possibles))  
+       
+    (modify ?libros (libros-possibles ?libros-possibles))
     (assert (veinte31))
 )
 
@@ -255,10 +287,13 @@
     (declare (salience 1))
     (LibrosT
                 (libros-possibles $?libros-possibles))
-    (test (<= (length$ ?libros-possibles) 3))
+    (test (< (length$ ?libros-possibles) 4))
+    (not (recomendi) )
+    (carga)
     =>
 
-    (assert(recomendi))
+    (printout t "REEEEEEEEEEEEECOOOOOOOOOOOOOOOOOOOOMMMMMMMMMM" crlf crlf)
+    (assert (recomendi))
 
 )
 ;(deffunction elimina-multislot (?respuesta ?multislot)
@@ -268,10 +303,10 @@
         (declare (salience 1))
         (LibrosT
                 (libros-possibles $?libros-possibles))
-        (or (veinte31) (recomendi))
+        (recomendi)
         =>
-        (bind ?libros-possibles (coger-tres ?libros-possibles))
-       (printout t "Resumen recomendaciones" crlf crlf)
+        ;(bind ?libros-possibles (coger-tres ?libros-possibles))
+       (printout t "Resumen recomendaciones 1" crlf crlf)
        ;
         (print-multislot "Libros possibles:" ?libros-possibles get-titulo)
         ;(print-multislot "Generos possibles:" ?generos-possibles get-nombreGenero)
@@ -280,4 +315,19 @@
         (focus MAIN)
 )
 
-;;; Moduls/possibles-recomendacions.clp END
+
+(defrule fuu "Fin del modulo"
+        (declare (salience -1))
+        (LibrosT
+                (libros-possibles $?libros-possibles))
+        (not (recomendi) )
+        =>
+       (bind ?libros-possibles (coger-tres ?libros-possibles))
+       (printout t "Resumen recomendaciones 2" crlf crlf)
+       ;
+        (print-multislot "Libros possibles:" ?libros-possibles get-titulo)
+        ;(print-multislot "Generos possibles:" ?generos-possibles get-nombreGenero)
+        ;(print-multislot "Temas possibles:" ?temas-possibles get-nombreTema)
+        ;(retract ?flow)
+        (focus MAIN)
+)
