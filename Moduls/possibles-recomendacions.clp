@@ -1,4 +1,5 @@
 
+
 (defmodule possibles-recomendaciones
     (import MAIN ?ALL)
     (export ?ALL)
@@ -33,6 +34,7 @@
     (and (test (> (length$ ?autores-possibles) 0)) (test (> (length$ ?generos-possibles) 0)) (test (> (length$ ?temas-possibles) 0)))
     ?libros <- (LibrosT)
     (not (filtrar))
+    (not (fii))
     =>
 
     (printout t "HOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAA" crlf crlf)
@@ -60,7 +62,8 @@
                 (libros-possibles $?libros-possibles))
     (or (Cultura Bajo) (Cultura Medio))
     ?libros <- (LibrosT)
-    (not(veinte24)) 
+    (not(veinte24))
+    (not (fii)) 
     =>
 
     (printout t "veinte24" crlf crlf)
@@ -90,7 +93,8 @@
                 (libros-possibles $?libros-possibles))
     (Cultura Alto)
     ?libros <- (LibrosT)
-    (not(veinte25)) 
+    (not(veinte25))
+    (not (fii)) 
     =>
 
     (printout t "veinte25" crlf crlf)
@@ -117,6 +121,7 @@
     (not (Lectura ligera))
     ?libros <- (LibrosT)
     (not (veinte26) ) 
+    (not (fii))
     =>
 
     (printout t "veinte26" crlf crlf)
@@ -143,6 +148,7 @@
     (not (Lectura densa))
     ?libros <- (LibrosT)
     (not (veinte27) )
+    (not (fii))
     =>
 
     (printout t "veinte27" crlf crlf)
@@ -171,7 +177,8 @@
                 (libros-possibles $?libros-possibles))
     (Edad nino)
     ?libros <- (LibrosT)
-    (not (veinte28)) 
+    (not (veinte28))
+    (not (fii)) 
     =>
 
     (printout t "veinte28" crlf crlf)
@@ -206,7 +213,8 @@
                 (libros-possibles $?libros-possibles))
     (not (Edad nino))
     ?libros <- (LibrosT)
-    (not (veinte29)) 
+    (not (veinte29))
+    (not (fii)) 
     =>
 
     (printout t "veinte29" crlf crlf)
@@ -235,6 +243,7 @@
     (Cultura Bajo)
     ?libros <- (LibrosT)
     (not(veinte30)) 
+    (not (fii))
     =>
 
     (printout t "veinte30" crlf crlf)
@@ -264,6 +273,7 @@
     (Cultura Bajo)
     ?libros <- (LibrosT)
     (not(veinte31)) 
+    (not (fii))
     =>
 
     (printout t "veinte31" crlf crlf)
@@ -287,8 +297,9 @@
     (declare (salience 1))
     (LibrosT
                 (libros-possibles $?libros-possibles))
-    (test (< (length$ ?libros-possibles) 4))
+    (test (< (length$ ?libros-possibles) 3))
     (not (recomendi) )
+    (not (fii))
     (carga)
     =>
 
@@ -304,6 +315,7 @@
         (LibrosT
                 (libros-possibles $?libros-possibles))
         (recomendi)
+        (not (fii))
         =>
         ;(bind ?libros-possibles (coger-tres ?libros-possibles))
        (printout t "Resumen recomendaciones 1" crlf crlf)
@@ -312,6 +324,7 @@
         ;(print-multislot "Generos possibles:" ?generos-possibles get-nombreGenero)
         ;(print-multislot "Temas possibles:" ?temas-possibles get-nombreTema)
         ;(retract ?flow)
+        (assert (fii))
         (focus MAIN)
 )
 
@@ -321,6 +334,7 @@
         (LibrosT
                 (libros-possibles $?libros-possibles))
         (not (recomendi) )
+        (not (fii))
         =>
        (bind ?libros-possibles (coger-tres ?libros-possibles))
        (printout t "Resumen recomendaciones 2" crlf crlf)
@@ -329,5 +343,6 @@
         ;(print-multislot "Generos possibles:" ?generos-possibles get-nombreGenero)
         ;(print-multislot "Temas possibles:" ?temas-possibles get-nombreTema)
         ;(retract ?flow)
+        (assert (fii))
         (focus MAIN)
 )
