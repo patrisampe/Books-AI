@@ -1,4 +1,4 @@
-; Sat Dec 05 11:50:23 CET 2015
+; Sat Dec 05 13:21:39 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,10 +20,14 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[libros_ProjectKB_Class49]
-		[libros_ProjectKB_Class50]
-		[libros_ProjectKB_Class51]
-		[libros_ProjectKB_Class52]))
+		[libros_ProjectKB_Class10062]
+		[libros_ProjectKB_Class10063]
+		[libros_ProjectKB_Class10064]
+		[libros_ProjectKB_Class10065]
+		[libros_ProjectKB_Class10066]
+		[libros_ProjectKB_Class10067]
+		[libros_ProjectKB_Class10068]
+		[libros_ProjectKB_Class10069]))
 
 ([CLSES_TAB] of  Widget
 
@@ -74,13 +78,80 @@
 	(name "instances_file_name")
 	(string_value "libros.pins"))
 
+([KB_468152_Class0] of  Map
+)
+
 ([LAYOUT_PROPERTIES] of  Property_List
 
 	(name "layout properties")
 	(properties [VERTICAL_STRETCHER]))
 
-([libros_ProjectKB_Class10] of  Property_List
+([libros_ProjectKB_Class1] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class10002])
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
+
+([libros_ProjectKB_Class10002] of  Property_List
 )
+
+([libros_ProjectKB_Class10003] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class10004])
+	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
+
+([libros_ProjectKB_Class10004] of  Property_List
+)
+
+([libros_ProjectKB_Class10005] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class10006])
+	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
+
+([libros_ProjectKB_Class10006] of  Property_List
+)
+
+([libros_ProjectKB_Class10062] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([libros_ProjectKB_Class10063] of  String
+
+	(name "Nacionalidad")
+	(string_value "nacionalidad"))
+
+([libros_ProjectKB_Class10064] of  String
+
+	(name "Genero")
+	(string_value "nombreGenero"))
+
+([libros_ProjectKB_Class10065] of  String
+
+	(name "Autor")
+	(string_value "nombre"))
+
+([libros_ProjectKB_Class10066] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([libros_ProjectKB_Class10067] of  String
+
+	(name "Tema")
+	(string_value "nombreTema"))
+
+([libros_ProjectKB_Class10068] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([libros_ProjectKB_Class10069] of  String
+
+	(name "Libro")
+	(string_value "titulo"))
 
 ([libros_ProjectKB_Class11] of  Property_List
 
@@ -167,53 +238,6 @@
 
 ([libros_ProjectKB_Class31] of  Property_List
 )
-
-([libros_ProjectKB_Class4] of  Map
-)
-
-([libros_ProjectKB_Class49] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([libros_ProjectKB_Class5] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [libros_ProjectKB_Class6])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
-
-([libros_ProjectKB_Class50] of  String
-
-	(name "Autor")
-	(string_value "nombre"))
-
-([libros_ProjectKB_Class51] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([libros_ProjectKB_Class52] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([libros_ProjectKB_Class6] of  Property_List
-)
-
-([libros_ProjectKB_Class7] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [libros_ProjectKB_Class8])
-	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
-
-([libros_ProjectKB_Class8] of  Property_List
-)
-
-([libros_ProjectKB_Class9] of  Widget
-
-	(is_hidden TRUE)
-	(property_list [libros_ProjectKB_Class10])
-	(widget_class_name "edu.stanford.smi.protege.widget.ProtegePropertiesTab"))
 
 ([option_instance] of  Options
 
