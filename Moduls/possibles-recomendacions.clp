@@ -24,34 +24,33 @@
 )
 
 (defrule filtrar "recopilacion de los LIBROS possibles del lector"
-    
-    (Possibles 
-                (autores-possibles $?autores-possibles) 
-                (generos-possibles $?generos-possibles) 
-                (temas-possibles $?temas-possibles))
+     (Prohibiciones 
+                (autores-prohibidos $?autores-prohibidos) 
+                (generos-prohibidos $?generos-prohibidos) 
+                (temas-prohibidos $?temas-prohibidos))
     (LibrosT
                 (libros-possibles $?libros-possibles))
-    (and (test (> (length$ ?autores-possibles) 0)) (test (> (length$ ?generos-possibles) 0)) (test (> (length$ ?temas-possibles) 0)))
+;and (test (> (length$ ?autores-possibles) 0)) (test (> (length$ ?generos-possibles) 0)) (test (> (length$ ?temas-possibles) 0)))
     ?libros <- (LibrosT)
     (not (filtrar))
     (not (fii))
     =>
 
     (printout t "HOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAA" crlf crlf)
-    (bind ?libros-possibles (maybe-multislot-multi ?generos-possibles ?libros-possibles get-pertenece))
+    (bind ?libros-possibles (maybe-multislot-multi ?generos-prohibidos ?libros-possibles get-pertenece))
     (modify ?libros (libros-possibles  ?libros-possibles))
     (printout t " ponemos solo los libros de generos-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
 
-    (bind ?libros-possibles (maybe-multislot-single ?autores-possibles ?libros-possibles get-escritoPor))
+    (bind ?libros-possibles (maybe-multislot-single ?autores-prohibidos ?libros-possibles get-escritoPor))
     (modify ?libros (libros-possibles  ?libros-possibles))
     (printout t " ponemos solo los libros de autores-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
 
 
-    (bind ?libros-possibles (maybe-multislot-multi ?temas-possibles ?libros-possibles get-trataSobre))
+    (bind ?libros-possibles (maybe-multislot-multi ?temas-prohibidos ?libros-possibles get-trataSobre))
     (modify ?libros (libros-possibles  ?libros-possibles))
-    (printout t " ponemos solo los libros de autores-possibles" crlf crlf)
+    (printout t " ponemos solo los libros de temas-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
     (assert (filtrar))
 )

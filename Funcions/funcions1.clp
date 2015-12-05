@@ -196,6 +196,7 @@
     (bind ?multislot-libros (elimina-multislot ?multislot ?multislot-libros))    
     ?multislot-libros
 )
+
 (deffunction coger-tres (?multislot-libros)
     (bind ?multislot (create$))
     (loop-for-count (?i 1 (length$ ?multislot-libros)) do

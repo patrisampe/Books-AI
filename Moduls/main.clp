@@ -68,7 +68,8 @@
         (focus reglas-abstraccion)
 )
 
-(defrule focus-possibles-lector
+
+(defrule focus-possibles-recomendaciones
         (Lector)
         (Habitos)
         (Preferencias)
@@ -76,20 +77,6 @@
         (Edad ?)
         (Cultura ?)
         (Lectura ?)
-        (not (Possibles))
-        =>
-        ;(printout t "Resumen HOOLAAA Possibles" crlf crlf)
-        (assert (Possibles))
-        (assert (establecer-generos-possibles))
-        (focus possibles-literarias)
-)
-
-(defrule focus-possibles-recomendaciones
-        (Lector)
-        (Habitos)
-        (Preferencias)
-        (Prohibiciones)
-        (Possibles)
         (not (LibrosT))
         =>
         ;(printout t "Resumen HOOLAAA Possibles" crlf crlf)
