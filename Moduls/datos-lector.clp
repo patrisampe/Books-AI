@@ -38,6 +38,18 @@
                 (case 2 then (modify ?lector (sexo mujer)))
         )
         (retract ?flow)
+        (assert (establecer-nacionalidad))
+)
+
+(defrule establecer-nacionalidad "Establece la nacionalidad del usuario"
+        ?lector <- (Lector)
+        ?flow <- (establecer-nacionalidad)
+        =>
+        (bind ?nacionalidades (pregunta-instancia "Indica tu nacionalidad" Nacionalidad get-nacionalidad))
+        (bind ?lista (pregunta-lista "Escribe el identificador: " crlf))
+        (bind ?multislot (rellena-multislot ?lista ?nacionalidades))
+        (modify ?lector (nacionalidad (nth$ 1 ?multislot)))
+        (retract ?flow)
         (assert (establecer-estudios))
 )
 

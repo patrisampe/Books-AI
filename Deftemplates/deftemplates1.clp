@@ -6,6 +6,7 @@
         (slot nombre (type STRING) (default ?DERIVE))
         (slot edad (type INTEGER) (range 0 120) (default 0))
         (slot sexo (type SYMBOL) (allowed-values hombre mujer IND) (default IND))
+        (slot nacionalidad (type INSTANCE) (allowed-classes Nacionalidad))
         (slot estudios (type SYMBOL) (allowed-values No_graduado_escolar CFGS Bachillerato Universidad IND) (default IND))
 )
 
