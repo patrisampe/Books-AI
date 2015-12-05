@@ -333,7 +333,7 @@
         (not (recomendi) )
         (not (fii))
         =>
-       (bind ?libros-possibles (coger-tres ?libros-possibles))
+       ;(bind ?libros-possibles (coger-tres ?libros-possibles))
        (printout t "Resumen recomendaciones 2" crlf crlf)
        ;
         (print-multislot "Libros possibles:" ?libros-possibles get-titulo)
