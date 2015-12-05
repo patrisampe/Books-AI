@@ -1,4 +1,4 @@
-; Mon Nov 30 20:17:03 CET 2015
+; Sat Dec 05 12:20:46 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -50,9 +50,6 @@
 	(librosEscritos [Libros_Class10000])
 	(nombre "Franz Kafka"))
 
-([Libros_Class10003] of  Autor
-)
-
 ([Libros_Class10005] of  Libro
 
 	(anoPublicacion 1914)
@@ -65,7 +62,7 @@
 ([Libros_Class10006] of  Autor
 
 	(librosEscritos [Libros_Class10005])
-	(nombre "Juan Ramón Jiménez"))
+	(nombre "Juan Ramon Jimenez"))
 
 ([Libros_Class10008] of  Libro
 
@@ -80,8 +77,10 @@
 
 ([Libros_Class10009] of  Autor
 
+	(anoDeNacimiento 1871)
 	(librosEscritos [Libros_Class10008])
-	(nombre "Marcel Proust"))
+	(nombre "Marcel Proust")
+	(tieneNacionalidad [libros_Class8]))
 
 ([Libros_Class10011] of  Libro
 
@@ -126,7 +125,9 @@
 
 ([Libros_Class10018] of  Autor
 
-	(librosEscritos [Libros_Class10017])
+	(librosEscritos
+		[Libros_Class10017]
+		[Libros_Class10029])
 	(nombre "Raymond Chandler"))
 
 ([Libros_Class10020] of  Libro
@@ -144,7 +145,7 @@
 ([Libros_Class10021] of  Autor
 
 	(librosEscritos [Libros_Class10020])
-	(nombre "John le Carré"))
+	(nombre "John le Carre"))
 
 ([Libros_Class10023] of  Libro
 
@@ -175,24 +176,21 @@
 
 ([Libros_Class10027] of  Autor
 
+	(anoDeNacimiento 1890)
 	(librosEscritos [Libros_Class10026])
-	(nombre "Agatha Christie"))
+	(nombre "Agatha Christie")
+	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10029] of  Libro
 
 	(anoPublicacion 1940)
 	(audiencia Adulto)
 	(dificultad Alta)
-	(escritoPor [Libros_Class10030])
+	(escritoPor [Libros_Class10018])
 	(idioma Ingles)
 	(paginas 400)
 	(pertenece [libros_Class52])
 	(titulo "Farewell My Lovely"))
-
-([Libros_Class10030] of  Autor
-
-	(librosEscritos [Libros_Class10029])
-	(nombre "Raymond Chandler"))
 
 ([Libros_Class10032] of  Libro
 
@@ -320,20 +318,16 @@
 	(idioma Ingles)
 	(paginas 100)
 	(pertenece [libros_Class53])
-	(titulo "“Enséñame el cielo”"))
+	(titulo "Ensename el cielo"))
 
 ([Libros_Class10048] of  Autor
 
 	(nombre "Veronica Roth"))
 
-([Libros_Class10049] of  Autor
-
-	(nombre "Lof yu"))
-
 ([Libros_Class10051] of  Autor
 
 	(librosEscritos [Libros_Class10047])
-	(nombre "Lof yu"))
+	(nombre "Lof Yu"))
 
 ([Libros_Class10053] of  Libro
 
@@ -365,7 +359,7 @@
 ([Libros_Class10056] of  Autor
 
 	(librosEscritos [Libros_Class10055])
-	(nombre "Andrea Tomé"))
+	(nombre "Andrea Tome"))
 
 ([Libros_Class10058] of  Libro
 
@@ -376,12 +370,14 @@
 	(idioma Ingles)
 	(paginas 410)
 	(pertenece [libros_Class53])
-	(titulo "Desafío"))
+	(titulo "Desafio"))
 
 ([Libros_Class10059] of  Autor
 
+	(anoDeNacimiento 1987)
 	(librosEscritos [Libros_Class10058])
-	(nombre "Alessandra Neymar"))
+	(nombre "Alessandra Neymar")
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10060] of  Libro
 
@@ -408,12 +404,12 @@
 	(idioma Castellano)
 	(paginas 250)
 	(pertenece [libros_Class53])
-	(titulo "Mi corazón es solo para Harry"))
+	(titulo "Mi corazon es solo para Harry"))
 
 ([Libros_Class10063] of  Autor
 
 	(librosEscritos [Libros_Class10062])
-	(nombre "Lucía R."))
+	(nombre "Lucia R."))
 
 ([Libros_Class10064] of  Libro
 
@@ -456,12 +452,12 @@
 	(idioma Castellano)
 	(paginas 438)
 	(pertenece [libros_Class49])
-	(titulo "LA VIRGEN DEL SOL"))
+	(titulo "La Virgen del sol"))
 
 ([Libros_Class10069] of  Autor
 
 	(librosEscritos [Libros_Class10068])
-	(nombre "Jordi Díez"))
+	(nombre "Jordi Diez"))
 
 ([Libros_Class10070] of  Libro
 
@@ -472,28 +468,25 @@
 	(idioma Castellano)
 	(paginas 199)
 	(pertenece [libros_Class46])
-	(titulo "MANAOS"))
+	(titulo "Manaos"))
 
 ([Libros_Class10071] of  Autor
 
-	(librosEscritos [Libros_Class10070])
-	(nombre "Alberto Vázquez-Figueroa"))
+	(librosEscritos
+		[Libros_Class10070]
+		[Libros_Class10072])
+	(nombre "Alberto Vazquez-Figueroa"))
 
 ([Libros_Class10072] of  Libro
 
 	(anoPublicacion 2012)
 	(audiencia Adulto)
 	(dificultad Media)
-	(escritoPor [Libros_Class10073])
+	(escritoPor [Libros_Class10071])
 	(idioma Castellano)
 	(paginas 224)
 	(pertenece [libros_Class49])
-	(titulo "LA BELLA BESTIA"))
-
-([Libros_Class10073] of  Autor
-
-	(librosEscritos [Libros_Class10072])
-	(nombre "Alberto Vázquez-Figueroa"))
+	(titulo "La Bella Bestia"))
 
 ([Libros_Class10074] of  Libro
 
@@ -504,10 +497,7 @@
 	(idioma Ingles)
 	(paginas 411)
 	(pertenece [libros_Class49])
-	(titulo "LA LISTA DE SCHINDLER"))
-
-([Libros_Class10075] of  Autor
-)
+	(titulo "La lista de Schindler"))
 
 ([Libros_Class10076] of  Autor
 
@@ -525,7 +515,8 @@
 	(pertenece
 		[Libros_Class14]
 		[libros_Class49])
-	(titulo "EL VIAJE DE LOS CONDENADOS"))
+	(titulo "El Viaje de los condenados")
+	(trataSobre [libros_Class43]))
 
 ([Libros_Class10078] of  Autor
 
@@ -546,7 +537,7 @@
 ([Libros_Class10080] of  Autor
 
 	(librosEscritos [Libros_Class10079])
-	(nombre "José Saramago"))
+	(nombre "Jose Saramago"))
 
 ([Libros_Class10081] of  Libro
 
@@ -562,7 +553,7 @@
 ([Libros_Class10082] of  Autor
 
 	(librosEscritos [Libros_Class10081])
-	(nombre "Felix Jaime Cortés"))
+	(nombre "Felix Jaime Cortes"))
 
 ([Libros_Class10083] of  Libro
 
@@ -573,12 +564,13 @@
 	(idioma Catalan)
 	(paginas 115)
 	(pertenece [libros_Class54])
-	(titulo "Área 81"))
+	(titulo "Area 81"))
 
 ([Libros_Class10084] of  Autor
 
 	(librosEscritos [Libros_Class10083])
-	(nombre "Albert Vitó i Godina"))
+	(nombre "Albert Vito i Godina")
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10085] of  Libro
 
@@ -815,7 +807,9 @@
 	(autores
 		[libros_Class69]
 		[Libros_Class27]
-		[Libros_Class28])
+		[Libros_Class28]
+		[Libros_Class10084]
+		[Libros_Class10059])
 	(nacionalidad "Espana"))
 
 ([Libros_Class30] of  Tema
@@ -896,11 +890,6 @@
 		[Libros_Class18])
 	(nombreTema "Amor"))
 
-([libros_Class39] of  Tema
-
-	(librosTema [libros_Class59])
-	(nombreTema "Erotico"))
-
 ([Libros_Class39] of  Libro
 
 	(anoPublicacion 1887)
@@ -913,6 +902,11 @@
 		[libros_Class46])
 	(premios TRUE)
 	(titulo "Estudio en escarlata"))
+
+([libros_Class39] of  Tema
+
+	(librosTema [libros_Class59])
+	(nombreTema "Erotico"))
 
 ([Libros_Class4] of  Libro
 
@@ -977,7 +971,8 @@
 		[libros_Class70]
 		[Libros_Class18]
 		[Libros_Class24]
-		[Libros_Class25])
+		[Libros_Class25]
+		[Libros_Class10077])
 	(nombreTema "Justicia"))
 
 ([libros_Class44] of  Tema
@@ -1256,12 +1251,15 @@
 
 ([libros_Class8] of  Nacionalidad
 
-	(autores [Libros_Class35])
+	(autores
+		[Libros_Class35]
+		[Libros_Class10009])
 	(nacionalidad "Francia"))
 
 ([libros_Class9] of  Nacionalidad
 
 	(autores
 		[libros_Class58]
-		[Libros_Class37])
+		[Libros_Class37]
+		[Libros_Class10027])
 	(nacionalidad "Reino Unido"))
