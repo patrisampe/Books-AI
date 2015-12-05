@@ -1,5 +1,3 @@
-
-
 (defmodule possibles-recomendaciones
     (import MAIN ?ALL)
     (export ?ALL)
@@ -72,7 +70,7 @@
             (bind ?e -1)
             (bind ?j (send ?inst get-paginas))
             (bind ?dif (send ?inst get-dificultad))
-            (if (and (> ?j 800 ) (= (str-compare ?dif "Alta") 0)) then
+            (if (or (> ?j 800 ) (= (str-compare ?dif "Alta") 0)) then
                 (bind ?multislot (insert$ ?multislot 1 ?inst))
             )
     )
@@ -157,7 +155,7 @@
             (bind ?e -1)
             (bind ?j (send ?inst get-paginas))
             (bind ?dif (send ?inst get-dificultad))
-            (if (and (> ?j 800 ) (= (str-compare ?dif "Alta") 0) ) then
+            (if (or (> ?j 800 ) (= (str-compare ?dif "Alta") 0) ) then
                 (bind ?multislot (insert$ ?multislot 1 ?inst))   
             )
     )
@@ -345,3 +343,5 @@
         (assert (fii))
         (focus MAIN)
 )
+
+;;; Moduls/possibles-recomendacions.clp END
