@@ -84,3 +84,12 @@
         (assert (establecer-libros))
         (focus possibles-recomendaciones)
 )
+
+(defrule focus-refinamiento
+    (Lector)
+    (Habitos)
+    (Preferencias)
+    (LibrosT)
+    =>
+    (focus refinamiento)
+)

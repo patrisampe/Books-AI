@@ -343,5 +343,3 @@
         (assert (fii))
         (focus MAIN)
 )
-
-;;; Moduls/possibles-recomendacions.clp END

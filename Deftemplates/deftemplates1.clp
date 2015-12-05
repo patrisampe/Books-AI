@@ -45,3 +45,7 @@
 (deftemplate LibrosT
     (multislot libros-possibles (type INSTANCE) (allowed-classes Libro))
 )
+
+(deftemplate Ordenacion
+    (multislot puntuaciones (type INTEGER))
+)
