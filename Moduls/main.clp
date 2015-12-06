@@ -81,7 +81,7 @@
         =>
         ;(printout t "Resumen HOOLAAA Possibles" crlf crlf)
         (assert (LibrosT))
-        (assert (establecer-libros))
+       ; (assert (establecer-libros))
         (focus possibles-recomendaciones)
 )
 
