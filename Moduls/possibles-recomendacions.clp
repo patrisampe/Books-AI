@@ -1,3 +1,4 @@
+
 (defmodule possibles-recomendaciones
     (import MAIN ?ALL)
     (export ?ALL)
@@ -36,17 +37,18 @@
 
     (printout t "HOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAA" crlf crlf)
     (bind ?libros-possibles (maybe-multislot-multi ?generos-prohibidos ?libros-possibles get-pertenece))
-    (modify ?libros (libros-possibles  ?libros-possibles))
+    ;(modify ?libros (libros-possibles  ?libros-possibles))
     (printout t " ponemos solo los libros de generos-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
 
     (bind ?libros-possibles (maybe-multislot-single ?autores-prohibidos ?libros-possibles get-escritoPor))
-    (modify ?libros (libros-possibles  ?libros-possibles))
+    ;(modify ?libros (libros-possibles  ?libros-possibles))
     (printout t " ponemos solo los libros de autores-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
 
 
     (bind ?libros-possibles (maybe-multislot-multi ?temas-prohibidos ?libros-possibles get-trataSobre))
+    ;(modify ?libros (libros-possibles  ?libros-possibles))
     (modify ?libros (libros-possibles  ?libros-possibles))
     (printout t " ponemos solo los libros de temas-possibles" crlf crlf)
     (print-multislot "libros possibles:" ?libros-possibles get-titulo)
@@ -290,41 +292,10 @@
     (assert (veinte31))
 )
 
-(defrule recomanem "hiii"
-    (declare (salience 1))
-    (LibrosT
-                (libros-possibles $?libros-possibles))
-    (test (< (length$ ?libros-possibles) 3))
-    (not (recomendi) )
-    (not (fii))
-    (carga)
-    =>
 
-    (printout t "REEEEEEEEEEEEECOOOOOOOOOOOOOOOOOOOOMMMMMMMMMM" crlf crlf)
-    (assert (recomendi))
-
-)
 ;(deffunction elimina-multislot (?respuesta ?multislot)
     
 ;(and (Edad joven) (Cultura Alto)) )
-(defrule f "Fin del modulo"
-        (declare (salience 1))
-        (LibrosT
-                (libros-possibles $?libros-possibles))
-        (recomendi)
-        (not (fii))
-        =>
-        ;(bind ?libros-possibles (coger-tres ?libros-possibles))
-       (printout t "Resumen recomendaciones 1" crlf crlf)
-       ;
-        (print-multislot "Libros possibles:" ?libros-possibles get-titulo)
-        ;(print-multislot "Generos possibles:" ?generos-possibles get-nombreGenero)
-        ;(print-multislot "Temas possibles:" ?temas-possibles get-nombreTema)
-        ;(retract ?flow)
-        (assert (fii))
-        (focus MAIN)
-)
-
 
 (defrule fuu "Fin del modulo"
         (declare (salience -1))
