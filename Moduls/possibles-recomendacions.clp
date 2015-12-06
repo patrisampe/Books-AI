@@ -201,7 +201,7 @@
     
     (LibrosT
                 (libros-possibles $?libros-possibles))
-    (not (Lectura ligera))
+     (or (Lectura densa) (lectura normal))
     ?libros <- (LibrosT)
     (not (veinte26) ) 
     (not (fii))
