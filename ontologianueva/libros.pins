@@ -1,4 +1,4 @@
-; Sat Dec 05 13:21:39 CET 2015
+; Sun Dec 06 18:55:14 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -22,6 +22,13 @@
 		[libros_Class68]
 		[libros_Class45]))
 
+([libros_Class0] of  Nacionalidad
+
+	(autores
+		[Libros_Class10076]
+		[Libros_Class10078])
+	(nacionalidad "Australia"))
+
 ([Libros_Class1] of  Autor
 
 	(anoDeNacimiento 1973)
@@ -32,6 +39,11 @@
 	(nPremios 4)
 	(tieneNacionalidad [libros_Class5]))
 
+([libros_Class1] of  Nacionalidad
+
+	(autores [Libros_Class10080])
+	(nacionalidad "Portugal"))
+
 ([libros_Class10] of  Nacionalidad
 
 	(nacionalidad "Italia"))
@@ -40,6 +52,7 @@
 
 	(anoPublicacion 1915)
 	(audiencia Adulto)
+	(dificultad Alta)
 	(escritoPor [Libros_Class10001])
 	(idioma Castellano)
 	(pertenece [libros_Class48])
@@ -47,13 +60,16 @@
 
 ([Libros_Class10001] of  Autor
 
+	(anoDeNacimiento 1883)
 	(librosEscritos [Libros_Class10000])
-	(nombre "Franz Kafka"))
+	(nombre "Franz Kafka")
+	(tieneNacionalidad [libros_Class4]))
 
 ([Libros_Class10005] of  Libro
 
 	(anoPublicacion 1914)
 	(audiencia Adulto)
+	(dificultad Media)
 	(escritoPor [Libros_Class10006])
 	(idioma Castellano)
 	(pertenece [Libros_Class14])
@@ -61,8 +77,11 @@
 
 ([Libros_Class10006] of  Autor
 
+	(anoDeNacimiento 1881)
 	(librosEscritos [Libros_Class10005])
-	(nombre "Juan Ramon Jimenez"))
+	(nombre "Juan Ramon Jimenez")
+	(nPremios 1)
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10008] of  Libro
 
@@ -86,6 +105,7 @@
 
 	(anoPublicacion 1912)
 	(audiencia Adulto)
+	(dificultad Media)
 	(escritoPor [Libros_Class10012])
 	(idioma Ingles)
 	(pertenece [Libros_Class14])
@@ -93,8 +113,11 @@
 
 ([Libros_Class10012] of  Autor
 
+	(anoDeNacimiento 1862)
 	(librosEscritos [Libros_Class10011])
-	(nombre "Edith Wharton"))
+	(nombre "Edith Wharton")
+	(nPremios 20)
+	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10014] of  Libro
 
@@ -109,8 +132,11 @@
 
 ([Libros_Class10015] of  Autor
 
+	(anoDeNacimiento 1896)
 	(librosEscritos [Libros_Class10014])
-	(nombre "Josephine Tey"))
+	(nombre "Josephine Tey")
+	(nPremios 1)
+	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10017] of  Libro
 
@@ -125,10 +151,13 @@
 
 ([Libros_Class10018] of  Autor
 
+	(anoDeNacimiento 1888)
 	(librosEscritos
 		[Libros_Class10017]
 		[Libros_Class10029])
-	(nombre "Raymond Chandler"))
+	(nombre "Raymond Chandler")
+	(nPremios 1)
+	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10020] of  Libro
 
@@ -144,8 +173,11 @@
 
 ([Libros_Class10021] of  Autor
 
+	(anoDeNacimiento 1931)
 	(librosEscritos [Libros_Class10020])
-	(nombre "John le Carre"))
+	(nombre "John le Carre")
+	(nPremios 12)
+	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10023] of  Libro
 
@@ -160,8 +192,10 @@
 
 ([Libros_Class10024] of  Autor
 
+	(anoDeNacimiento 1893)
 	(librosEscritos [Libros_Class10023])
-	(nombre "Dorothy L. Sayers"))
+	(nombre "Dorothy L. Sayers")
+	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10026] of  Libro
 
@@ -205,8 +239,10 @@
 
 ([Libros_Class10033] of  Autor
 
+	(anoDeNacimiento 1824)
 	(librosEscritos [Libros_Class10032])
-	(nombre "Wilkie Collins"))
+	(nombre "Wilkie Collins")
+	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10036] of  Libro
 
@@ -221,12 +257,15 @@
 
 ([Libros_Class10037] of  Autor
 
+	(anoDeNacimiento 1971)
 	(librosEscritos
 		[Libros_Class10036]
 		[Libros_Class10042]
 		[Libros_Class10045]
 		[Libros_Class10046])
-	(nombre "Jeff Kinney"))
+	(nombre "Jeff Kinney")
+	(nPremios 1)
+	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10038] of  Libro
 
@@ -241,8 +280,11 @@
 
 ([Libros_Class10039] of  Autor
 
+	(anoDeNacimiento 1977)
 	(librosEscritos [Libros_Class10038])
-	(nombre "Anna Llenas"))
+	(nombre "Anna Llenas")
+	(nPremios 1)
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10040] of  Libro
 
@@ -257,8 +299,10 @@
 
 ([Libros_Class10041] of  Autor
 
+	(anoDeNacimiento 1940)
 	(librosEscritos [Libros_Class10040])
-	(nombre "Ant Parker"))
+	(nombre "Ant Parker")
+	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10042] of  Libro
 
@@ -284,8 +328,11 @@
 
 ([Libros_Class10044] of  Autor
 
+	(anoDeNacimiento 1947)
 	(librosEscritos [Libros_Class10043])
-	(nombre "Barbara Park"))
+	(nombre "Barbara Park")
+	(nPremios 0)
+	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10045] of  Libro
 
@@ -322,12 +369,17 @@
 
 ([Libros_Class10048] of  Autor
 
-	(nombre "Veronica Roth"))
+	(anoDeNacimiento 1988)
+	(nombre "Veronica Roth")
+	(nPremios 2)
+	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10051] of  Autor
 
+	(anoDeNacimiento 1974)
 	(librosEscritos [Libros_Class10047])
-	(nombre "Lof Yu"))
+	(nombre "Lof Yu")
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10053] of  Libro
 
@@ -342,8 +394,11 @@
 
 ([Libros_Class10054] of  Autor
 
+	(anoDeNacimiento 1904)
 	(librosEscritos [Libros_Class10053])
-	(nombre "Nancy Mitford"))
+	(nombre "Nancy Mitford")
+	(nPremios 3)
+	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10055] of  Libro
 
@@ -358,8 +413,10 @@
 
 ([Libros_Class10056] of  Autor
 
+	(anoDeNacimiento 1974)
 	(librosEscritos [Libros_Class10055])
-	(nombre "Andrea Tome"))
+	(nombre "Andrea Tome")
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10058] of  Libro
 
@@ -393,7 +450,8 @@
 ([Libros_Class10061] of  Autor
 
 	(librosEscritos [Libros_Class10060])
-	(nombre "Michelle Levy"))
+	(nombre "Michelle Levy")
+	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10062] of  Libro
 
@@ -435,13 +493,17 @@
 
 ([Libros_Class10066] of  Autor
 
+	(anoDeNacimiento 1970)
 	(librosEscritos [Libros_Class10064])
-	(nombre "Biggs Waller"))
+	(nombre "Biggs Waller")
+	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10067] of  Autor
 
+	(anoDeNacimiento 1971)
 	(librosEscritos [Libros_Class10065])
-	(nombre "Florencia Bonelli"))
+	(nombre "Florencia Bonelli")
+	(tieneNacionalidad [libros_Class6]))
 
 ([Libros_Class10068] of  Libro
 
@@ -457,7 +519,8 @@
 ([Libros_Class10069] of  Autor
 
 	(librosEscritos [Libros_Class10068])
-	(nombre "Jordi Diez"))
+	(nombre "Jordi Diez")
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10070] of  Libro
 
@@ -472,10 +535,13 @@
 
 ([Libros_Class10071] of  Autor
 
+	(anoDeNacimiento 1936)
 	(librosEscritos
 		[Libros_Class10070]
 		[Libros_Class10072])
-	(nombre "Alberto Vazquez-Figueroa"))
+	(nombre "Alberto Vazquez-Figueroa")
+	(nPremios 1)
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10072] of  Libro
 
@@ -501,8 +567,11 @@
 
 ([Libros_Class10076] of  Autor
 
+	(anoDeNacimiento 1935)
 	(librosEscritos [Libros_Class10074])
-	(nombre "Thomas Keneally"))
+	(nombre "Thomas Keneally")
+	(nPremios 11)
+	(tieneNacionalidad [libros_Class0]))
 
 ([Libros_Class10077] of  Libro
 
@@ -520,8 +589,11 @@
 
 ([Libros_Class10078] of  Autor
 
+	(anoDeNacimiento 1907)
 	(librosEscritos [Libros_Class10077])
-	(nombre "Herz Bergner"))
+	(nombre "Herz Bergner")
+	(nPremios 5)
+	(tieneNacionalidad [libros_Class0]))
 
 ([Libros_Class10079] of  Libro
 
@@ -536,8 +608,11 @@
 
 ([Libros_Class10080] of  Autor
 
+	(anoDeNacimiento 1922)
 	(librosEscritos [Libros_Class10079])
-	(nombre "Jose Saramago"))
+	(nombre "Jose Saramago")
+	(nPremios 45)
+	(tieneNacionalidad [libros_Class1]))
 
 ([Libros_Class10081] of  Libro
 
@@ -552,8 +627,10 @@
 
 ([Libros_Class10082] of  Autor
 
+	(anoDeNacimiento 1950)
 	(librosEscritos [Libros_Class10081])
-	(nombre "Felix Jaime Cortes"))
+	(nombre "Felix Jaime Cortes")
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10083] of  Libro
 
@@ -568,6 +645,7 @@
 
 ([Libros_Class10084] of  Autor
 
+	(anoDeNacimiento 1949)
 	(librosEscritos [Libros_Class10083])
 	(nombre "Albert Vito i Godina")
 	(tieneNacionalidad [libros_Class3]))
@@ -585,8 +663,11 @@
 
 ([Libros_Class10087] of  Autor
 
+	(anoDeNacimiento 1919)
 	(librosEscritos [Libros_Class10085])
-	(nombre "J.D. Salinger"))
+	(nombre "J.D. Salinger")
+	(nPremios 4)
+	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10088] of  Libro
 
@@ -601,8 +682,11 @@
 
 ([Libros_Class10089] of  Autor
 
+	(anoDeNacimiento 1977)
 	(librosEscritos [Libros_Class10088])
-	(nombre "John Green"))
+	(nombre "John Green")
+	(nPremios 4)
+	(tieneNacionalidad [libros_Class5]))
 
 ([libros_Class11] of  Nacionalidad
 
@@ -783,6 +867,7 @@
 
 	(anoPublicacion 1950)
 	(audiencia Adulto)
+	(dificultad Alta)
 	(escritoPor [Libros_Class28])
 	(idioma Castellano)
 	(paginas 272)
@@ -809,7 +894,14 @@
 		[Libros_Class27]
 		[Libros_Class28]
 		[Libros_Class10084]
-		[Libros_Class10059])
+		[Libros_Class10059]
+		[Libros_Class10051]
+		[Libros_Class10006]
+		[Libros_Class10069]
+		[Libros_Class10082]
+		[Libros_Class10039]
+		[Libros_Class10056]
+		[Libros_Class10071])
 	(nacionalidad "Espana"))
 
 ([Libros_Class30] of  Tema
@@ -894,6 +986,7 @@
 
 	(anoPublicacion 1887)
 	(audiencia Adulto)
+	(dificultad Media)
 	(escritoPor [Libros_Class37])
 	(idioma Castellano)
 	(paginas 168)
@@ -924,7 +1017,9 @@
 
 ([libros_Class4] of  Nacionalidad
 
-	(autores [Libros_Class3])
+	(autores
+		[Libros_Class3]
+		[Libros_Class10001])
 	(nacionalidad "Alemania"))
 
 ([libros_Class40] of  Tema
@@ -1056,7 +1151,16 @@
 		[Libros_Class1]
 		[Libros_Class19]
 		[Libros_Class22]
-		[Libros_Class33])
+		[Libros_Class33]
+		[Libros_Class10048]
+		[Libros_Class10018]
+		[Libros_Class10061]
+		[Libros_Class10089]
+		[Libros_Class10037]
+		[Libros_Class10087]
+		[Libros_Class10012]
+		[Libros_Class10066]
+		[Libros_Class10044])
 	(nacionalidad "EEUU"))
 
 ([libros_Class50] of  Narrativa
@@ -1137,6 +1241,7 @@
 
 ([libros_Class6] of  Nacionalidad
 
+	(autores [Libros_Class10067])
 	(nacionalidad "Argentina"))
 
 ([libros_Class61] of  Autor
@@ -1261,5 +1366,11 @@
 	(autores
 		[libros_Class58]
 		[Libros_Class37]
-		[Libros_Class10027])
+		[Libros_Class10027]
+		[Libros_Class10033]
+		[Libros_Class10054]
+		[Libros_Class10015]
+		[Libros_Class10021]
+		[Libros_Class10024]
+		[Libros_Class10041])
 	(nacionalidad "Reino Unido"))

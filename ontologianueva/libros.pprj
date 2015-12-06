@@ -1,4 +1,4 @@
-; Sat Dec 05 13:21:39 CET 2015
+; Sun Dec 06 18:55:14 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,17 +20,18 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[libros_ProjectKB_Class10062]
-		[libros_ProjectKB_Class10063]
-		[libros_ProjectKB_Class10064]
-		[libros_ProjectKB_Class10065]
-		[libros_ProjectKB_Class10066]
-		[libros_ProjectKB_Class10067]
-		[libros_ProjectKB_Class10068]
-		[libros_ProjectKB_Class10069]))
+		[libros_ProjectKB_Class20168]
+		[libros_ProjectKB_Class20169]
+		[libros_ProjectKB_Class20170]
+		[libros_ProjectKB_Class20171]
+		[libros_ProjectKB_Class20172]
+		[libros_ProjectKB_Class20173]
+		[libros_ProjectKB_Class20174]
+		[libros_ProjectKB_Class20175]))
 
 ([CLSES_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.ClsesTab"))
 
 ([CREATION_TIMESTAMP_WIDGET] of  Widget
@@ -43,6 +44,7 @@
 
 ([FORMS_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.FormsTab"))
 
 ([INSTANCE_ANNOTATION_FORM_WIDGET] of  Widget
@@ -66,7 +68,11 @@
 
 ([INSTANCES_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
+
+([KB_065819_Class0] of  Map
+)
 
 ([KB_386208_Class0] of  String
 
@@ -78,9 +84,6 @@
 	(name "instances_file_name")
 	(string_value "libros.pins"))
 
-([KB_468152_Class0] of  Map
-)
-
 ([LAYOUT_PROPERTIES] of  Property_List
 
 	(name "layout properties")
@@ -90,7 +93,7 @@
 
 	(is_hidden TRUE)
 	(property_list [libros_ProjectKB_Class10002])
-	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.widget.OWLFormsTab"))
 
 ([libros_ProjectKB_Class10002] of  Property_List
 )
@@ -99,7 +102,7 @@
 
 	(is_hidden TRUE)
 	(property_list [libros_ProjectKB_Class10004])
-	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
+	(widget_class_name "org.protege.owl.mm.portability.protege3.MappingMasterTab"))
 
 ([libros_ProjectKB_Class10004] of  Property_List
 )
@@ -112,46 +115,6 @@
 
 ([libros_ProjectKB_Class10006] of  Property_List
 )
-
-([libros_ProjectKB_Class10062] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([libros_ProjectKB_Class10063] of  String
-
-	(name "Nacionalidad")
-	(string_value "nacionalidad"))
-
-([libros_ProjectKB_Class10064] of  String
-
-	(name "Genero")
-	(string_value "nombreGenero"))
-
-([libros_ProjectKB_Class10065] of  String
-
-	(name "Autor")
-	(string_value "nombre"))
-
-([libros_ProjectKB_Class10066] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([libros_ProjectKB_Class10067] of  String
-
-	(name "Tema")
-	(string_value "nombreTema"))
-
-([libros_ProjectKB_Class10068] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([libros_ProjectKB_Class10069] of  String
-
-	(name "Libro")
-	(string_value "titulo"))
 
 ([libros_ProjectKB_Class11] of  Property_List
 
@@ -203,6 +166,381 @@
 
 	(name "layout properties"))
 
+([libros_ProjectKB_Class20007] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20008])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalQueriesTab"))
+
+([libros_ProjectKB_Class20008] of  Property_List
+)
+
+([libros_ProjectKB_Class20009] of  Widget
+
+	(is_hidden FALSE)
+	(property_list [libros_ProjectKB_Class20010])
+	(widget_class_name "dfki.protege.ontoviz_tab.OntovizTab"))
+
+([libros_ProjectKB_Class20010] of  Property_List
+)
+
+([libros_ProjectKB_Class20011] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20012])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.cls.OWLClassesTab"))
+
+([libros_ProjectKB_Class20012] of  Property_List
+)
+
+([libros_ProjectKB_Class20013] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20014])
+	(widget_class_name "edu.stanford.smi.protegex.server_changes.prompt.UsersTab"))
+
+([libros_ProjectKB_Class20014] of  Property_List
+)
+
+([libros_ProjectKB_Class20015] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20016])
+	(widget_class_name "edu.stanford.smi.protege.query.LuceneQueryPlugin"))
+
+([libros_ProjectKB_Class20016] of  Property_List
+)
+
+([libros_ProjectKB_Class20017] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20018])
+	(widget_class_name "edu.stanford.smi.protege.widget.ClsesAndInstancesTab"))
+
+([libros_ProjectKB_Class20018] of  Property_List
+)
+
+([libros_ProjectKB_Class20019] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20020])
+	(widget_class_name "edu.stanford.smi.protege.widget.KAToolTab"))
+
+([libros_ProjectKB_Class20020] of  Property_List
+)
+
+([libros_ProjectKB_Class20021] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20022])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.KnowledgeTreeTab"))
+
+([libros_ProjectKB_Class20022] of  Property_List
+)
+
+([libros_ProjectKB_Class20023] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20024])
+	(widget_class_name "edu.stanford.smi.protegex.prompt.PromptTab"))
+
+([libros_ProjectKB_Class20024] of  Property_List
+)
+
+([libros_ProjectKB_Class20025] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20026])
+	(widget_class_name "edu.stanford.smi.protege.keywordsearch.StringSearch"))
+
+([libros_ProjectKB_Class20026] of  Property_List
+)
+
+([libros_ProjectKB_Class20027] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20028])
+	(widget_class_name "edu.stanford.smi.protegex.widget.pal.PalConstraintsTab"))
+
+([libros_ProjectKB_Class20028] of  Property_List
+)
+
+([libros_ProjectKB_Class20029] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20030])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.metadatatab.OWLMetadataTab"))
+
+([libros_ProjectKB_Class20030] of  Property_List
+)
+
+([libros_ProjectKB_Class20031] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20032])
+	(widget_class_name "edu.stanford.smi.protegex.owl.swrl.ui.tab.SWRLTab"))
+
+([libros_ProjectKB_Class20032] of  Property_List
+)
+
+([libros_ProjectKB_Class20033] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20034])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.individuals.OWLIndividualsTab"))
+
+([libros_ProjectKB_Class20034] of  Property_List
+)
+
+([libros_ProjectKB_Class20035] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20036])
+	(widget_class_name "uk.ac.man.cs.mig.coode.debugger.test.DebuggerTestTab"))
+
+([libros_ProjectKB_Class20036] of  Property_List
+)
+
+([libros_ProjectKB_Class20037] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20038])
+	(widget_class_name "edu.stanford.smi.protegex.changes.ChangesTab"))
+
+([libros_ProjectKB_Class20038] of  Property_List
+)
+
+([libros_ProjectKB_Class20039] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20040])
+	(widget_class_name "org.protege.owl.axiome.ui.AxiomeTab"))
+
+([libros_ProjectKB_Class20040] of  Property_List
+)
+
+([libros_ProjectKB_Class20041] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20042])
+	(widget_class_name "ca.uvic.csr.shrimp.jambalaya.JambalayaTab"))
+
+([libros_ProjectKB_Class20042] of  Property_List
+)
+
+([libros_ProjectKB_Class20043] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20044])
+	(widget_class_name "TGViztab.TGVizTab"))
+
+([libros_ProjectKB_Class20044] of  Property_List
+)
+
+([libros_ProjectKB_Class20045] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20046])
+	(widget_class_name "edu.stanford.smi.protegex.owl.ui.properties.OWLPropertiesTab"))
+
+([libros_ProjectKB_Class20046] of  Property_List
+)
+
+([libros_ProjectKB_Class20047] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20048])
+	(widget_class_name "uk.ac.man.ac.mig.coode.individuals.ui.OWLDLIndividualsTab"))
+
+([libros_ProjectKB_Class20048] of  Property_List
+)
+
+([libros_ProjectKB_Class20049] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20050])
+	(widget_class_name "edu.stanford.smi.protegex.evaluation.MetaAnalysis"))
+
+([libros_ProjectKB_Class20050] of  Property_List
+)
+
+([libros_ProjectKB_Class20051] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20052])
+	(widget_class_name "edu.stanford.smi.protege.widget.instance_tree.InstanceTreeTab"))
+
+([libros_ProjectKB_Class20052] of  Property_List
+)
+
+([libros_ProjectKB_Class20053] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20054])
+	(widget_class_name "edu.stanford.smi.protegex.changes.changesKBViewTab.ChangesKBViewTab"))
+
+([libros_ProjectKB_Class20054] of  Property_List
+)
+
+([libros_ProjectKB_Class20055] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20056])
+	(widget_class_name "se.liu.ida.JessTab.JessTab"))
+
+([libros_ProjectKB_Class20056] of  Property_List
+)
+
+([libros_ProjectKB_Class20057] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20058])
+	(widget_class_name "edu.stanford.smi.protegex.changeanalysis.ChangeAnalysisTab"))
+
+([libros_ProjectKB_Class20058] of  Property_List
+)
+
+([libros_ProjectKB_Class20059] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20060])
+	(widget_class_name "uk.ac.man.cs.mig.coode.owlviz.ui.OWLVizTab"))
+
+([libros_ProjectKB_Class20060] of  Property_List
+)
+
+([libros_ProjectKB_Class20061] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20062])
+	(widget_class_name "edu.stanford.smi.protegex.changes.stats.ChangeStatisticsTab"))
+
+([libros_ProjectKB_Class20062] of  Property_List
+)
+
+([libros_ProjectKB_Class20063] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20064])
+	(widget_class_name "script.ProtegeScriptTab"))
+
+([libros_ProjectKB_Class20064] of  Property_List
+)
+
+([libros_ProjectKB_Class20065] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20066])
+	(widget_class_name "edu.stanford.smi.protegex.chatPlugin.ChatTab"))
+
+([libros_ProjectKB_Class20066] of  Property_List
+)
+
+([libros_ProjectKB_Class20067] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20068])
+	(widget_class_name "edu.stanford.smi.protegex.fctab.FacetConstraintsTab"))
+
+([libros_ProjectKB_Class20068] of  Property_List
+)
+
+([libros_ProjectKB_Class20069] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20070])
+	(widget_class_name "edu.stanford.smi.protegex.xml.tab.XMLTab"))
+
+([libros_ProjectKB_Class20070] of  Property_List
+)
+
+([libros_ProjectKB_Class20071] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20072])
+	(widget_class_name "edu.stanford.smi.protegex.datamaster.DataMasterTab"))
+
+([libros_ProjectKB_Class20072] of  Property_List
+)
+
+([libros_ProjectKB_Class20073] of  Widget
+
+	(is_hidden TRUE)
+	(property_list [libros_ProjectKB_Class20074])
+	(widget_class_name "ezpal.EZPalTab"))
+
+([libros_ProjectKB_Class20074] of  Property_List
+)
+
+([libros_ProjectKB_Class20075] of  Property_List
+
+	(properties [libros_ProjectKB_Class20167]))
+
+([libros_ProjectKB_Class20167] of  String
+
+	(name "SearchTab_Query"))
+
+([libros_ProjectKB_Class20168] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([libros_ProjectKB_Class20169] of  String
+
+	(name "Nacionalidad")
+	(string_value "nacionalidad"))
+
+([libros_ProjectKB_Class20170] of  String
+
+	(name "Genero")
+	(string_value "nombreGenero"))
+
+([libros_ProjectKB_Class20171] of  String
+
+	(name "Autor")
+	(string_value "nombre"))
+
+([libros_ProjectKB_Class20172] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([libros_ProjectKB_Class20173] of  String
+
+	(name "Tema")
+	(string_value "nombreTema"))
+
+([libros_ProjectKB_Class20174] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([libros_ProjectKB_Class20175] of  String
+
+	(name "Libro")
+	(string_value "titulo"))
+
+([libros_ProjectKB_Class20176] of  Map_Entry
+
+	(key "suppress_instance_counting")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([libros_ProjectKB_Class20177] of  Map_Entry
+
+	(key "add_name_on_instance_form")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([libros_ProjectKB_Class20178] of  Map_Entry
+
+	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
 ([libros_ProjectKB_Class21] of  Property_List
 )
 
@@ -231,7 +569,11 @@
 )
 
 ([libros_ProjectKB_Class3] of  Map
-)
+
+	(entries
+		[libros_ProjectKB_Class20176]
+		[libros_ProjectKB_Class20177]
+		[libros_ProjectKB_Class20178]))
 
 ([libros_ProjectKB_Class30] of  Property_List
 )
@@ -246,6 +588,7 @@
 	(display_hidden_classes TRUE)
 	(display_multi_parent_class_icon TRUE)
 	(is_readonly FALSE)
+	(tabbed_instance_form_layout FALSE)
 	(undo_enabled TRUE)
 	(update_modification_slots FALSE))
 
@@ -325,6 +668,7 @@
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
 	(default_slot_metaclass ":STANDARD-SLOT")
+	(journaling_enabled FALSE)
 	(next_frame_number 0)
 	(options [option_instance])
 	(property_map [libros_ProjectKB_Class3])
@@ -334,14 +678,54 @@
 		[SLOTS_TAB]
 		[FORMS_TAB]
 		[INSTANCES_TAB]
-		[QUERIES_TAB]))
+		[QUERIES_TAB]
+		[libros_ProjectKB_Class20057]
+		[libros_ProjectKB_Class20037]
+		[libros_ProjectKB_Class20017]
+		[libros_ProjectKB_Class20071]
+		[libros_ProjectKB_Class20035]
+		[libros_ProjectKB_Class20067]
+		[libros_ProjectKB_Class20051]
+		[libros_ProjectKB_Class20041]
+		[libros_ProjectKB_Class20055]
+		[libros_ProjectKB_Class20019]
+		[libros_ProjectKB_Class20021]
+		[libros_ProjectKB_Class20015]
+		[libros_ProjectKB_Class20049]
+		[libros_ProjectKB_Class20009]
+		[libros_ProjectKB_Class20047]
+		[libros_ProjectKB_Class1]
+		[libros_ProjectKB_Class20027]
+		[libros_ProjectKB_Class20023]
+		[libros_ProjectKB_Class10005]
+		[libros_ProjectKB_Class20063]
+		[libros_ProjectKB_Class20025]
+		[libros_ProjectKB_Class20043]
+		[libros_ProjectKB_Class20069]
+		[libros_ProjectKB_Class20039]
+		[libros_ProjectKB_Class20053]
+		[libros_ProjectKB_Class20061]
+		[libros_ProjectKB_Class20065]
+		[libros_ProjectKB_Class20073]
+		[libros_ProjectKB_Class10003]
+		[libros_ProjectKB_Class20011]
+		[libros_ProjectKB_Class20033]
+		[libros_ProjectKB_Class20029]
+		[libros_ProjectKB_Class20045]
+		[libros_ProjectKB_Class20059]
+		[libros_ProjectKB_Class20007]
+		[libros_ProjectKB_Class20031]
+		[libros_ProjectKB_Class20013]))
 
 ([QUERIES_TAB] of  Widget
 
+	(is_hidden FALSE)
+	(property_list [libros_ProjectKB_Class20075])
 	(widget_class_name "edu.stanford.smi.protegex.queries_tab.QueriesTab"))
 
 ([SLOTS_TAB] of  Widget
 
+	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.SlotsTab"))
 
 ([SOURCES] of  Property_List

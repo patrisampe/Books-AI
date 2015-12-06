@@ -1,0 +1,4 @@
+digraph "libros" {
+
+"Autor" [shape=box, label="Autor", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+}
