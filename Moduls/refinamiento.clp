@@ -2,7 +2,6 @@
 ; MODULO DE REFINAMIENTO
 ; =============================================================================
 
-
 (defmodule refinamiento
     (import MAIN ?ALL)
     (export ?ALL)

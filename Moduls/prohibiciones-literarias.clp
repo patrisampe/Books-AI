@@ -1,3 +1,7 @@
+; =============================================================================
+; MODULO DE PREGUNTAS: PROHIBICIONES LITERARIAS DEL LECTOR
+; =============================================================================
+
 ; Modulo de recopilacion de las prohibiciones literarias del lector
 (defmodule prohibiciones-literarias
     (import MAIN ?ALL)

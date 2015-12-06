@@ -1,8 +1,7 @@
 ; =============================================================================
-; MODULO DE PREGUNTAS EXTRA
+; MODULO DE PREGUNTAS: PREGUNTAS EXTRA
 ; =============================================================================
 
-; Modulo de recopilacion de las preguntas extra
 (defmodule preguntas-extra
         (import MAIN ?ALL)
         (export ?ALL)

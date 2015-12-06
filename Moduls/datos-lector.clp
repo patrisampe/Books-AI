@@ -1,5 +1,5 @@
 ; =============================================================================
-; MODULO DE PREGUNTAS
+; MODULO DE PREGUNTAS: DATOS DEL LECTOR
 ; =============================================================================
 
 ; Modulo de recopilacion de los datos del lector

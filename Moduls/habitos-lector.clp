@@ -1,4 +1,7 @@
-; Modulo de recopilacion de los habitos del lector
+; =============================================================================
+; MODULO DE PREGUNTAS: HABITOS DEL LECTOR
+; =============================================================================
+
 (defmodule habitos-lector
         (import MAIN ?ALL)
         (export ?ALL)

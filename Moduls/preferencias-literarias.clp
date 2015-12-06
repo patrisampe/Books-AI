@@ -1,3 +1,7 @@
+; =============================================================================
+; MODULO DE PREGUNTAS: PREFERENCIAS LITERARIAS DEL LECTOR
+; =============================================================================
+
 ; Modulo de recopilacion de las prefencias literarias del lector
 (defmodule preferencias-literarias
     (import MAIN ?ALL)

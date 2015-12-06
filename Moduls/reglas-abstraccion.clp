@@ -3,8 +3,6 @@
 ; MODULO DE REGLAS DE ABSTRACCION
 ; =============================================================================
 
-;Modulo de Reglas de Abstraccion
-
 (defmodule reglas-abstraccion
     (import MAIN ?ALL)
     (export ?ALL)
