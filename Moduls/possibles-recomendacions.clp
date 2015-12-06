@@ -5,8 +5,16 @@
 )
 
 (defrule establecer-libros "recopilacion de los LIBROS possibles del lector"
+    (declare (salience 2))
     ?libros <- (LibrosT)
-    ?flow <- (establecer-libros) 
+    (Preferencias
+                (generos-deseados $?generos-deseados)
+                (autores-deseados $?autores-deseados)
+                (temas-deseados $?temas-deseados))
+    ;?flow <- (establecer-libros) 
+    (test (eq (length$ ?generos-deseados) 0))
+    (test (eq (length$ ?autores-deseados) 0))
+    (test (eq (length$ ?temas-deseados) 0))
     =>
 
     (printout t "HOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAA" crlf crlf)
@@ -15,11 +23,86 @@
     (modify ?libros (libros-possibles ?vectorLibros))
     (printout t "HOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAA" crlf crlf)
     (printout t "Resumen Libros" crlf crlf)
-    (print-multislot "Libros possibles:" ?vectorLibros get-titulo)
+    ;(print-multislot "Libros possibles:" ?vectorLibros get-titulo)
     ;(printout t "Resumen possibles" crlf crlf)
     ;(print-multislot "Generos possibles:" ?generos-possibles4 get-nombreGenero)
     (assert (carga))
-    (retract ?flow)
+    ;(retract ?flow)
+)
+
+
+(defrule establicer-generos-deseados " establecer generos deseados " 
+        (declare (salience 1))
+        (Preferencias
+                (generos-deseados $?generos-deseados))
+        (not (deseos-generos))
+        (not  (test (eq (length$ ?generos-deseados) 0))) 
+        (LibrosT
+                (libros-possibles $?libros-possibles))
+;and (test (> (length$ ?autores-possibles) 0)) (test (> (length$ ?generos-possibles) 0)) (test (> (length$ ?temas-possibles) 0)))
+        ?libros <- (LibrosT)
+    
+
+        =>
+      (bind ?vectorLibros (todas-instancia Libro))
+ ;(printout t " uollaa 1 ponemos solo los libros de generos-deseados" crlf crlf)
+    (bind ?libros-possibles (maybe-multislot-multi-insert ?generos-deseados ?libros-possibles ?vectorLibros get-pertenece))
+    (modify ?libros (libros-possibles  ?libros-possibles))
+    (printout t " ponemos solo los libros de generos-deseados" crlf crlf)
+    (print-multislot "libros possibles:" ?libros-possibles get-titulo)
+    (assert (deseos-generos))
+
+
+)
+
+
+(defrule establicer-autores-deseados " establecer autores deseados " 
+        (declare (salience 1))
+        (Preferencias
+                (autores-deseados $?autores-deseados))
+        (not (deseos-autores))
+        (not  (test (eq (length$ ?autores-deseados) 0))) 
+        (LibrosT
+                (libros-possibles $?libros-possibles))
+;and (test (> (length$ ?autores-possibles) 0)) (test (> (length$ ?generos-possibles) 0)) (test (> (length$ ?temas-possibles) 0)))
+        ?libros <- (LibrosT)
+    
+
+        =>
+      (bind ?vectorLibros (todas-instancia Libro))
+ ;(printout t " uollaa 1 ponemos solo los libros de generos-deseados" crlf crlf)
+    (bind ?libros-possibles (maybe-multislot-single-insert ?autores-deseados ?libros-possibles ?vectorLibros get-escritoPor))
+    (modify ?libros (libros-possibles  ?libros-possibles))
+    (printout t " ponemos solo los libros de autores-deseados" crlf crlf)
+    (print-multislot "libros possibles:" ?libros-possibles get-titulo)
+    (assert (deseos-autores))
+
+
+)
+
+
+(defrule establicer-temas-deseados " establecer temas deseados " 
+        (declare (salience 1))
+        (Preferencias
+                (temas-deseados $?temas-deseados))
+        (not (deseos-temas))
+        (not  (test (eq (length$ ?temas-deseados) 0))) 
+        (LibrosT
+                (libros-possibles $?libros-possibles))
+;and (test (> (length$ ?autores-possibles) 0)) (test (> (length$ ?generos-possibles) 0)) (test (> (length$ ?temas-possibles) 0)))
+        ?libros <- (LibrosT)
+    
+
+        =>
+      (bind ?vectorLibros (todas-instancia Libro))
+ ;(printout t " uollaa 1 ponemos solo los libros de generos-deseados" crlf crlf)
+    (bind ?libros-possibles (maybe-multislot-multi-insert ?temas-deseados ?libros-possibles ?vectorLibros get-trataSobre))
+    (modify ?libros (libros-possibles  ?libros-possibles))
+    (printout t " ponemos solo los libros de temas-deseados" crlf crlf)
+    (print-multislot "libros possibles:" ?libros-possibles get-titulo)
+    (assert (deseos-temas))
+
+
 )
 
 (defrule filtrar "recopilacion de los LIBROS possibles del lector"
