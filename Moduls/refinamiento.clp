@@ -107,4 +107,45 @@
     )
     (modify ?ord (puntuaciones ?puntuaciones))
     (retract ?flow)
+    (assert (puntuar-premios-autores))
+)
+
+(defrule puntuar-premios-autores "Asigna una puntuacion a cada libro segun los premios de su autor"
+    (LibrosT (libros-possibles $?libros-possibles))
+    ?ord <- (Ordenacion (puntuaciones $?puntuaciones))
+    ?flow <- (puntuar-premios-autores)
+    (PreguntasExtra (seguir-criticos ?si))
+    (test (eq ?si si))
+    =>
+    (loop-for-count (?i 1 (length$ ?libros-possibles)) do
+        (bind ?libro (nth$ ?i ?libros-possibles))
+        (bind ?autor (send ?libro get-escritoPor))
+        (bind ?premios (send ?autor get-nPremios))
+        (bind ?ant (nth$ ?i ?puntuaciones))
+        (bind ?act (+ ?ant ?premios))
+        (bind ?puntuaciones (replace$ ?puntuaciones ?i ?i ?act)) 
+    )
+    (modify ?ord (puntuaciones ?puntuaciones))
+    (retract ?flow)
+    (assert (puntuar-premios-libros))
+)
+
+(defrule puntuar-premios-libros "Asigna una puntuacion a cada libro segun si ha sido premiado"
+    (LibrosT (libros-possibles $?libros-possibles))
+    ?ord <- (Ordenacion (puntuaciones $?puntuaciones))
+    ?flow <- (puntuar-premios-libros)
+    (PreguntasExtra (libro-premiado ?si))
+    (test (eq ?si si))
+    =>
+    (loop-for-count (?i 1 (length$ ?libros-possibles)) do
+        (bind ?libro (nth$ ?i ?libros-possibles))
+        (bind ?premio (send ?libro get-premios))
+        (if ?premio then
+            (bind ?ant (nth$ ?i ?puntuaciones))
+            (bind ?act (+ ?ant 10))
+            (bind ?puntuaciones (replace$ ?puntuaciones ?i ?i ?act)) 
+        )
+    )
+    (modify ?ord (puntuaciones ?puntuaciones))
+    (retract ?flow)
 )

@@ -58,6 +58,18 @@
         (focus prohibiciones-literarias)
 )
 
+(defrule focus-preguntas-extra
+        (Lector)
+        (Habitos)
+        (Preferencias)
+        (Prohibiciones)
+        (not (PreguntasExtra))
+        =>
+        (assert (PreguntasExtra))
+        (assert (establecer-seguir-criticos))
+        (focus preguntas-extra)
+)
+
 (defrule focus-reglas-abstraccion
         (Lector)
         (Habitos)

@@ -16,13 +16,13 @@ Deftemplates/*
 #Posem * ja que no ens importa l'ordre
 Funcions/*
 
-
 #Moduls
 Moduls/main.clp
 Moduls/datos-lector.clp
 Moduls/habitos-lector.clp
 Moduls/preferencias-literarias.clp
 Moduls/prohibiciones-literarias.clp
+Moduls/preguntas-extra.clp
 Moduls/reglas-abstraccion.clp
 Moduls/possibles-recomendacions.clp
 Moduls/refinamiento.clp

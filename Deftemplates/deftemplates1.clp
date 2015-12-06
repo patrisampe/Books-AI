@@ -32,9 +32,9 @@
         (multislot temas-prohibidos (type INSTANCE) (allowed-classes Tema))
 )
 
-(deftemplate PreguntasRaras
+(deftemplate PreguntasExtra
         (slot seguir-criticos (type SYMBOL) (allowed-values si no IND) (default IND))
-        (slot libro-raro (type SYMBOL) (allowed-values si no IND) (default IND))
+        (slot libro-premiado (type SYMBOL) (allowed-values si no IND) (default IND))
 )
 
 (deftemplate Possibles
