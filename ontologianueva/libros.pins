@@ -1,4 +1,4 @@
-; Sun Dec 06 18:57:24 CET 2015
+; Sun Dec 06 21:39:57 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -63,6 +63,7 @@
 	(anoDeNacimiento 1883)
 	(librosEscritos [Libros_Class10000])
 	(nombre "Franz Kafka")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class4]))
 
 ([Libros_Class10005] of  Libro
@@ -99,6 +100,7 @@
 	(anoDeNacimiento 1871)
 	(librosEscritos [Libros_Class10008])
 	(nombre "Marcel Proust")
+	(nPremios 14)
 	(tieneNacionalidad [libros_Class8]))
 
 ([Libros_Class10011] of  Libro
@@ -195,6 +197,7 @@
 	(anoDeNacimiento 1893)
 	(librosEscritos [Libros_Class10023])
 	(nombre "Dorothy L. Sayers")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10026] of  Libro
@@ -213,6 +216,7 @@
 	(anoDeNacimiento 1890)
 	(librosEscritos [Libros_Class10026])
 	(nombre "Agatha Christie")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10029] of  Libro
@@ -242,6 +246,7 @@
 	(anoDeNacimiento 1824)
 	(librosEscritos [Libros_Class10032])
 	(nombre "Wilkie Collins")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10036] of  Libro
@@ -302,6 +307,7 @@
 	(anoDeNacimiento 1940)
 	(librosEscritos [Libros_Class10040])
 	(nombre "Ant Parker")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class9]))
 
 ([Libros_Class10042] of  Libro
@@ -379,6 +385,7 @@
 	(anoDeNacimiento 1974)
 	(librosEscritos [Libros_Class10047])
 	(nombre "Lof Yu")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10053] of  Libro
@@ -416,6 +423,7 @@
 	(anoDeNacimiento 1974)
 	(librosEscritos [Libros_Class10055])
 	(nombre "Andrea Tome")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10058] of  Libro
@@ -434,6 +442,7 @@
 	(anoDeNacimiento 1987)
 	(librosEscritos [Libros_Class10058])
 	(nombre "Alessandra Neymar")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10060] of  Libro
@@ -451,6 +460,7 @@
 
 	(librosEscritos [Libros_Class10060])
 	(nombre "Michelle Levy")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10062] of  Libro
@@ -467,7 +477,9 @@
 ([Libros_Class10063] of  Autor
 
 	(librosEscritos [Libros_Class10062])
-	(nombre "Lucia R."))
+	(nombre "Lucia R.")
+	(nPremios 0)
+	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10064] of  Libro
 
@@ -496,6 +508,7 @@
 	(anoDeNacimiento 1970)
 	(librosEscritos [Libros_Class10064])
 	(nombre "Biggs Waller")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class5]))
 
 ([Libros_Class10067] of  Autor
@@ -503,6 +516,7 @@
 	(anoDeNacimiento 1971)
 	(librosEscritos [Libros_Class10065])
 	(nombre "Florencia Bonelli")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class6]))
 
 ([Libros_Class10068] of  Libro
@@ -520,6 +534,7 @@
 
 	(librosEscritos [Libros_Class10068])
 	(nombre "Jordi Diez")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10070] of  Libro
@@ -630,6 +645,7 @@
 	(anoDeNacimiento 1950)
 	(librosEscritos [Libros_Class10081])
 	(nombre "Felix Jaime Cortes")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10083] of  Libro
@@ -648,6 +664,7 @@
 	(anoDeNacimiento 1949)
 	(librosEscritos [Libros_Class10083])
 	(nombre "Albert Vito i Godina")
+	(nPremios 0)
 	(tieneNacionalidad [libros_Class3]))
 
 ([Libros_Class10085] of  Libro
@@ -901,7 +918,8 @@
 		[Libros_Class10082]
 		[Libros_Class10039]
 		[Libros_Class10056]
-		[Libros_Class10071])
+		[Libros_Class10071]
+		[Libros_Class10063])
 	(nacionalidad "Espana"))
 
 ([Libros_Class30] of  Tema
@@ -1331,6 +1349,7 @@
 	(anoDeNacimiento 1547)
 	(librosEscritos [libros_Class70])
 	(nombre "Miguel de Cervantes")
+	(nPremios 40)
 	(tieneNacionalidad [libros_Class3]))
 
 ([libros_Class7] of  Nacionalidad

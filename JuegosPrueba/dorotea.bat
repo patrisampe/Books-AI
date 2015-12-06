@@ -17,4 +17,5 @@
 		(temas-prohibidos [libros_Class68] [libros_Class39])
 	)
 )
+(assert (PreguntasExtra (seguir-criticos no) (libro-premiado no)))
 (run)
