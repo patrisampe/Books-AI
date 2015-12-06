@@ -1,4 +1,4 @@
-; Sun Dec 06 18:55:14 CET 2015
+; Sun Dec 06 18:57:24 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,14 +20,14 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[libros_ProjectKB_Class20168]
-		[libros_ProjectKB_Class20169]
-		[libros_ProjectKB_Class20170]
-		[libros_ProjectKB_Class20171]
-		[libros_ProjectKB_Class20172]
-		[libros_ProjectKB_Class20173]
-		[libros_ProjectKB_Class20174]
-		[libros_ProjectKB_Class20175]))
+		[libros_ProjectKB_Class20179]
+		[libros_ProjectKB_Class20180]
+		[libros_ProjectKB_Class20181]
+		[libros_ProjectKB_Class20182]
+		[libros_ProjectKB_Class20183]
+		[libros_ProjectKB_Class20184]
+		[libros_ProjectKB_Class20185]
+		[libros_ProjectKB_Class20186]))
 
 ([CLSES_TAB] of  Widget
 
@@ -480,61 +480,61 @@
 
 	(name "SearchTab_Query"))
 
-([libros_ProjectKB_Class20168] of  String
+([libros_ProjectKB_Class20179] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([libros_ProjectKB_Class20169] of  String
+([libros_ProjectKB_Class20180] of  String
 
 	(name "Nacionalidad")
 	(string_value "nacionalidad"))
 
-([libros_ProjectKB_Class20170] of  String
+([libros_ProjectKB_Class20181] of  String
 
 	(name "Genero")
 	(string_value "nombreGenero"))
 
-([libros_ProjectKB_Class20171] of  String
+([libros_ProjectKB_Class20182] of  String
 
 	(name "Autor")
 	(string_value "nombre"))
 
-([libros_ProjectKB_Class20172] of  String
+([libros_ProjectKB_Class20183] of  String
 
 	(name ":PAL-CONSTRAINT")
 	(string_value "%3APAL-NAME"))
 
-([libros_ProjectKB_Class20173] of  String
+([libros_ProjectKB_Class20184] of  String
 
 	(name "Tema")
 	(string_value "nombreTema"))
 
-([libros_ProjectKB_Class20174] of  String
+([libros_ProjectKB_Class20185] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([libros_ProjectKB_Class20175] of  String
+([libros_ProjectKB_Class20186] of  String
 
 	(name "Libro")
 	(string_value "titulo"))
 
-([libros_ProjectKB_Class20176] of  Map_Entry
+([libros_ProjectKB_Class20187] of  Map_Entry
 
 	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([libros_ProjectKB_Class20177] of  Map_Entry
+([libros_ProjectKB_Class20188] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([libros_ProjectKB_Class20178] of  Map_Entry
+([libros_ProjectKB_Class20189] of  Map_Entry
 
 	(key "change_tracking_active")
 	(key_class "java.lang.String")
@@ -571,9 +571,9 @@
 ([libros_ProjectKB_Class3] of  Map
 
 	(entries
-		[libros_ProjectKB_Class20176]
-		[libros_ProjectKB_Class20177]
-		[libros_ProjectKB_Class20178]))
+		[libros_ProjectKB_Class20187]
+		[libros_ProjectKB_Class20188]
+		[libros_ProjectKB_Class20189]))
 
 ([libros_ProjectKB_Class30] of  Property_List
 )
