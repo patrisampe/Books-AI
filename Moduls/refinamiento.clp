@@ -75,13 +75,34 @@
         (bind ?libro (nth$ ?i ?libros-possibles))
         (bind $?temas (send ?libro get-trataSobre))
         (loop-for-count (?j 1 (length ?temas))
-            (printout t "ENTRO AKI" (nth$ ?j ?temas) crlf)
             (if (in-multislot (nth$ ?j ?temas) ?temas-preferidos) 
             then
             (bind ?ant (nth$ ?i ?puntuaciones))
             (bind ?act (+ ?ant 10))
             (bind ?puntuaciones (replace$ ?puntuaciones ?i ?i ?act))
             )
+        )
+    )
+    (modify ?ord (puntuaciones ?puntuaciones))
+    (retract ?flow)
+    (assert (puntuar-nacionalidad))
+)
+
+(defrule puntuar-nacionalidad "Asigna una puntuacion a cada libro segun la nacionalidad del autor"
+    (Lector (nacionalidad ?nacionalidad))
+    (LibrosT (libros-possibles $?libros-possibles))
+    ?ord <- (Ordenacion (puntuaciones $?puntuaciones))
+    ?flow <- (puntuar-nacionalidad)
+    =>
+    (loop-for-count (?i 1 (length$ ?libros-possibles)) do
+        (bind ?libro (nth$ ?i ?libros-possibles))
+        (bind ?autor (send ?libro get-escritoPor))
+        (bind ?origen (send ?autor get-tieneNacionalidad))
+        (if (eq ?nacionalidad ?origen) 
+            then
+            (bind ?ant (nth$ ?i ?puntuaciones))
+            (bind ?act (+ ?ant 10))
+            (bind ?puntuaciones (replace$ ?puntuaciones ?i ?i ?act))    
         )
     )
     (modify ?ord (puntuaciones ?puntuaciones))
