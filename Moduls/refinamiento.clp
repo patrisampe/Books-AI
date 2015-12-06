@@ -1,9 +1,14 @@
+; =============================================================================
+; MODULO DE REFINAMIENTO
+; =============================================================================
+
+
 (defmodule refinamiento
     (import MAIN ?ALL)
     (export ?ALL)
 )
 
-(defrule inicializar
+(defrule inicializar "Inicializa el deftemplate Ordenacion con todos los valores a 0"
     (declare (salience 1))
     (LibrosT (libros-possibles $?libros-possibles))
     =>
@@ -12,12 +17,14 @@
         (bind ?puntuaciones (insert$ ?puntuaciones ?i 0))
     )
     (assert (Ordenacion (puntuaciones ?puntuaciones)))
+    (assert (puntuar-autores))
 )
 
 (defrule puntuar-autores "Asigna una puntuacion a cada libro segun su autor"
     (Preferencias (autores-preferidos $?autores-preferidos))
     (LibrosT (libros-possibles $?libros-possibles))
-    (Ordenacion (puntuaciones $?puntuaciones))
+    ?ord <- (Ordenacion (puntuaciones $?puntuaciones))
+    ?flow <- (puntuar-autores)
     =>
     (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?libro (nth$ ?i ?libros-possibles))
@@ -27,40 +34,56 @@
             (bind ?ant (nth$ ?i ?puntuaciones))
             (bind ?act (+ ?ant 10))
             (bind ?puntuaciones (replace$ ?puntuaciones ?i ?i ?act))
+            
         )
     )
+    (modify ?ord (puntuaciones ?puntuaciones))
+    (retract ?flow)
+    (assert (puntuar-generos))
 )
 
 (defrule puntuar-generos "Asigna una puntuacion a cada libro segun su genero"
     (Preferencias (generos-preferidos $?generos-preferidos))
     (LibrosT (libros-possibles $?libros-possibles))
-    (Ordenacion (puntuaciones $?puntuaciones))
+    ?ord <- (Ordenacion (puntuaciones $?puntuaciones))
+    ?flow <- (puntuar-generos)
     =>
     (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?libro (nth$ ?i ?libros-possibles))
-        (bind ?genero (send ?libro get-pertenece))
-        (if (in-multislot ?genero ?generos-preferidos) 
+        (bind $?generos (send ?libro get-pertenece))
+        (loop-for-count (?j 1 (length ?generos)) do
+            (if (in-multislot (nth$ ?j ?generos) ?generos-preferidos) 
             then
             (bind ?ant (nth$ ?i ?puntuaciones))
             (bind ?act (+ ?ant 10))
             (bind ?puntuaciones (replace$ ?puntuaciones ?i ?i ?act))
+            )
         )
     )
+    (modify ?ord (puntuaciones ?puntuaciones))
+    (retract ?flow)
+    (assert (puntuar-temas))
 )
 
 (defrule puntuar-temas "Asigna una puntuacion a cada libro segun su tema"
     (Preferencias (temas-preferidos $?temas-preferidos))
     (LibrosT (libros-possibles $?libros-possibles))
-    (Ordenacion (puntuaciones $?puntuaciones))
+    ?ord <- (Ordenacion (puntuaciones $?puntuaciones))
+    ?flow <- (puntuar-temas)
     =>
     (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?libro (nth$ ?i ?libros-possibles))
-        (bind ?tema (send ?libro get-trataSobre))
-        (if (in-multislot ?tema ?temas-preferidos) 
+        (bind $?temas (send ?libro get-trataSobre))
+        (loop-for-count (?j 1 (length ?temas))
+            (printout t "ENTRO AKI" (nth$ ?j ?temas) crlf)
+            (if (in-multislot (nth$ ?j ?temas) ?temas-preferidos) 
             then
             (bind ?ant (nth$ ?i ?puntuaciones))
             (bind ?act (+ ?ant 10))
             (bind ?puntuaciones (replace$ ?puntuaciones ?i ?i ?act))
+            )
         )
     )
+    (modify ?ord (puntuaciones ?puntuaciones))
+    (retract ?flow)
 )

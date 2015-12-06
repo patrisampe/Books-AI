@@ -10,7 +10,7 @@ ontologianueva/libros.pins
 Deftemplates/*
 
 #Deffacts
-#Deffacts/lector-pablito.clp
+Deffacts/lector-pablito.clp
 
 #Funcions
 #Posem * ja que no ens importa l'ordre

@@ -45,10 +45,10 @@
 )
 
 (deffunction in-multislot (?x ?vector)
-    (bind ?bool TRUE)
+    (bind ?bool FALSE)
     (loop-for-count (?i 1 (length$ ?vector)) do
         (bind ?aux (nth$ ?i ?vector))
-        (if (eq ?x ?aux) then (bind ?bool FALSE))
+        (if (eq ?x ?aux) then (bind ?bool TRUE))
     )
     ?bool
 )
@@ -61,7 +61,7 @@
     (bind ?vectorInstancias (create$))
     (loop-for-count (?i 1 (length$ ?allInstances)) do
         (bind ?inst (nth$ ?i ?allInstances))
-        (if (in-multislot ?inst ?deseos) then (printout t (send ?inst ?getter) "(" ?i ")" crlf))
+        (if (not (in-multislot ?inst ?deseos)) then (printout t (send ?inst ?getter) "(" ?i ")" crlf))
         (bind ?vectorInstancias (insert$ ?vectorInstancias ?i ?inst))
     )
     (printout t crlf)
