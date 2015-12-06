@@ -18,3 +18,4 @@
 		(temas-prohibidos [libros_Class68] [libros_Class39])
 	)
 )
+(run)
