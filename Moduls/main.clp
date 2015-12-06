@@ -93,3 +93,10 @@
     =>
     (focus refinamiento)
 )
+
+(defrule focus-recomendacion
+    (LibrosT)
+    (Ordenacion)
+    =>
+    (focus recomendacion)
+)

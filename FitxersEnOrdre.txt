@@ -26,3 +26,4 @@ Moduls/prohibiciones-literarias.clp
 Moduls/reglas-abstraccion.clp
 Moduls/possibles-recomendacions.clp
 Moduls/refinamiento.clp
+Moduls/recomendacion.clp

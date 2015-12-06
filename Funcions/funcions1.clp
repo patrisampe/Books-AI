@@ -105,6 +105,8 @@
         )
         (printout t crlf)
 )
+
+
 (deffunction evalua-multislot (?respuesta ?auxi)
     (bind ?encontrado FALSE)
     (loop-for-count (?i 1 (length$ ?respuesta)) do
@@ -219,4 +221,19 @@
             )
     )
     ?multislot
+)
+
+; Funcion que retorna la posicion del maximo elemento de una lista
+; PRE: La lista no es vacia
+(deffunction getPosMax (?vector)
+    (bind ?pos 1)
+    (bind ?max (nth$ 1 ?vector))
+    (loop-for-count (?i 1 (length$ ?vector)) do
+        (bind ?act (nth$ ?i ?vector))
+        (if (> ?act ?max) then
+            (bind ?pos ?i)
+            (bind ?max ?act)
+        )
+    )
+    ?pos
 )
