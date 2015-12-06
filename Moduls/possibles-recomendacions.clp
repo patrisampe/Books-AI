@@ -15,6 +15,7 @@
     (test (eq (length$ ?generos-deseados) 0))
     (test (eq (length$ ?autores-deseados) 0))
     (test (eq (length$ ?temas-deseados) 0))
+    (not (carga))
     =>
 
     (printout t "HOOOOOOOOOOOOOOOOOLAAAAAAAAAAAAAAA" crlf crlf)
