@@ -110,6 +110,7 @@
 (defrule focus-recomendacion
     (LibrosT)
     (Ordenacion)
+    (PreguntasExtra)
     =>
     (focus recomendacion)
 )

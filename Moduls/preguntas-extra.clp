@@ -19,18 +19,18 @@
                 (case 2 then (modify ?pextra (seguir-criticos no)))
         )
         (retract ?flow)
-        (assert (establecer-libro-premiado))
+        (assert (establecer-libro-desconocido))
 )
 
-(defrule establecer-libro-premiado "Establece si el lector prefiere libros que hayan sido premiados"
+(defrule establecer-libro-desconocido "Establece si el lector prefiere libros que no hayan sido premiados"
         ?pextra <- (PreguntasExtra)
-        ?flow <- (establecer-libro-premiado)
+        ?flow <- (establecer-libro-desconocido)
         =>
-        (printout t "Le gusta que los libros tengan premios?" crlf)
+        (printout t "Le gusta que los libros sean desconocidos, es decir que no tengan premios?" crlf)
         (bind ?res (pregunta-general "Si(1) No(2)"))
         (switch ?res
-                (case 1 then (modify ?pextra (libro-premiado si)))
-                (case 2 then (modify ?pextra (libro-premiado no)))
+                (case 1 then (modify ?pextra (libro-desconocido si)))
+                (case 2 then (modify ?pextra (libro-desconocido no)))
         )
         (retract ?flow)
         (focus MAIN)

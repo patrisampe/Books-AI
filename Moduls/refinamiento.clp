@@ -129,17 +129,37 @@
     (assert (puntuar-premios-libros))
 )
 
-(defrule puntuar-premios-libros "Asigna una puntuacion a cada libro segun si ha sido premiado"
+(defrule puntuar-premios-libros "Asigna una puntuacion a cada libro segun si ha sido premiado o no"
     (LibrosT (libros-possibles $?libros-possibles))
     ?ord <- (Ordenacion (puntuaciones $?puntuaciones))
     ?flow <- (puntuar-premios-libros)
-    (PreguntasExtra (libro-premiado ?si))
-    (test (eq ?si si))
+    (PreguntasExtra (libro-desconocido ?no))
+    (test (eq ?no no))
     =>
     (loop-for-count (?i 1 (length$ ?libros-possibles)) do
         (bind ?libro (nth$ ?i ?libros-possibles))
         (bind ?premio (send ?libro get-premios))
         (if ?premio then
+            (bind ?ant (nth$ ?i ?puntuaciones))
+            (bind ?act (+ ?ant 10))
+            (bind ?puntuaciones (replace$ ?puntuaciones ?i ?i ?act)) 
+        )
+    )
+    (modify ?ord (puntuaciones ?puntuaciones))
+    (retract ?flow)
+)
+
+(defrule puntuar-libros-desconocidos "Asigna una puntuacion a cada libro segun si es desconocido"
+    (LibrosT (libros-possibles $?libros-possibles))
+    ?ord <- (Ordenacion (puntuaciones $?puntuaciones))
+    ?flow <- (puntuar-premios-libros)
+    (PreguntasExtra (libro-desconocido ?si))
+    (test (eq ?si si))
+    =>
+    (loop-for-count (?i 1 (length$ ?libros-possibles)) do
+        (bind ?libro (nth$ ?i ?libros-possibles))
+        (bind ?premio (send ?libro get-premios))
+        (if (not ?premio) then
             (bind ?ant (nth$ ?i ?puntuaciones))
             (bind ?act (+ ?ant 10))
             (bind ?puntuaciones (replace$ ?puntuaciones ?i ?i ?act)) 

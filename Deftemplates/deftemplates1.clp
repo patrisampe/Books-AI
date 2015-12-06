@@ -34,7 +34,7 @@
 
 (deftemplate PreguntasExtra
         (slot seguir-criticos (type SYMBOL) (allowed-values si no IND) (default IND))
-        (slot libro-premiado (type SYMBOL) (allowed-values si no IND) (default IND))
+        (slot libro-desconocido (type SYMBOL) (allowed-values si no IND) (default IND))
 )
 
 (deftemplate LibrosT

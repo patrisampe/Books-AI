@@ -1,0 +1,57 @@
+digraph libros {
+	graph [bb="0,0,266,546"];
+	node [label="\N"];
+	Nacionalidad	 [color="0.0,0.0,0.0",
+		fontcolor="0.0,0.0,0.0",
+		height=0.97222,
+		label="{Nacionalidad|{autores|Instance*|{Autor}}|{nacionalidad|String}}",
+		pos="133,511",
+		rects="47,522.5,219,545.5 47,499.5,103,522.5 103,499.5,171,522.5 171,499.5,219,522.5 47,476.5,151,499.5 151,476.5,219,499.5",
+		shape=record,
+		width=2.3889];
+	Autor	 [color="0.0,0.0,0.0",
+		fontcolor="0.0,0.0,0.0",
+		height=1.9306,
+		label="{Autor|{nPremios|Integer}|{anoDeNacimiento|Integer}|{librosEscritos|Instance*|{Libro}}|{tieneNacionalidad|Instance|{Nacionalidad}}|{\
+nombre|String}}",
+		pos="133,354",
+		rects="0,400,266,423 0,377,139,400 139,377,266,400 0,354,163,377 163,354,266,377 0,331,111,354 111,331,199,354 199,331,266,354 0,308,115,\
+331 115,308,177,331 177,308,266,331 0,285,137,308 137,285,266,308",
+		shape=record,
+		width=3.6944];
+	Nacionalidad -> Autor	 [color="0.6666667,1.0,1.0",
+		fontcolor="0.6666667,1.0,1.0",
+		label="autores*",
+		lp="123,450",
+		pos="e,99.329,423.26 107.9,476.35 104.65,470.49 101.82,464.26 100,458 97.672,449.99 97.147,441.65 97.868,433.35",
+		style=filled];
+	Autor -> Nacionalidad	 [color="0.6666667,1.0,1.0",
+		fontcolor="0.6666667,1.0,1.0",
+		label=tieneNacionalidad,
+		lp="196.5,450",
+		pos="e,142.68,476.38 146.39,423.14 147.3,434.77 147.39,446.73 146,458 145.67,460.72 145.24,463.5 144.74,466.3",
+		style=filled];
+	Libro	 [color="0.0,0.0,0.0",
+		fontcolor="0.0,0.0,0.0",
+		height=3.2083,
+		label="{Libro|{idioma|Symbol|{Frances|Catalan|Castellano|...}}|{trataSobre|Instance*|{Tema}}|{titulo|String}|{pertenece|Instance*|{Genero}}|{\
+escritoPor|Instance|{Autor}}|{...}}",
+		pos="133,116",
+		rects="37,208,229,231 37,116,93,208 93,116,153,208 153,185,228,208 153,162,228,185 153,139,228,162 153,116,228,139 37,93,110,116 110,93,\
+179,116 179,93,228,116 37,70,130,93 130,70,229,93 37,47,105,70 105,47,173,70 173,47,229,70 37,24,111,47 111,24,177,47 177,24,228,\
+47 37,1,229,24",
+		shape=record,
+		width=2.6667];
+	Autor -> Libro	 [color="0.6666667,1.0,1.0",
+		fontcolor="0.6666667,1.0,1.0",
+		label="librosEscritos*",
+		lp="123,258",
+		pos="e,79.436,231.24 88.615,284.65 85.969,278.51 83.697,272.25 82,266 79.81,257.93 78.87,249.67 78.914,241.37",
+		style=filled];
+	Libro -> Autor	 [color="0.6666667,1.0,1.0",
+		fontcolor="0.6666667,1.0,1.0",
+		label=escritoPor,
+		lp="192.5,258",
+		pos="e,159.77,284.72 165.67,231.14 166.35,242.9 165.96,254.67 164,266 163.5,268.89 162.91,271.81 162.26,274.74",
+		style=filled];
+}

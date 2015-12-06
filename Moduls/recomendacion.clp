@@ -128,7 +128,7 @@
     (bind ?libros-possibles (delete$ ?libros-possibles ?posMax1 ?posMax1))
 
     (bind ?posMax2 (getPosMax ?puntuaciones))
-    (bind ?libro2 (nth$ ?posMax1 ?libros-possibles))
+    (bind ?libro2 (nth$ ?posMax2 ?libros-possibles))
     (bind ?titulo2 (send ?libro2 get-titulo))
     (bind ?aux (send ?libro2 get-escritoPor))
     (bind ?autor2 (send ?aux get-nombre))
@@ -156,7 +156,7 @@
     (printout t crlf) 
     (printout t "Muchas gracias por confiar en nuestro sistema" crlf)
     (printout t "Disfrute con la lectura de estos libros" crlf)
-    (printout t "No dude en volver a preguntarnos cuando los finalice" crlf)
+    (printout t "No dude en volver a preguntarnos de nuevo cuando los acabe" crlf)
     (printout t crlf)
     (printout t crlf)
     (printout t "--------------------------------------------------------" crlf)

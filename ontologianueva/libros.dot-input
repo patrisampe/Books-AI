@@ -1,4 +1,10 @@
 digraph "libros" {
 
-"Autor" [shape=box, label="Autor", color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0"]
+"Nacionalidad" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Nacionalidad|{autores|Instance*|{Autor}}|{nacionalidad|String}}"]
+"Nacionalidad"->"Autor" [style=filled, label="autores*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0"]
+"Autor" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Autor|{nPremios|Integer}|{anoDeNacimiento|Integer}|{librosEscritos|Instance*|{Libro}}|{tieneNacionalidad|Instance|{Nacionalidad}}|{nombre|String}}"]
+"Autor"->"Libro" [style=filled, label="librosEscritos*", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0"]
+"Autor"->"Nacionalidad" [style=filled, label="tieneNacionalidad", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0"]
+"Libro" [shape=record, color="0.0,0.0,0.0", fontcolor="0.0,0.0,0.0", label="{Libro|{idioma|Symbol|{Frances|Catalan|Castellano|...}}|{trataSobre|Instance*|{Tema}}|{titulo|String}|{pertenece|Instance*|{Genero}}|{escritoPor|Instance|{Autor}}|{...}}"]
+"Libro"->"Autor" [style=filled, label="escritoPor", color="0.6666667,1.0,1.0", fontcolor="0.6666667,1.0,1.0"]
 }
