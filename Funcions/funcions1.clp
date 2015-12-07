@@ -187,28 +187,30 @@
     (bind ?multislot (create$))
     ;(printout t "uolaa insertaoooo 0" crlf)
     (loop-for-count (?i 1 (length$ ?multislot-libros)) do
-     ;   (printout t "uolaa insertaoooo 0.1" crlf)
+      ;  (printout t "uolaa insertaoooo 0.1" crlf)
         (bind ?B (nth$ ?i ?multislot-libros))
      ;   (printout t "uolaa insertaoooo 0.25" crlf)
         (bind ?aux (send ?B ?getter))
-     ;   (printout t "uolaa insertaoooo 0.5" crlf)
+      ; (printout t "uolaa insertaoooo 0.5" crlf)
+       ;(bind ?len (length$ ?intii))
+       ;(printout t ?len crlf)
                (if (eq (length$ ?intii) 0) then
                     (bind ?z -1)
-                else (bind ?z (evalua-elimina-multislot ?intii ?B))
+                else (bind ?z (evalua-multislot-elimina ?intii ?B))
                 )
+        ;       (printout t "uolaa insertaoooo 1" crlf)
                 (bind ?j (evalua-elimina-multislot ?respuesta ?aux))
-     ;           (printout t "uolaa insertaoooo 1" crlf)
+         ;       (printout t "uolaa insertaoooo 1.5" crlf)
                 ;(bind ?j -1)
                ;(if (not (eq ?j -1)) then
                 (if (or (not (eq ?j -1 ) ) (not (eq ?z -1 ) ))then
-       ;              (printout t "uolaa insertaoooo 2 " crlf)
+          ;           (printout t "uolaa insertaoooo 2 " crlf)
                     (bind ?multislot (insert$ ?multislot 1 ?B))
                 )
 
     )
     ?multislot
 )
-
 
 (deffunction maybe-multislot-single (?respuesta ?multislot-libros ?getter)
     (bind ?multislot (create$))
