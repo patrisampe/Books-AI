@@ -94,6 +94,28 @@
     (retract ?densa)
 )
 
+(defrule tipoLectura3
+    (and (Habitos (lugar casa)) (Habitos (frecuencia finde)))
+    ?densa <- (Lectura densa)
+    =>
+    (retract ?densa)
+)
+
+(defrule tipoLectura4
+    (Edad nino)
+    ?densa <- (Lectura densa)
+    =>
+    (retract ?densa)
+)
+
+(defrule tipoLectura5
+    (Edad Adolescente) 
+    (or(Cultura Medio) (Cultura Bajo))
+    ?densa <- (Lectura densa)
+    =>
+    (retract ?densa)
+)
+
 (defrule tipoLectura2
     (Habitos (lugar transporte_publico))
     ?densa <- (Lectura densa)
