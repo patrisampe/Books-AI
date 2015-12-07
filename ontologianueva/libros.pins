@@ -1,4 +1,4 @@
-; Mon Dec 07 17:21:24 CET 2015
+; Mon Dec 07 18:12:20 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -769,7 +769,7 @@
 	(pertenece
 		[Libros_Class15]
 		[libros_Class47])
-	(titulo "Farenheit 451")
+	(titulo "Fahrenheit 451")
 	(trataSobre
 		[libros_Class43]
 		[libros_Class38]
@@ -1000,6 +1000,11 @@
 		[Libros_Class18])
 	(nombreTema "Amor"))
 
+([libros_Class39] of  Tema
+
+	(librosTema [libros_Class59])
+	(nombreTema "Erotico"))
+
 ([Libros_Class39] of  Libro
 
 	(anoPublicacion 1887)
@@ -1013,11 +1018,6 @@
 		[libros_Class46])
 	(premios TRUE)
 	(titulo "Estudio en escarlata"))
-
-([libros_Class39] of  Tema
-
-	(librosTema [libros_Class59])
-	(nombreTema "Erotico"))
 
 ([Libros_Class4] of  Libro
 

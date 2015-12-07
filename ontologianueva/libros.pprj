@@ -1,4 +1,4 @@
-; Mon Dec 07 17:21:24 CET 2015
+; Mon Dec 07 18:12:20 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,14 +20,14 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[libros_ProjectKB_Class10097]
-		[libros_ProjectKB_Class10098]
-		[libros_ProjectKB_Class10099]
-		[libros_ProjectKB_Class10100]
-		[libros_ProjectKB_Class10101]
-		[libros_ProjectKB_Class10102]
-		[libros_ProjectKB_Class10103]
-		[libros_ProjectKB_Class10104]))
+		[libros_ProjectKB_Class10033]
+		[libros_ProjectKB_Class10034]
+		[libros_ProjectKB_Class10035]
+		[libros_ProjectKB_Class10036]
+		[libros_ProjectKB_Class10037]
+		[libros_ProjectKB_Class10038]
+		[libros_ProjectKB_Class10039]
+		[libros_ProjectKB_Class10040]))
 
 ([CLSES_TAB] of  Widget
 
@@ -71,9 +71,6 @@
 	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_284256_Class3] of  Map
-)
-
 ([KB_386208_Class0] of  String
 
 	(name "classes_file_name")
@@ -83,6 +80,9 @@
 
 	(name "instances_file_name")
 	(string_value "libros.pins"))
+
+([KB_767513_Class3] of  Map
+)
 
 ([LAYOUT_PROPERTIES] of  Property_List
 
@@ -116,63 +116,63 @@
 ([libros_ProjectKB_Class10006] of  Property_List
 )
 
-([libros_ProjectKB_Class10097] of  String
+([libros_ProjectKB_Class10033] of  String
 
 	(name ":INSTANCE-ANNOTATION")
 	(string_value "%3AANNOTATION-TEXT"))
 
-([libros_ProjectKB_Class10098] of  String
-
-	(name "Nacionalidad")
-	(string_value "nacionalidad"))
-
-([libros_ProjectKB_Class10099] of  String
-
-	(name "Genero")
-	(string_value "nombreGenero"))
-
-([libros_ProjectKB_Class10100] of  String
+([libros_ProjectKB_Class10034] of  String
 
 	(name "Autor")
 	(string_value "nombre"))
 
-([libros_ProjectKB_Class10101] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([libros_ProjectKB_Class10102] of  String
+([libros_ProjectKB_Class10035] of  String
 
 	(name "Tema")
 	(string_value "nombreTema"))
 
-([libros_ProjectKB_Class10103] of  String
+([libros_ProjectKB_Class10036] of  String
+
+	(name "Genero")
+	(string_value "nombreGenero"))
+
+([libros_ProjectKB_Class10037] of  String
 
 	(name ":META-CLASS")
 	(string_value "%3ANAME"))
 
-([libros_ProjectKB_Class10104] of  String
+([libros_ProjectKB_Class10038] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([libros_ProjectKB_Class10039] of  String
 
 	(name "Libro")
 	(string_value "titulo"))
 
-([libros_ProjectKB_Class10105] of  Map_Entry
+([libros_ProjectKB_Class10040] of  String
 
-	(key "suppress_instance_counting")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
+	(name "Nacionalidad")
+	(string_value "nacionalidad"))
 
-([libros_ProjectKB_Class10106] of  Map_Entry
+([libros_ProjectKB_Class10041] of  Map_Entry
 
 	(key "add_name_on_instance_form")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
 
-([libros_ProjectKB_Class10107] of  Map_Entry
+([libros_ProjectKB_Class10042] of  Map_Entry
 
 	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([libros_ProjectKB_Class10043] of  Map_Entry
+
+	(key "suppress_instance_counting")
 	(key_class "java.lang.String")
 	(value "false")
 	(value_class "java.lang.String"))
@@ -571,9 +571,9 @@
 ([libros_ProjectKB_Class3] of  Map
 
 	(entries
-		[libros_ProjectKB_Class10105]
-		[libros_ProjectKB_Class10106]
-		[libros_ProjectKB_Class10107]))
+		[libros_ProjectKB_Class10041]
+		[libros_ProjectKB_Class10042]
+		[libros_ProjectKB_Class10043]))
 
 ([libros_ProjectKB_Class30] of  Property_List
 )
@@ -660,10 +660,10 @@
 	(browser_slot_names [BROWSER_SLOT_NAMES])
 	(customized_instance_widgets
 		[INSTANCE_ANNOTATION_FORM_WIDGET]
-		[STANDARD_CLASS_FORM_WIDGET]
-		[STANDARD_SLOT_FORM_WIDGET]
 		[STANDARD_FACET_FORM_WIDGET]
-		[PAL_FORM_WIDGET])
+		[STANDARD_SLOT_FORM_WIDGET]
+		[PAL_FORM_WIDGET]
+		[STANDARD_CLASS_FORM_WIDGET])
 	(default_cls_metaclass ":STANDARD-CLASS")
 	(default_facet_metaclass ":STANDARD-FACET")
 	(default_instance_widget_class_name "edu.stanford.smi.protege.widget.FormWidget")
