@@ -1,4 +1,4 @@
-; Sun Dec 06 21:39:57 CET 2015
+; Mon Dec 07 12:37:48 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -397,7 +397,7 @@
 	(idioma Ingles)
 	(paginas 150)
 	(pertenece [libros_Class53])
-	(titulo "Amor en clima frío"))
+	(titulo "Amor en clima frio"))
 
 ([Libros_Class10054] of  Autor
 

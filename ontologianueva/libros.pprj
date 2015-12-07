@@ -1,4 +1,4 @@
-; Sun Dec 06 21:39:57 CET 2015
+; Mon Dec 07 12:37:48 CET 2015
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -20,14 +20,14 @@
 ([BROWSER_SLOT_NAMES] of  Property_List
 
 	(properties
-		[libros_ProjectKB_Class20190]
-		[libros_ProjectKB_Class20191]
-		[libros_ProjectKB_Class20192]
-		[libros_ProjectKB_Class20193]
-		[libros_ProjectKB_Class20194]
-		[libros_ProjectKB_Class20195]
-		[libros_ProjectKB_Class20196]
-		[libros_ProjectKB_Class20197]))
+		[libros_ProjectKB_Class10068]
+		[libros_ProjectKB_Class10069]
+		[libros_ProjectKB_Class10070]
+		[libros_ProjectKB_Class10071]
+		[libros_ProjectKB_Class10072]
+		[libros_ProjectKB_Class10073]
+		[libros_ProjectKB_Class10074]
+		[libros_ProjectKB_Class10075]))
 
 ([CLSES_TAB] of  Widget
 
@@ -71,7 +71,7 @@
 	(is_hidden FALSE)
 	(widget_class_name "edu.stanford.smi.protege.widget.InstancesTab"))
 
-([KB_065819_Class0] of  Map
+([KB_284256_Class3] of  Map
 )
 
 ([KB_386208_Class0] of  String
@@ -115,6 +115,67 @@
 
 ([libros_ProjectKB_Class10006] of  Property_List
 )
+
+([libros_ProjectKB_Class10068] of  String
+
+	(name ":INSTANCE-ANNOTATION")
+	(string_value "%3AANNOTATION-TEXT"))
+
+([libros_ProjectKB_Class10069] of  String
+
+	(name "Nacionalidad")
+	(string_value "nacionalidad"))
+
+([libros_ProjectKB_Class10070] of  String
+
+	(name "Genero")
+	(string_value "nombreGenero"))
+
+([libros_ProjectKB_Class10071] of  String
+
+	(name "Autor")
+	(string_value "nombre"))
+
+([libros_ProjectKB_Class10072] of  String
+
+	(name ":PAL-CONSTRAINT")
+	(string_value "%3APAL-NAME"))
+
+([libros_ProjectKB_Class10073] of  String
+
+	(name "Tema")
+	(string_value "nombreTema"))
+
+([libros_ProjectKB_Class10074] of  String
+
+	(name ":META-CLASS")
+	(string_value "%3ANAME"))
+
+([libros_ProjectKB_Class10075] of  String
+
+	(name "Libro")
+	(string_value "titulo"))
+
+([libros_ProjectKB_Class10076] of  Map_Entry
+
+	(key "suppress_instance_counting")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([libros_ProjectKB_Class10077] of  Map_Entry
+
+	(key "add_name_on_instance_form")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
+
+([libros_ProjectKB_Class10078] of  Map_Entry
+
+	(key "change_tracking_active")
+	(key_class "java.lang.String")
+	(value "false")
+	(value_class "java.lang.String"))
 
 ([libros_ProjectKB_Class11] of  Property_List
 
@@ -480,67 +541,6 @@
 
 	(name "SearchTab_Query"))
 
-([libros_ProjectKB_Class20190] of  String
-
-	(name ":INSTANCE-ANNOTATION")
-	(string_value "%3AANNOTATION-TEXT"))
-
-([libros_ProjectKB_Class20191] of  String
-
-	(name "Nacionalidad")
-	(string_value "nacionalidad"))
-
-([libros_ProjectKB_Class20192] of  String
-
-	(name "Genero")
-	(string_value "nombreGenero"))
-
-([libros_ProjectKB_Class20193] of  String
-
-	(name "Autor")
-	(string_value "nombre"))
-
-([libros_ProjectKB_Class20194] of  String
-
-	(name ":PAL-CONSTRAINT")
-	(string_value "%3APAL-NAME"))
-
-([libros_ProjectKB_Class20195] of  String
-
-	(name "Tema")
-	(string_value "nombreTema"))
-
-([libros_ProjectKB_Class20196] of  String
-
-	(name ":META-CLASS")
-	(string_value "%3ANAME"))
-
-([libros_ProjectKB_Class20197] of  String
-
-	(name "Libro")
-	(string_value "titulo"))
-
-([libros_ProjectKB_Class20198] of  Map_Entry
-
-	(key "suppress_instance_counting")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
-([libros_ProjectKB_Class20199] of  Map_Entry
-
-	(key "add_name_on_instance_form")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
-([libros_ProjectKB_Class20200] of  Map_Entry
-
-	(key "change_tracking_active")
-	(key_class "java.lang.String")
-	(value "false")
-	(value_class "java.lang.String"))
-
 ([libros_ProjectKB_Class21] of  Property_List
 )
 
@@ -571,9 +571,9 @@
 ([libros_ProjectKB_Class3] of  Map
 
 	(entries
-		[libros_ProjectKB_Class20198]
-		[libros_ProjectKB_Class20199]
-		[libros_ProjectKB_Class20200]))
+		[libros_ProjectKB_Class10076]
+		[libros_ProjectKB_Class10077]
+		[libros_ProjectKB_Class10078]))
 
 ([libros_ProjectKB_Class30] of  Property_List
 )

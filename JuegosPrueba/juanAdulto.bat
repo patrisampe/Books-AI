@@ -12,4 +12,5 @@
 	)
 )
 (assert (Prohibiciones))
+(assert (PreguntasExtra (seguir-criticos no) (libro-desconocido no)))
 (run)
