@@ -156,7 +156,7 @@
     (printout t crlf) 
     (printout t "Muchas gracias por confiar en nuestro sistema" crlf)
     (printout t "Disfrute con la lectura de estos libros" crlf)
-    (printout t "No dude en volver a preguntarnos de nuevo cuando los acabe" crlf)
+    (printout t "No dude en volver a preguntarnos de nuevo cuando quiera" crlf)
     (printout t crlf)
     (printout t crlf)
     (printout t "--------------------------------------------------------" crlf)
