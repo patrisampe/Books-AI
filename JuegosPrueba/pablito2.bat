@@ -8,7 +8,7 @@
         (Preferencias
         		(autores-preferidos [Libros_Class10037])
         		(generos-preferidos [libros_Class46])
-        		(temas-preferidos [libros_Class68] [libros_Class44] [libros_Class39])
+        		(temas-deseados [libros_Class68] [libros_Class44] [libros_Class39])
         		(autores-deseados [Libros_Class10037])
         		(generos-deseados [libros_Class46])
         )
