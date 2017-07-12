@@ -1,42 +1,10 @@
-﻿1. Escriure les rutes dels fixers a afegir a FitxersEnOrdre.txt, accepta comentaris i *
-    - També es poden afegir exclusions al Exclusiones.txt
-2. Executar el script CrearClp(.sh a linux, .ps1 a windows)
+This is a SBC system capable of recommending books to a reader from a particular reader characteristics'. 1 to 31 to 3 
+It will have the greatest possible resemblance to the interaction with an expert and must give a result similar to what he would give.
+ddd
+It is capable of recommend 1 to 3 books from a set of about 50 to 60.
 
-
-MODE DE TREBALL
-La idea d'aquest sistema de d'arxius es evitar els conflictes que hi hauria si nomes
-tinguessim un unic fitxer .clp al nostre repositori. Per tant MAI afegirem el fitxer
-Libros.clp, aquest fitxer el tindra cadascu de nosaltres i es genera a partir de 
-l'script CrearClp.sh
-Per a poder generar el Libros.clp hem d'ajuntar molts fitxers. L'ordre d'aquests esta a
-FitxerEnOrdre.txt. Aquest fitxer si que 
-Aquesta estructura es molt util ja que ens permetra crear el nostre Libros.clp i fer
-els canvis que volguem (eliminar moduls, fer proves...) i no es modificaran els petits
-fitxers amb els codis bons. 
-
-
-QUE HEM DE PUJAR AL GIT?
-Doncs tot els petits fitxers que hem anat modificant, si hem acabat el modul tambe podem
-pujar el FitxersEnOrdre.txt per a que s'inclogui el nostre modul recient fet i que ja
-hem provat que funciona be.
-
-Deffacts -> Ens permeten definir fets inicials, el que ens evitara haver de respondre
-a les preguntes cada cop que executem el programa. El projecte ja esta dissenyat per a
-poder suportar aquest tipus d'entrada i pot ser mixta (coses per deffacts i coses a ma)
-
-Deftemplates -> Tots els deftemplates que tenim
-
-Funcions -> Totes les funcions que tenim
-
-Moduls -> Cada modul que hem fet. Cada usuari te la seva carpeta, un cop un modul esta
-provat i funciona be ja es pot treure de la carpeta personal i posar a fora.
-La idea es que si tenim un modul inacabat/no funciona del tot be no s'inclogui en el libros.clp
-
-  
-Ontologia -> La nostra Ontologia
-
-EN CONSTRUCCIO
-En Yoel esta creant un script que ens permetra actualitzar tots els petits fitxers a partir
-del fitxer Libros.txt.
-D'aquesta manera podrem fer les proves en el programa principal i no haurem d'anar fent 
-copiar/pegar en els petit fitxers.
+The difference between this system and others used to recommend books is that our to provide a solution similar to that which would give the reader his trusted bookshelf
+While these others either use generalist recommendation techniques for articles
+In stores (this would be the case of amazon for example), or are search tools a
+Starting from 'objective' features of the book. In short, this system should do
+Use of expert knowledge, as opposed to the others just mentioned.
